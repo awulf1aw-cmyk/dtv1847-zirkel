@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="de" class="no-js">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.className="js";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#D7191C">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="DTV1847-zirkel">
+<link rel="apple-touch-icon" href="dtv-icon.png">
+<title>Dürener TV 1847 Track &amp; Field – Zirkeltraining</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F1F1F0; --paper:#FFFFFF; --ink:#2B2B2B; --muted:#6A6A6A; --line:#DEDEDC;
+  --red:#D7191C; --red-deep:#A81216; --track-deep:#B51518; --m-gelb:#F2C200;
+  --cond:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45}
+a{color:var(--red-deep)}
+:focus-visible{outline:3px solid var(--m-gelb);outline-offset:2px}
+[hidden]{display:none!important}
+.no-js .only-js{display:none!important}
+.js .nojs-banner{display:none}
+.nojs-banner{background:var(--ink);color:#fff;padding:12px 16px;font-size:14.5px}
+
+/* Kopf */
+.brand{background:#fff;display:flex;align-items:center;gap:14px;padding:14px 16px 12px;max-width:1100px;margin:0 auto}
+.brand img{height:68px;width:auto;flex:0 0 auto}
+.wordmark{flex:1;min-width:0;max-width:420px;height:auto;display:block}
+.wm-club{font-family:var(--cond);font-weight:700;font-size:34px;fill:var(--ink)}
+.wm-tf{font-family:var(--cond);font-weight:600;font-size:17px;fill:var(--red)}
+.wm-line{stroke:var(--red);stroke-width:2}
+.hero{background:var(--red);color:#fff;padding:16px 16px 0}
+.hero-inner{max-width:1100px;margin:0 auto}
+.hero h1{font-family:var(--cond);font-weight:700;font-size:38px;line-height:1;margin:0}
+.hero p{margin:6px 0 14px;font-size:15px;opacity:.95}
+.lanes{height:30px;margin:0 -16px;background:repeating-linear-gradient(to bottom, rgba(255,255,255,.92) 0 2px, var(--track-deep) 2px 12px);position:relative}
+.lanes::after{content:"";position:absolute;left:68%;top:0;bottom:0;width:4px;background:#fff}
+
+main{max-width:1100px;margin:0 auto;padding:16px 12px 48px}
+h2{font-family:var(--cond);font-weight:700;font-size:28px;line-height:1;margin:22px 0 4px}
+h2:first-child{margin-top:0}
+h3{font-family:var(--cond);font-weight:600;font-size:21px;line-height:1.1;margin:0}
+.lead{margin:0 0 12px;color:var(--muted);font-size:14.5px}
+.block{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px;margin:0 0 10px}
+.block-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.tag{font-size:12.5px;color:var(--muted)}
+.note{font-size:13.5px;color:var(--muted);margin:8px 0 0}
+.warn{font-size:13.5px;color:var(--red-deep);margin:8px 0 0}
+.info{background:#fff;border:1px solid var(--line);border-left:6px solid var(--red);border-radius:10px;padding:12px 14px;margin:0 0 10px;font-size:14.5px}
+.f{display:flex;flex-direction:column;gap:3px;min-width:0}
+.f > span{font-size:12.5px;color:var(--muted);font-weight:500}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:10px 8px}
+.fg .full{grid-column:1 / -1}
+select,input[type=text],input[type=number],textarea{
+  width:100%;min-width:0;font:600 16px var(--body);color:var(--ink);background:#fff;
+  border:1.5px solid var(--ink);border-radius:6px;padding:8px 10px;min-height:44px;-webkit-appearance:none;appearance:none}
+select{padding-right:30px;background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);
+  background-position:calc(100% - 16px) 55%,calc(100% - 11px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+textarea{font:500 15px var(--body);min-height:110px;resize:vertical;line-height:1.6}
+.chk{display:flex;align-items:center;gap:9px;font-size:15px;min-height:44px;cursor:pointer}
+.chk input{width:22px;height:22px;accent-color:var(--red);margin:0;flex:0 0 auto}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.btn{font:600 15px var(--body);border:1.5px solid var(--ink);background:#fff;color:var(--ink);border-radius:6px;padding:9px 15px;cursor:pointer;min-height:44px}
+.btn.primary{background:var(--red);border-color:var(--red);color:#fff}
+.btn.danger{border-color:var(--red);color:var(--red-deep)}
+.btn.small{font-size:14px;padding:7px 12px;min-height:40px}
+.btn.big{font:700 22px var(--cond);letter-spacing:.3px;padding:14px 28px;min-height:58px}
+.icon-btn{width:40px;height:40px;border:1px solid var(--line);background:#fff;border-radius:6px;font-size:19px;line-height:1;color:var(--muted);cursor:pointer;flex:0 0 auto;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:600 14px var(--body);border:0;background:var(--bg);color:var(--ink);border-radius:999px;padding:8px 13px;min-height:38px;cursor:pointer}
+.chip.on{background:var(--ink);color:#fff}
+.seg{display:grid;grid-template-columns:1fr 1fr;border:1.5px solid var(--ink);border-radius:6px;overflow:hidden;max-width:260px}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label{text-align:center;padding:9px 4px;font-weight:600;cursor:pointer}
+.seg input:checked + label{background:var(--ink);color:#fff}
+
+/* Gruppen */
+.grps{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px}
+.grp{border:1px solid var(--line);border-left:8px solid var(--gc);border-radius:9px;padding:9px 11px;background:#fff}
+.grp b{font-family:var(--cond);font-weight:700;font-size:20px;color:var(--gc)}
+.grp ul{margin:4px 0 0;padding:0;list-style:none}
+.grp li{padding:5px 0;border-top:1px solid var(--line);font-size:15px;cursor:pointer;display:flex;justify-content:space-between;gap:6px}
+.grp li:first-child{border-top:0}
+.grp li.sel{font-weight:600;color:var(--red-deep)}
+.grp li em{font-style:normal;color:var(--muted);font-size:12px}
+.grp.target{outline:3px dashed var(--red);outline-offset:2px}
+
+nav.jump{display:flex;gap:6px;overflow-x:auto;padding:0 12px 10px;max-width:900px;margin:0 auto;scrollbar-width:none}
+nav.jump::-webkit-scrollbar{display:none}
+nav.jump a{flex:0 0 auto;text-decoration:none;color:var(--ink);font-weight:600;font-size:14px;padding:6px 13px;border-radius:999px;background:var(--bg)}
+nav.jump a.ext{background:#fff;border:1px solid var(--line)}
+
+/* Übungen & Symbole */
+.ico{display:block;width:100%;height:100%}
+.cats{margin-top:2px}
+.cats .chip{min-height:36px;padding:7px 12px}
+.exgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:8px;margin-top:10px}
+.ex{position:relative;border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:6px 6px 9px;cursor:pointer;text-align:center;font:600 13px/1.2 var(--body);color:var(--ink);min-width:0;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:anywhere}
+.ex .ic{width:76px;height:76px;margin:0 auto 4px}
+.ex .al{display:block;font-weight:400;font-size:11.5px;opacity:.65;margin-top:2px}
+.ex.on{border-color:var(--ink);background:var(--ink);color:#fff}
+.ex.on::after{content:'✓';position:absolute;top:5px;right:8px;font-size:15px}
+.ex.cur{border-color:var(--red);box-shadow:0 0 0 2px var(--red) inset}
+.libempty{color:var(--muted);padding:10px 0}
+.ov{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;padding:14px}
+.ov[hidden]{display:none}
+.ovbox{background:#fff;border-radius:14px;max-width:820px;width:100%;max-height:calc(100vh - 28px);overflow:auto;padding:0 14px 14px;-webkit-overflow-scrolling:touch}
+.ovhead{display:flex;align-items:center;justify-content:space-between;gap:10px;position:sticky;top:0;background:#fff;padding:12px 0 8px;z-index:1}
+.ovhead h3{margin:0}
+.ov.dark .ovbox{background:#232329;color:#fff;max-width:600px;text-align:center;padding:18px 18px 20px;border-left:10px solid var(--gc,#4A4A52)}
+.dt-ic{width:min(280px,58vw,42vh);height:min(280px,58vw,42vh);margin:0 auto;color:#F2F2F4}
+.dt-st{font:700 14px var(--cond);color:#8E8E96;letter-spacing:.6px;margin-top:6px}
+.dt-nm{font:700 32px/1.05 var(--cond);margin:2px 0 6px}
+.dt-gr{font:700 24px var(--cond);color:var(--gc)}
+.dt-mem{font-size:17px;color:#D6D6DC}
+.dt-cue{font-size:17px;line-height:1.45;color:#E6E6EA;margin:12px auto 16px;max-width:30em}
+.dt-close{min-width:150px}
+
+/* Stationen */
+.stlist{margin:0;padding:0;list-style:none}
+.stlist li{display:flex;align-items:center;gap:9px;padding:8px 0;border-top:1px solid var(--line)}
+.stlist li:first-child{border-top:0}
+.stlist .n{width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;font:700 15px var(--cond);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.stlist .nm{flex:1;min-width:0;font-weight:600}
+.stlist .nm small{display:block;font-weight:400;font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stlist .ic{width:48px;height:48px;flex:0 0 auto;border:1px solid var(--line);border-radius:8px;background:#fff;padding:2px;cursor:pointer;color:var(--ink)}
+
+/* ============ LAUF-ANSICHT ============ */
+body.running{overflow:hidden;background:#17171A}
+.run{position:fixed;inset:0;background:#17171A;color:#fff;display:none;flex-direction:column}
+body.running .run{display:flex}
+body.running .page{display:none}
+.topbar{display:flex;align-items:center;gap:12px;padding:8px 14px;flex:0 0 auto}
+.topbar .st{font-family:var(--cond);font-weight:700;font-size:26px;line-height:1}
+.topbar .sub{font-size:13px;color:#A9A9AD}
+.topbar .sp{flex:1}
+.tb{width:46px;height:46px;border-radius:8px;border:1px solid #3A3A40;background:#232329;color:#fff;font-size:19px;cursor:pointer;padding:0;flex:0 0 auto}
+.tb.on{background:var(--red);border-color:var(--red)}
+.stage{flex:1;position:relative;display:flex;align-items:center;justify-content:center;min-height:0}
+.ring{position:relative}
+.node{position:absolute;transform:translate(-50%,-50%);border-radius:12px;background:#232329;border:2px solid #34343C;border-left-width:9px;
+  display:flex;flex-direction:column;justify-content:center;padding:7px 9px;overflow:hidden}
+.node .snum{font:700 13px var(--cond);color:#8E8E96;letter-spacing:.5px;white-space:nowrap}
+.node .sname{font:600 14px var(--body);line-height:1.15;color:#E6E6EA;margin-bottom:3px;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.node .gname{font-family:var(--cond);font-weight:700;line-height:1;margin-bottom:1px}
+.node .mem{font-size:12.5px;color:#C6C6CC;line-height:1.25;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.node.empty{opacity:.45}
+.node{cursor:pointer}
+.node .nic{position:absolute;right:6px;top:50%;transform:translateY(-50%);color:#E6E6EA;pointer-events:none}
+.node.arrive{animation:arrive 1s ease-in-out infinite}
+@keyframes arrive{0%,100%{border-color:#34343C}50%{border-color:#fff}}
+@media (prefers-reduced-motion:reduce){ .node.arrive{animation:none;border-color:#fff} }
+
+.center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.center svg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-90deg)}
+.center .phase{font-family:var(--cond);font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#A9A9AD;position:relative}
+.center .clock{font-family:var(--cond);font-weight:700;line-height:.92;font-variant-numeric:tabular-nums;position:relative}
+.center .meta{font-size:14px;color:#A9A9AD;position:relative}
+.center.work .clock{color:#fff}
+.center.change .clock{color:var(--m-gelb)}
+.center.change .phase{color:var(--m-gelb)}
+.center.done .clock{font-size:42px!important;color:#5ED17C}
+
+.ctrl{display:flex;gap:10px;justify-content:center;padding:10px 14px 14px;flex:0 0 auto}
+.cb{min-width:62px;height:58px;border-radius:10px;border:1px solid #3A3A40;background:#232329;color:#fff;font:600 16px var(--body);cursor:pointer;padding:0 18px}
+.cb.go{background:var(--red);border-color:var(--red);font:700 20px var(--cond);letter-spacing:.5px;min-width:150px}
+.cb:disabled{opacity:.35}
+
+/* Listenmodus für kleine Schirme oder viele Stationen */
+.stage[data-mode="list"]{align-items:stretch}
+.listwrap{display:flex;flex-direction:column;min-height:0;width:100%;flex:1}
+.listmode{display:grid;gap:8px;width:100%;padding:0 14px 4px;overflow-y:auto;-webkit-overflow-scrolling:touch;align-content:start;flex:1;min-height:0}
+.listmode.two{grid-template-columns:1fr 1fr;gap:8px 12px}
+.lrow{display:flex;align-items:center;gap:10px;background:#232329;border:1px solid #34343C;border-left:9px solid var(--gc,#34343C);border-radius:10px;padding:9px 11px}
+.lrow .ln{width:30px;height:30px;border-radius:50%;background:#34343C;color:#fff;font:700 15px var(--cond);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.lrow{cursor:pointer}
+.lrow .lic{width:calc(44px * var(--lf));height:calc(44px * var(--lf));flex:0 0 auto;color:#E6E6EA}
+.lrow .lt{flex:1;min-width:0}
+.listmode{--lf:1}
+.lrow .lt b{display:block;font-size:calc(14.5px * var(--lf));color:#E6E6EA;line-height:1.2}
+.lrow .lt span{display:block;font-size:calc(12.5px * var(--lf));color:#C6C6CC;line-height:1.25}
+.lrow .lg{font-family:var(--cond);font-weight:700;font-size:calc(19px * var(--lf));color:var(--gc);line-height:1}
+.lrow .ln{font-size:calc(15px * var(--lf))}
+.minitimer{display:flex;align-items:baseline;justify-content:center;gap:12px;padding:4px 14px 10px;flex:0 0 auto;flex-wrap:wrap}
+.minitimer .m{font-size:14px;color:#A9A9AD}
+.minitimer .c{font-family:var(--cond);font-weight:700;font-size:58px;line-height:1;font-variant-numeric:tabular-nums}
+.minitimer .p{font-family:var(--cond);font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#A9A9AD}
+
+footer{max-width:1100px;margin:0 auto;padding:0 12px 40px;font-size:13px;color:var(--muted)}
+.ver{display:block;margin-top:6px;font-size:12px;color:var(--muted)}
+@media (min-width:860px){ .fg{grid-template-columns:1fr 1fr 1fr} }
+</style>
+</head>
+<body>
+<div class="nojs-banner">Diese Seite braucht JavaScript. Bitte den Link in Safari öffnen, nicht in der Dateivorschau.</div>
+
+<div class="page">
+<header>
+  <div class="brand">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARUAAAEsCAMAAADaRde1AAAAwFBMVEX9/PzZFRgAAAAuLy5dXV2fn5/kXF35+flhJydwcHDuoKGoqKiWlpaiHiClpKVra2vT0tPpfoBqampAQD7ePkE/QD5AP0A/PkA+QECq/6q/wMDogH/0vsA/P38AVQAA//9VAABVAFVmZpl+foB/f4B/f/9/g399gHx/gICAfn6Af36AgH6+wMDeQD/BvsH//38AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB2xCmnAAAAMHRSTlP//wD++f3/D/8D/w6h/2SmTv92///+///5A////wQDAQMDBZv/Ajy7tG/WgX7/SwKbLPIUAAAR8UlEQVR42uXd52KkOBIA4LKQUBPctO2Z293bvZzz+7/dAe1ulHMAzK9djwN8XVUSkhCAzAdFaMRnOyjqzFcNdpTmdIeVxaKyREpzQpb18w5V6egpUZrmPSKDBnQ9J4qNxaTSoa457TEFqnRowM3XZIGvitLgq77kwldFWVk6T5UBUQ7lcpaDZfm3jgXcUF5fznJwLLf5Qt1V6GlRBJZBzQJfK1IULJ2jylyZT4wisFBVtIASZTozykuPbSzwBVEAhBvo/1lVxLGDM6KILL/vLCoiyuVsKC2AyDJJnVxQDL19ARQgRhZBZaDnRvkGoGDBkzGDhAGV06G8AGhZqE6lQ9fmq6AILCPHAjwK/jooJhb4Qii9oAJYYFGoDOj2xVAklk5SEVCa06G0ABaW7U4RvjSKjgW+NoqGBT4LLT312IHU/OhZhqfKjBJ0m9yD19HvEUVguY8rQATKCxxFxXxejcQyq/wlFOUwKrYTE1jorEKDUY6iYk90cb0CRKAcRMWl+gnjCtCFoxxDxa1J4FgG4Nvky8vZVFrHk+Mmz2aVMfjm5wAqrijsDTSmwM2InU7FGYVRwbe5DerYiY7XDCn7MKmh4n56W2gQ2gE/p3xJdhrtvvv5xlCZVeZgGdPdAe1KBUJCZaIdAuHW8HIilT4oVJa1uPf7oCnZGMKOVPqwUFkGE0AcR3g9i4pXUyDfHS7He6oU2o1KCxDWAFFmfCVVsOxFxQsFuAZoG4ujf0sULDtR+Y8XCltrO3aEkllGegYVv073du2fi02fMx+JUmgfKp63IkyorGXlocLOMF8Or+KJsiXQSLmZD67bf3QVz0H2LYGea+TgOck8JUmhHaj0waGCqTR3uAXLxfxn+ufRWlSe36huPB//+pYU5Q2CQ+X6WE7JrEnQ1lsTfmtSMQfO9kvqdVTEfm0nqHRUW2/Nf6h1UOmNKn1VFMLfAvEq1JBCHkNsnMovputus6h4o7AJRAd5VQ/V1luPkUe+rphypM1RmP1RQK61rArbZXn1q+q9RqU1qfQZykoACttZkVf1mFLImqytTeVbEZUeohJoW9DPrhZkUsj3M9D0V0xJkr6shKBwXTiqXFk6BhYW5qo1Kn2BshKEAqoEYlUMHbm1wyV05NTBUk+lDUIhymczuVix3AuJ19EqgoX/gqF2pC4rYShcAmlUzPdCrSFfqqsEogAz4YHsa7PdVOSeGP89hjRJXGwhVmXUPd1g6t5qLlEqLPz3fHNQaWuiEPXTqsKTML4qvVlFHxFpi20oiqasCCr03VBYMqlUa5N5Ff3zQYOxsISoaGtqymIbjsL2Vv5geMLOkEJJVRIW2wgUouru51fR3gk9v/5Wq03mVaj+WTL2Vii1Spup2Mag6MqKoML2WJKovFhVaqKob4IUT2Pe9OVWpdI6q/R5ii0kURE3qAHtDiOXJCqay09VbONQiG4jlmOrQCoV87PvzGRZGhV1AUlUbPtIFeyoMjAbAiRWaZMX21iUTWWyxYq+dxukom6EkhTbt1iUZ7H9uAp7sIB+P7TEKn3istJCMhVp1ytJhXqpvFlVlGGRQCUBCjuMYNxTg3b6RiidSoJimwBF299X7WA0pVVpjSq12uT1+LOzCrN8/ZKkrjjdJ1RBUU8FlVF5Man0NVGYhlncNE5WGXSzH7EqfbJi2ydWGW0qA9M0p1GRAyO22CZC2RpmELeMA8Nmi69pVUD+oW81UbZxhMEeK6lV5AYnrti2kFoFW1Won8qbj0qboqykQyH67fkV+1BOaVVekqp8gzoqdEqbQRJCVLGFPCrUPVYuaVSeZeSX+J4t5FCZqG0fSk+VNx8ViC62fUoVrN+DXqEyJlZpdSp9VZTdqLRxxTYtSmUV7Yx8W6tN9lfpMqr0McU2NUpGFZc2SCgkgcU2OQp7c1hVBSKKLeRU+U0FFf6bwootZFXpqqq0ocUWDqXiVG25LwYV2/7UKn1Ysc2CUl2lV6n0lVH2owIhxbaFc6q0KpW2MsqeVPyLLWRXqXMfxH7VWwV2ojLlVPEttlBChdZR2Sw8VfqMKsQnVmjq0Wx1xWxro4SO2yYazVaruEyQ/Qw7UaHJZ8k05aFmm+w98zEUUumroxxUBYqpDA4rNXKo9P7FFrIfPipd4vUr6mz4Vh8FmPeeDCjlWqe3UJWqbbK4UiO1Su+o8uJZVkqgeKwA81xDmUmlhbIq1KZC86j0PsW2DIr7GkrquTY7i0ohFPdVyL4r1qWU0F1361FsYW8qg98zH20OlVIo8Gth/9ZUzwfJKaHNEediC+UOzdPMcc+StYoP302lrdwm2xoh5+cO220YDfp2/r9emRLaC+/dEqgkyqZChMLipmI91zaRyhtUUcHGsbhZ5UdVsbX+/herSuui0hZF0Y8lgMtjh6H7xekuuN8Hir7ciirvqjvm0L0FdeW23QnKdn/4booVTX+/d82fOJXiKFy5Rb47jbijGFR6W1mBiiqmPTV+Um8e0bqmj6NKX79NVpTbwfAub1+VXjdi0OqrRr8XFM3OgqKKen9O7QkrNsR2UWn3gqLbLs5pZ7RWfajbEf2/mn7QpfkhBM8HIbmGWDQqg3kXvYxHy1z6esgkzPsHMdG6aX7aSUWzix67ofhrHZTn85G6s9f8O18lSEhhodpd9EgdFenisS79n7tgGD94ww+Kf8C6DyWtlUCKT86Coo4WhalVhUmhjqp3/R2qqCiuAZvSR5slTYCKepSSy6AqZaVXXD1W5j5/6AcciV2FyL98VO76y24y0tRF4VWw5cKkCwQPFWDfSEZV+/HXKCs/Ky8eq6sKYRto7FBstSqWSSGntxSUaJNxY1URQt6h2DqoEPN+/F26lx7GonAXJvZCsE5FlVprZ3g7jHDj1gpB1QRy6aWJ5YL4qGjCiVg6/U+VgV6/lw4VbUENUdFq2cLJ8E4YmuwtdglQglSw8W7A8KNbMUdUUimeQL2+P1JUBevfNTUnUGGVXtF5wxEqHmVF03XeUgjsryUr1nvDzysOUHEpK1gJR+Q7RHiESuEEapWfYAIV7Fls+RT67N4+Y+W9aKi08klhiFLBHiraoacrFysUle3CtfJJYYhTcSgr1p5O88/Pjhx8JtB/iyaQ/FERyK+CrXdQj3shcHlHTlaU9ZwIRKr4FFusDaLHcAJUGESQThabSqabCg4vtsC/3Y95w/n1h3IJJE79YAxlVexD/VD8dlmaDyOQQCWm2MopBGuo3MrV2t5lIsJbJaqsyCkE/Nr97CotZFX5CFQR3gUJ/MhK7gRqIY9KXLGVXrwL/MrjS1WUeBUSVGylegv8aw5fi7bJ6VTiii13477UW5gboFupzgqEqICDSmyxFertosL0ay91UcwqRH91LmXFkmTsjfMA5W4M+0AV4ZIbgwoJLLbiKAsUq7Uuq5mIcUZVvxwjuqzwKfRbMLzYvDiKZuiIndsiLkO77r9a0woBKnNj6LbCmFjWJDATqsRzHM5aetgFPsDMo15qo+guz7Z+hb1i3Sowe+lhCgsUGVlxXYtOXNc6YW0h1ZUYe+lhUgiKjGJDpAqYVzqxZUUTEw6lh1Upsb4JolX46UXNFX84qLjMoeEBjC+qLoxiOnfDmjiukGLz7IbL7SO+wZS9BeoTqBBTAnEQmnhyWXT6lBthyp1APmvRiSUa1DnUeKg4LUkeIXdZ8XqSkJiDQc3CF9LGPGvqpDJB5rLi93yYrRenZOFLhlrFpawwz1BlVvF8aI5YVpYSoljaxtdXfAAVSKDCF1n9onOTitMK/1IqkEAFN+qRBHG+sQEHFccHQLKqQAoVbWxg5c8oVYifStZq26dQkcdTsDo4sCFXnMqKsmV+rY9iVNF9RQiOCJVtT7B8KiFPEipUDI+3EFXJsPfzXHr8uVSCHmQPUNnu6e5Hw/2/T7FlHorZ/vtSHyVKxbBe37PYzip57oMCtzxIrYKDiu1EYcwyFAe7VHErK8sI5ZBDBXai8uFRbNlHYrKMUALsKla8y0oWlX43Ko3zxAg/0ZxhjD9iy4M8seJUbPkZ1eQTqjH7QIT04uzzPtjrhhnf0ACpn4CJ2oYoj4pLsSXcyjhIvAA5bm+mLCp+o5P3VT2JHwyC2io/aFWwa62dVdKuX4HqKr+yjOvaQgWjz7VO6daVwp5ViFOorDuOAPfAVFOv+clXVzyeBnk8vgso3cK4+L2ZcsSKzxO9j12vgN/5K6ayJNiwKkes+KxGeDymOqvQ3zEpdKnUJudTcSi2jfg8JqBEwZJkE8kcKh7LebhnybjG+VIRpY4KaaSdaaSnpgKDBfaqYi8rcqgonrC71EOporKFyveR3xGAqyyXaig5VKzFlhl3eO7sBPKeTv451O9YxVZWcKPfaYR9mZJ3sKTbWbO8CrsMZNtd8LmnBvp7aLAk3G40vYqtrDSNabcrdmdOP5aUu10bVBrDfLxBxVJWcKN8tRKodvz1yaGkW4CbZt/lrSMhWoWoQ4XbA2y7SfRggVIq4pSXm4q5rDAoN/VOrmE5BLlVuOXHhGDbdq68Su+UbY34jmZ2H0o6MmdQA8W8Asxhf05JxVhsWWGqe0sB91yzWw71BVTAtu2oaXzFVFYIlz+dfofom18OJd8CnHjszmlpau0qjbr9kXZyHRCbQ6/FUcJWIfPHRbkQihhRMDK9gcsvhzK8liNoxbqhrhi6NlxRMb8Fknqw5HhXiW7qhrjVFP0ktBHlKr4E0vS2NgsL5DhI1M7zzG/A3K8jhkrb/ElCkd5+0lHiVlqg+OG92b7LrLLqTd6q96iyOaRngUMfPIoUKvIbQ/kubnNKFHNRUb5dlt0pWlda+rOgNP9SoShUuIlnNct5UCakPBQqlN06QcXSngYF065zVBF6LYY3Eh8fRZk/ahU0sNv3iA3RsVG4Nvkm9mmNKvzAnMByHpSrDkWjslRcDctpUJp/IO2hUZn7uGxDtLGcB+UdeassneBJwdKfBmXUFFqjitj1v7OcB4Uo7n4cVMSu/8JyHhRsRDGoiCyXY7fJIsqAwlSkaDlL582KYlTh5+QPzeKHYlaRWMjXQLGozCx/PQGLiNKhOJVTRMuPvihWleOzCFtC2dPHRUViwQdHsUeKi8qxWXgU4hQpTioSy8dB62wzmnu0fioSy2GKCz/j+I6c0sdV5aAsQkl5R51bpLiqSHfQRyguAsrVNVDcVZZ7oulYLFhE8ThcVWSWfWeRsIoBU5RFBf2E6HiY4iKgTI4tsr/KMk00NsfIIiF7JuRRUzxVlrb+ig+QRWL2jKjzQ/FSQbTj1hPuNFzEMxyQ9wF+3z630NO+m2hpsRhF2VWWpmhsdpxFYqB4l5QgFVVx2U+4EPHMrgiViJX5rwxScdlLuIinNYWIhKmsMlL2kv1VlOWR7a6gSidnUf00kk7oitBQNlaQeLdYO42kQAnOnnCVtYke9xMuRA4UGpo9MSrL3xz2Ei7SeSydlKFCrNyzaBLP54PsweRKwxrkBCrrp3GVT4lULijLcreY7IlVUYdL0fJCFIGC4g+I+/H5BkAOl2Iussna9Ay1VdZwGeu4KEyWQOnqx8p6AzDfAXwv7qIyGWkalHiV+3ko0iiri8pkSZ4/IrQTlTWRVWmUzYWo/lZ0c5xaZY2Xm+pR0hzttNJkTFJlE6to0yi5i9JkSZ6Oot2p3NNI6fKdZOzHrq8jGNKapFRZ40VZXlIFDFH/7pQFJYPKMgeAbmqX+BtHg0mH0I5V7p+ZJl6iAoZofuVIUydPDpV7Q6CLl1AYTZik67VlV7G4+MPowuSeOxQdROXpooH57gFDdEGX0ySTyrO+aPfZcYIh2njLa5JNZY6Xbu2/YP17FcxbHhC96HTLa5JR5d5Oo9uETW+cIN4ka4nNU2OLqNxHGYyJpIoZYoqvNXXQQNGBVT4LL71ZYOarJVaRpXeymuQmKaDymUjGCvO4aAvcPXUKmJRQ+ay81kyykKyD1EMRk0Iqj4C5BcF84OlaLkxKqiwXFQaDyUqScEhpVypLk7TCLDUGO2cOXfomQ4fQWVWeMHPxnawweIkS+giyU6usJeYOc7sa2mH82QrPJBShL6CyXuu9SsxVRlFm8Fxdb/dvo7TK6VVS2XJpLjPD+EinD7yIfFJ0FFU7AFU8HjLzf1zHiUzjU2RAVY//A06XwnjiVfSoAAAAAElFTkSuQmCC" alt="Wappen Dürener TV 1847">
+    <svg class="wordmark" viewBox="0 0 300 62" role="img" aria-label="Dürener TV 1847 Track &amp; Field">
+      <text x="0" y="32" textLength="300" lengthAdjust="spacingAndGlyphs" class="wm-club">DÜRENER TV 1847</text>
+      <line x1="0" y1="50" x2="52" y2="50" class="wm-line"/>
+      <text x="150" y="57" text-anchor="middle" textLength="176" lengthAdjust="spacingAndGlyphs" class="wm-tf">TRACK &amp; FIELD</text>
+      <line x1="248" y1="50" x2="300" y2="50" class="wm-line"/>
+    </svg>
+  </div>
+  <div class="hero">
+    <div class="hero-inner">
+      <h1>Zirkeltraining</h1>
+      <p>Jede Gruppe hat eine Farbe und sieht jederzeit, wo sie steht</p>
+    </div>
+    <div class="lanes" aria-hidden="true"></div>
+  </div>
+  <nav class="jump" aria-label="Bereiche">
+    <a href="#teilnehmer">Teilnehmer</a>
+    <a href="#gruppen">Gruppen</a>
+    <a href="#stationen">Stationen</a>
+    <a href="#zeiten">Zeiten</a>
+    <a href="masse.html" class="ext">Maße</a>
+    <a href="technik.html" class="ext">Technik</a>
+  </nav>
+</header>
+
+<main class="only-js">
+  <p class="warn" id="storageWarn" hidden></p>
+
+  <h2 id="teilnehmer">Teilnehmer</h2>
+  <p class="lead">Einen Namen pro Zeile. Die Gruppen entstehen daraus automatisch.</p>
+  <div class="block">
+    <label class="f"><span>Namen</span><textarea id="names" placeholder="Anna&#10;Ben&#10;Clara&#10;David"></textarea></label>
+    <div class="fg" style="margin-top:10px">
+      <div class="f"><span>Gruppengröße</span>
+        <div class="seg" role="radiogroup" aria-label="Gruppengröße">
+          <input type="radio" name="gs" id="gs2" value="2"><label for="gs2">2 pro Gruppe</label>
+          <input type="radio" name="gs" id="gs3" value="3"><label for="gs3">3 pro Gruppe</label>
+        </div>
+      </div>
+    </div>
+    <div class="btns">
+      <button class="btn primary" type="button" id="mkGroups">Gruppen bilden</button>
+      <button class="btn small" type="button" id="shuffle">Neu mischen</button>
+    </div>
+    <p class="note" id="namesMsg"></p>
+  </div>
+
+  <h2 id="gruppen">Gruppen</h2>
+  <p class="lead">Zum Umsortieren einen Namen antippen, dann die Zielgruppe antippen.</p>
+  <div id="grpOut"></div>
+
+  <h2 id="stationen">Stationen</h2>
+  <p class="lead">Reihenfolge im Zirkel von oben nach unten. Die Gruppen wandern im Uhrzeigersinn. Auf das Symbol tippen, um es zu ändern.</p>
+  <div class="block">
+    <div class="block-head"><h3>Im Zirkel</h3><span class="tag" id="stCount"></span></div>
+    <ul class="stlist" id="stList"></ul>
+    <label class="f" style="margin-top:12px"><span>Eigene Station</span><input type="text" id="stNew" placeholder="z. B. Medizinball über Kopf"></label>
+    <div class="btns"><button class="btn small" type="button" id="stAdd">Hinzufügen</button></div>
+  </div>
+  <div class="block">
+    <div class="block-head"><h3>Übungen</h3><span class="tag" id="libCount">antippen zum Übernehmen</span></div>
+    <div class="chips cats" id="libCats"></div>
+    <input type="text" id="libSearch" placeholder="Übung suchen …" style="margin-top:10px" autocomplete="off">
+    <div class="exgrid" id="stLib"></div>
+  </div>
+
+  <h2 id="zeiten">Zeiten</h2>
+  <div class="block">
+    <div class="fg">
+      <label class="f"><span>Belastung in Sekunden</span><input type="number" inputmode="numeric" id="tWork" min="10" max="600"></label>
+      <label class="f"><span>Wechsel in Sekunden</span><input type="number" inputmode="numeric" id="tChange" min="5" max="300"></label>
+      <label class="f"><span>Durchgänge</span><input type="number" inputmode="numeric" id="tRounds" min="1" max="10"></label>
+    </div>
+    <div class="chips" style="margin-top:10px" id="presets"></div>
+    <label class="chk" style="margin-top:6px"><input type="checkbox" id="optSound"> Signaltöne</label>
+    <label class="chk"><input type="checkbox" id="optVoice"> Ansage „Wechsel“ und Stationsname</label>
+    <p class="note" id="planNote"></p>
+  </div>
+
+  <div class="btns" style="margin:18px 0 0">
+    <button class="btn primary big" type="button" id="startBtn">Zirkel starten</button>
+  </div>
+  <p class="warn" id="startErr" hidden></p>
+
+  <h2>Hinweise</h2>
+  <div class="info">
+    Das Tablet bleibt während des Laufs wach, solange die Seite offen ist. Lege es so hin, dass alle den Ring sehen.
+    Wenn du die Seite über „Zum Home-Bildschirm“ als App öffnest, stört keine Browserleiste.
+    Beim ersten Start musst du einmal tippen, damit der Ton freigeschaltet wird, das verlangt iOS so.
+    Im Lauf zeigt ein Tipp auf eine Station die Übung groß mit Ausführungshinweis, gut zum Erklären vor dem Start.
+  </div>
+</main>
+
+<footer>Alles bleibt auf diesem Gerät gespeichert. <span class="ver">Zirkel · Version 2026-10-11 · 77 Übungen</span></footer>
+</div>
+
+<!-- ============ LAUF ============ -->
+<div class="run" id="runView">
+  <div class="topbar">
+    <button class="tb" type="button" id="backBtn" aria-label="Zurück zur Einrichtung">✕</button>
+    <div>
+      <div class="st" id="rTitle">Zirkel</div>
+      <div class="sub" id="rSub">&nbsp;</div>
+    </div>
+    <div class="sp"></div>
+    <button class="tb" type="button" id="sndBtn" aria-label="Ton ein oder aus">♪</button>
+  </div>
+  <div class="stage" id="stage"></div>
+  <div class="ctrl">
+    <button class="cb" type="button" id="prevBtn" aria-label="eine Station zurück">◀</button>
+    <button class="cb go" type="button" id="goBtn">Start</button>
+    <button class="cb" type="button" id="nextBtn" aria-label="eine Station weiter">▶</button>
+  </div>
+</div>
+
+<div class="ov" id="picker" hidden>
+  <div class="ovbox">
+    <div class="ovhead"><h3 id="pkTitle">Symbol wählen</h3><button class="icon-btn" type="button" id="pkClose" aria-label="schließen">×</button></div>
+    <div class="exgrid" id="pkGrid"></div>
+  </div>
+</div>
+<div class="ov dark" id="detail" hidden><div class="ovbox" id="dtBox"></div></div>
+
+<script>
+(function(){
+const KEY = 'dtv-zirkel-v1';
+const $ = s => document.querySelector(s);
+const on = (sel, ev, fn) => { const el = $(sel); if (el) el.addEventListener(ev, fn); };
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const clamp = (v,a,b) => Math.min(b, Math.max(a, v));
+
+const COLORS = [
+  {n:'Rot',    c:'#E8453C'}, {n:'Blau',  c:'#3B8BD4'}, {n:'Grün',   c:'#41B36B'}, {n:'Gelb', c:'#F0A830'},
+  {n:'Lila',   c:'#9B6BD6'}, {n:'Türkis',c:'#3FC1C9'}, {n:'Pink',   c:'#E87EB0'}, {n:'Orange',c:'#E8743C'},
+  {n:'Hellgrün',c:'#A6CE39'},{n:'Grau',  c:'#9AA0A6'}
+];
+/* ===== Symbol-Engine: Strichfiguren per Vorwärtskinematik =====
+   Winkel absolut: 0 = nach unten, 90 = nach vorn (rechts), 180 = nach oben, -90 = nach hinten (links).
+   Lokale Koordinaten: Boden bei y = 0, nach oben negativ. */
+const SG = {th:19, sh:19, ua:14, fa:13, tr:24, hd:10, hr:6.5, ft:6, sw:6.5};
+const STAND = {t:180, l:[-3,0], r:[3,0], la:[-8,-4], ra:[8,4]};
+function dv(a){ const r = a*Math.PI/180; return [Math.sin(r), Math.cos(r)]; }
+function wk(o, a, L){ const d = dv(a); return [o[0]+d[0]*L, o[1]+d[1]*L]; }
+function joints(q){
+  q = Object.assign({}, STAND, q);
+  const J = {p:[0,0]};
+  J.n = wk(J.p, q.t, SG.tr);
+  J.s = wk(J.p, q.t, SG.tr - 2.5);
+  J.h = wk(J.n, q.h != null ? q.h : q.t, SG.hd);
+  J.lk = wk(J.p, q.l[0], SG.th); J.lf = wk(J.lk, q.l[1], SG.sh);
+  J.rk = wk(J.p, q.r[0], SG.th); J.rf = wk(J.rk, q.r[1], SG.sh);
+  J.le = wk(J.s, q.la[0], SG.ua); J.lh = wk(J.le, q.la[1], SG.fa);
+  J.re = wk(J.s, q.ra[0], SG.ua); J.rh = wk(J.re, q.ra[1], SG.fa);
+  if (q.lft != null) J.lt = wk(J.lf, q.lft, SG.ft);
+  if (q.rft != null) J.rt = wk(J.rf, q.rft, SG.ft);
+  return J;
+}
+function placeFig(q){
+  const J = joints(q);
+  let dx, dy;
+  if (q.pin){
+    const [k, x, y] = q.pin; dx = x - J[k][0]; dy = y - J[k][1];
+  } else {
+    let low = -1e9;
+    for (const k in J){ const r = k === 'h' ? SG.hr : SG.sw/2; low = Math.max(low, J[k][1] + r); }
+    dx = (q.x || 0) - J.p[0]; dy = -low - (q.air || 0);
+  }
+  for (const k in J){ J[k] = [J[k][0]+dx, J[k][1]+dy]; }
+  return J;
+}
+const f1 = n => Math.round(n*10)/10;
+function pl(...pts){ return pts.filter(Boolean).map((p,i)=>(i?'L':'M')+f1(p[0])+' '+f1(p[1])).join(''); }
+function figSvg(J, ghost, front){
+  const far  = `<path d="${pl(J.p,J.lk,J.lf,J.lt)}"/><path d="${pl(J.s,J.le,J.lh)}"/>`;
+  const near = `<path d="${pl(J.p,J.n)}"/><path d="${pl(J.p,J.rk,J.rf,J.rt)}"/><path d="${pl(J.s,J.re,J.rh)}"/>`;
+  const head = `<circle cx="${f1(J.h[0])}" cy="${f1(J.h[1])}" r="${SG.hr}" fill="currentColor" stroke="none"/>`;
+  const body = (front ? far : `<g opacity=".4">${far}</g>`) + near + head;
+  return ghost ? `<g opacity=".22">${body}</g>` : body;
+}
+function figPts(J){
+  const P = [];
+  for (const k in J){ const r = k === 'h' ? SG.hr : SG.sw/2; P.push([J[k][0]-r, J[k][1]-r], [J[k][0]+r, J[k][1]+r]); }
+  return P;
+}
+/* ---- Geräte ---- */
+const PS = 'stroke-width="3.2"';
+function arrowHead(x1,y1,x2,y2){
+  const a = Math.atan2(y2-y1, x2-x1), L = 5, w = 0.5;
+  const p1 = [x2 - L*Math.cos(a-w), y2 - L*Math.sin(a-w)], p2 = [x2 - L*Math.cos(a+w), y2 - L*Math.sin(a+w)];
+  return `M${f1(p1[0])} ${f1(p1[1])}L${f1(x2)} ${f1(y2)}L${f1(p2[0])} ${f1(p2[1])}`;
+}
+const PROPS = {
+  box(x,w,h){ return {s:`<rect x="${x}" y="${-h}" width="${w}" height="${h}" rx="1.5" ${PS} fill="currentColor" fill-opacity=".12"/>`, p:[[x,-h],[x+w,0]]}; },
+  bench(x,w,h){ return {s:`<path d="M${x} ${-h}H${x+w}" stroke-width="4"/><path d="M${x+3} ${-h}V0M${x+w-3} ${-h}V0" ${PS}/>`, p:[[x,-h-2],[x+w,0]]}; },
+  ball(x,y,r){ r = r || 5.5; return {s:`<circle cx="${x}" cy="${y}" r="${r}" ${PS} fill="currentColor" fill-opacity=".3"/><path d="M${x-r*0.7} ${y-r*0.7}Q${x+r*0.2} ${y} ${x-r*0.1} ${y+r}" stroke-width="2"/>`, p:[[x-r-2,y-r-2],[x+r+2,y+r+2]]}; },
+  sball(x,y){ return {s:`<circle cx="${x}" cy="${y}" r="3.6" fill="currentColor" stroke="none"/>`, p:[[x-4,y-4],[x+4,y+4]]}; },
+  cone(x){ return {s:`<path d="M${x-5.5} 0L${x} -12L${x+5.5} 0Z" fill="currentColor" fill-opacity=".75" stroke-width="2"/>`, p:[[x-6,-12],[x+6,0]]}; },
+  hurdle(x,h,w){ w = w || 14; return {s:`<path d="M${x} 0V${-h}M${x+w} 0V${-h}" ${PS}/><path d="M${x-1} ${-h}H${x+w+1}" stroke-width="4.5"/><path d="M${x-3} 0H${x+3}M${x+w-3} 0H${x+w+3}" ${PS}/>`, p:[[x-3,-h-2],[x+w+3,0]]}; },
+  ladder(x1,x2){ let s = `<path d="M${x1} 2H${x2}M${x1-4} 8H${x2-4}" stroke-width="2.4"/>`; let r=''; for (let x=x1; x<=x2+0.1; x+=8) r += `M${x} 2L${x-4} 8`; return {s:s+`<path d="${r}" stroke-width="2.4"/>`, p:[[x1-5,0],[x2,9]]}; },
+  path(d, w, dash){ return {s:`<path d="${d}" stroke-width="${w||2.8}"${dash?' stroke-dasharray="'+dash+'" opacity=".7"':''}/>`, p:[]}; },
+  post(x,h){ return {s:`<path d="M${x} 0V${-h}" stroke-width="4"/>`, p:[[x-2,-h],[x+2,0]]}; },
+  bar(x1,x2,y){ return {s:`<path d="M${x1} ${y}H${x2}" stroke-width="4"/><path d="M${x1+3} ${y}V${y-7}M${x2-3} ${y}V${y-7}" ${PS}/>`, p:[[x1,y-8],[x2,y+2]]}; },
+  wall(x,h,side){ side = side || 1; let hatch=''; for (let y=-h+4; y<0; y+=8) hatch += `M${x} ${y}l${side*4} 4`; return {s:`<path d="M${x} 0V${-h}" stroke-width="4"/><path d="${hatch}" stroke-width="1.8"/>`, p:[[x-5,-h],[x+5,0]]}; },
+  mat(x1,x2){ return {s:`<rect x="${x1}" y="0.5" width="${x2-x1}" height="4" rx="2" fill="currentColor" fill-opacity=".25" stroke="none"/>`, p:[[x1,0],[x2,5]]}; },
+  floorline(x){ return {s:`<path d="M${x-2} 1L${x+2} 1L${x+4} 8L${x-4} 8Z" fill="currentColor" fill-opacity=".6" stroke="none"/>`, p:[[x-4,0],[x+4,8]]}; },
+  target(x,y){ return {s:`<circle cx="${x}" cy="${y}" r="7" ${PS}/><circle cx="${x}" cy="${y}" r="2.6" fill="currentColor" stroke="none"/>`, p:[[x-8,y-8],[x+8,y+8]]}; },
+  board(x,w){ w = w || 26; return {s:`<path d="M${x-w/2} -7H${x+w/2}" stroke-width="4"/><path d="M${x-6} -6.5A6 6 0 0 0 ${x+6} -6.5" ${PS} fill="currentColor" fill-opacity=".3"/>`, p:[[x-w/2,-9],[x+w/2,0]]}; },
+  txt(x,y,t){ return {s:`<text x="${x}" y="${y}" font-size="11" font-weight="700" font-family="sans-serif" text-anchor="middle" fill="currentColor" stroke="none">${t}</text>`, p:[[x-4,y-8],[x+4,y+1]]}; },
+  sled(x,w,h,dir){ dir = dir || 1; const px = dir > 0 ? x+4 : x+w-4; return {s:`<path d="M${x-2} -1H${x+w}" stroke-width="3.6"/><rect x="${x}" y="-8" width="${w}" height="6" rx="1.5" fill="currentColor" fill-opacity=".35" stroke-width="2.6"/>`+(h?`<path d="M${px} -8V${-h}" stroke-width="3.6"/>`:''), p:[[x-2,-(h||8)],[x+w,0]]}; },
+  hoop(x){ return {s:`<ellipse cx="${x}" cy="3" rx="10" ry="3" ${PS}/>`, p:[[x-11,0],[x+11,6]]}; },
+  signal(x,y){ return {s:`<circle cx="${x}" cy="${y}" r="7" ${PS}/><path d="M${x} ${y-4}V${y+0.8}" stroke-width="2.8"/><circle cx="${x}" cy="${y+3.4}" r="1.3" fill="currentColor" stroke="none"/>`, p:[[x-8,y-8],[x+8,y+8]]}; },
+  speed(x,y){ return {s:`<path d="M${x} ${y}h-9M${x+2} ${y+7}h-12M${x} ${y+14}h-8" stroke-width="2.4" opacity=".6"/>`, p:[[x-10,y],[x+2,y+14]]}; },
+  arrow(c, both){
+    let d, h;
+    if (c.length === 4){ d = `M${c[0]} ${c[1]}L${c[2]} ${c[3]}`; h = arrowHead(c[0],c[1],c[2],c[3]); if (both) h += arrowHead(c[2],c[3],c[0],c[1]); }
+    else { d = `M${c[0]} ${c[1]}Q${c[2]} ${c[3]} ${c[4]} ${c[5]}`; h = arrowHead(c[2],c[3],c[4],c[5]); if (both) h += arrowHead(c[2],c[3],c[0],c[1]); }
+    const xs = c.filter((_,i)=>i%2===0), ys = c.filter((_,i)=>i%2===1);
+    return {s:`<g opacity=".7"><path d="${d}" stroke-width="2.6"/><path d="${h}" stroke-width="2.6"/></g>`, p:[[Math.min(...xs)-3,Math.min(...ys)-3],[Math.max(...xs)+3,Math.max(...ys)+3]]};
+  },
+  turn(cx,cy,r,a1,a2){
+    const P = a => [cx + r*Math.cos(a*Math.PI/180), cy + r*Math.sin(a*Math.PI/180)];
+    const [x1,y1] = P(a1), [x2,y2] = P(a2), [x3,y3] = P(a2 - Math.sign(a2-a1)*12);
+    const large = Math.abs(a2-a1) > 180 ? 1 : 0, sweep = a2 > a1 ? 1 : 0;
+    return {s:`<g opacity=".7"><path d="M${f1(x1)} ${f1(y1)}A${r} ${r} 0 ${large} ${sweep} ${f1(x2)} ${f1(y2)}" stroke-width="2.6"/><path d="${arrowHead(x3,y3,x2,y2)}" stroke-width="2.6"/></g>`, p:[[cx-r-3,cy-r-3],[cx+r+3,cy+r+3]]};
+  }
+};
+function iconSvg(spec, opt){
+  opt = opt || {};
+  let parts = [], pts = [], under = [], lastJ = null;
+  for (const it of spec){
+    const k = it[0];
+    if (k === 'F' || k === 'G'){ const J = placeFig(it[1]); parts.push(figSvg(J, k === 'G', it[1].fr)); lastJ = J; pts.push(...figPts(J)); }
+    else if (k === 'hball' || k === 'hsball'){ const j = lastJ[it[1]], x = j[0]+(it[2]||0), y = j[1]+(it[3]||0); const r = k==='hball' ? PROPS.ball(f1(x),f1(y),it[4]) : PROPS.sball(f1(x),f1(y)); parts.push(r.s); pts.push(...r.p); }
+    else if (k === 'hsled'){ const h = lastJ.rh; const r = PROPS.sled(f1(h[0]-4), 26, f1(-h[1])); parts.push(r.s); pts.push(...r.p); }
+    else if (k === 'jline'){ const a = lastJ[it[1]]; parts.push(`<path d="M${f1(a[0])} ${f1(a[1])}L${it[2]} ${it[3]}" stroke-width="2.4"/>`); }
+    else if (k === 'hband'){ const a = lastJ.lh, b = lastJ.rh; parts.push(`<path d="M${f1(a[0])} ${f1(a[1])}L${f1(b[0])} ${f1(b[1])}" stroke-width="2.6"/>`); }
+    else { const r = PROPS[k](...it.slice(1)); (k==='mat'||k==='ladder'||k==='floorline'||k==='hoop' ? under : parts).push(r.s); pts.push(...r.p); }
+  }
+  let x0=1e9,x1=-1e9,y0=1e9,y1=-1e9;
+  for (const [x,y] of pts){ x0=Math.min(x0,x); x1=Math.max(x1,x); y0=Math.min(y0,y); y1=Math.max(y1,y); }
+  y1 = Math.max(y1, 0);
+  const s = Math.min(1, 92/(x1-x0), 82/(-y0), y1 > 0 ? 9/y1 : 1);
+  const G = 88, tx = 50 - (x0+x1)/2*s;
+  const ground = `<path d="M5 ${G}H95" stroke-width="2.4" opacity=".3"/>`;
+  return `<svg class="ico" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">`+
+    ground + `<g transform="translate(${f1(tx)} ${G}) scale(${f1(s*100)/100})" stroke-width="${SG.sw}">${under.join('')}${parts.join('')}</g></svg>`;
+}
+
+/* ===== Übungsbibliothek ===== */
+const CATS = [
+  ['rumpf','Rumpf'], ['beine','Beine'], ['ober','Oberkörper'], ['sprung','Sprung'],
+  ['wurf','Medizinball & Wurf'], ['schnell','Schnelligkeit'], ['koord','Koordination'], ['mobil','Beweglichkeit']
+];
+const RUN  = {t:170, r:[68,-18], l:[-32,-100], ra:[-48,40], la:[50,150]};
+const SQ   = {t:148, l:[80,-14], r:[84,-12], la:[95,92], ra:[98,95]};
+const EX = [
+/* ---------- Rumpf ---------- */
+{id:'plank', n:'Unterarmstütz', a:['Plank'], c:'rumpf', cue:'Körper wie ein Brett von Kopf bis Ferse. Po nicht hoch, Bauch nicht durchhängen, Blick zum Boden.',
+ s:[['mat',-44,34],['F',{t:97,l:[-73,-73],r:[-74,-74],la:[0,90],ra:[2,90],h:100}]]},
+{id:'side', n:'Seitstütz', a:['Side Plank'], c:'rumpf', cue:'Auf Unterarm und Fußaußenkante, Hüfte hoch, Körper in einer Linie. Freier Arm zur Decke. Seiten wechseln.',
+ s:[['mat',-44,34],['F',{t:103,l:[-77,-77],r:[-77,-77],ra:[0,90],la:[180,180],h:110}]]},
+{id:'bridge', n:'Hüftheben', a:['Glute Bridge'], c:'rumpf', cue:'Rückenlage, Füße hüftbreit aufgestellt. Po hochdrücken bis Knie, Hüfte und Schulter eine Linie bilden, kurz halten.',
+ s:[['mat',-44,30],['G',{t:-90,h:-90,l:[125,55],r:[126,56],la:[92,92],ra:[94,94],pin:['rf',20,-3.3]}],['F',{t:-68,h:-95,l:[111,4],r:[112,5],la:[95,92],ra:[96,94],pin:['rf',20,-3.3]}]]},
+{id:'crunch', n:'Crunches', c:'rumpf', cue:'Rückenlage, Beine angestellt. Schultern nur leicht vom Boden lösen, Blick zur Decke, Kinn nicht auf die Brust ziehen.',
+ s:[['mat',-38,30],['F',{t:-112,l:[138,35],r:[140,38],la:[-140,40],ra:[-140,40]}]]},
+{id:'superman', n:'Rückenstrecker', c:'rumpf', cue:'Bauchlage, Arme nach vorn. Arme und Beine gleichzeitig wenige Zentimeter anheben, Blick zum Boden, ruhig atmen.',
+ s:[['mat',-40,40],['F',{t:108,h:112,l:[-104,-104],r:[-106,-106],la:[116,116],ra:[118,118]}]]},
+{id:'climber', n:'Bergsteiger', a:['Mountain Climber'], c:'rumpf', cue:'Liegestützposition, Hände unter den Schultern. Knie abwechselnd zügig zur Brust ziehen, Hüfte bleibt tief.',
+ s:[['F',{t:116,l:[-64,-64],r:[76,-25],la:[2,2],ra:[0,0],h:120}]]},
+{id:'twist', n:'Russian Twist', c:'rumpf', cue:'Sitzen, Oberkörper leicht zurück, Füße angehoben oder am Boden. Ball oder Hände von Seite zu Seite neben die Hüfte führen.',
+ s:[['F',{t:-152,h:-165,l:[130,94],r:[134,96],la:[120,95],ra:[124,98]}],['hball','rh',5,0],['turn',2,-56,16,200,340]]},
+{id:'legraise', n:'Beinheben liegend', c:'rumpf', cue:'Rückenlage, Hände neben dem Po. Gestreckte Beine langsam heben und senken, ohne dass der untere Rücken hohl wird.',
+ s:[['mat',-38,42],['G',{t:-90,l:[96,96],r:[97,97],la:[90,90],ra:[90,90]}],['F',{t:-90,l:[140,140],r:[142,142],la:[90,90],ra:[90,90]}],['arrow',[30,-12,22,-26]]]},
+{id:'deadbug', n:'Käfer (Dead Bug)', c:'rumpf', cue:'Rückenlage, Arme zur Decke, Knie im rechten Winkel. Gegengleich Arm und Bein langsam strecken, Rücken bleibt am Boden.',
+ s:[['mat',-46,40],['F',{t:-90,r:[180,90],l:[100,96],ra:[180,180],la:[-100,-96]}]]},
+{id:'birddog', n:'Vierfüßlerstand diagonal', c:'rumpf', cue:'Hände unter den Schultern, Knie unter der Hüfte. Gegengleich Arm und Bein waagerecht strecken, Becken bleibt gerade.',
+ s:[['mat',-40,36],['F',{t:106,l:[0,-90],r:[-88,-90],la:[2,0],ra:[100,100],h:100}]]},
+{id:'vsit', n:'Klappmesser', a:['V-Sitz'], c:'rumpf', cue:'Auf dem Po balancieren, Oberkörper und gestreckte Beine bilden ein V. Hände Richtung Füße.',
+ s:[['mat',-30,40],['F',{t:-142,l:[136,136],r:[138,138],la:[130,130],ra:[132,132]}]]},
+/* ---------- Beine ---------- */
+{id:'squat', n:'Kniebeugen', c:'beine', cue:'Füße hüftbreit, Po nach hinten wie auf einen Stuhl, Knie zeigen über die Füße. Rücken gerade, Fersen bleiben am Boden.',
+ s:[['F',SQ],['arrow',[-28,-56,-28,-30],true]]},
+{id:'lunge', n:'Ausfallschritte', c:'beine', cue:'Großer Schritt nach vorn, hinteres Knie sinkt Richtung Boden. Vorderes Knie über dem Fuß, Oberkörper aufrecht.',
+ s:[['F',{t:180,r:[80,0],l:[-18,-82],la:[-30,70],ra:[-30,72]}]]},
+{id:'calf', n:'Wadenheben', c:'beine', cue:'Auf einer Stufe oder flach, Fersen hoch auf die Zehenspitzen, oben kurz halten, langsam absenken.',
+ s:[['box',-6,24,7],['F',{t:180,l:[-1,0],r:[1,1],rft:40,lft:40,la:[-6,-2],ra:[6,4],pin:['rt',12,-7]}],['arrow',[-16,-30,-16,-48]]]},
+{id:'wallsit', n:'Wandsitzen', c:'beine', cue:'Rücken an der Wand, Oberschenkel waagerecht, Knie über den Fersen. Halten und ruhig atmen.',
+ s:[['wall',-8,72,-1],['F',{t:180,l:[90,0],r:[91,1],la:[40,80],ra:[42,82],x:-1}]]},
+{id:'stepup', n:'Step-ups auf Kasten', c:'beine', cue:'Ganzer Fuß auf den Kasten, über das vordere Bein hochdrücken, nicht vom hinteren Fuß abstoßen. Seite wechseln.',
+ s:[['box',8,30,20],['F',{t:174,r:[84,-14],l:[-8,-12],ra:[-40,20],la:[50,140],pin:['rf',16,-23]}]]},
+{id:'bulgarian', n:'Bulgarische Kniebeuge', c:'beine', cue:'Hinterer Fuß liegt auf Bank oder Kasten. Vorderes Bein beugen, bis das hintere Knie fast den Boden berührt.',
+ s:[['bench',-44,24,17],['F',{t:178,r:[72,0],l:[-12,-108],la:[-30,70],ra:[-30,72],pin:['rf',12,-3.2]}]]},
+{id:'pistol', n:'Einbeinige Kniebeuge', c:'beine', cue:'Auf einem Bein langsam zum Kasten absitzen, Knie bleibt über dem Fuß. Das andere Bein nach vorn halten.',
+ s:[['box',-26,20,20],['F',{t:150,r:[80,-14],l:[78,84],la:[95,95],ra:[98,96]}]]},
+{id:'sidelunge', n:'Seitliche Ausfallschritte', c:'beine', cue:'Breiter Stand, Gewicht auf ein Bein verlagern und beugen, das andere bleibt gestreckt. Fußspitzen nach vorn.',
+ s:[['F',{fr:1,t:174,r:[52,-4],l:[-58,-58],la:[-50,20],ra:[50,-20]}],['arrow',[-22,-62,22,-62],true]]},
+{id:'bridge1', n:'Hüftheben einbeinig', c:'beine', cue:'Wie Hüftheben, aber ein Bein gestreckt in der Luft. Becken bleibt waagerecht, nicht seitlich absacken.',
+ s:[['mat',-44,34],['F',{t:-68,h:-95,l:[111,4],r:[124,124],la:[95,92],ra:[96,94]}]]},
+{id:'nordic', n:'Beinbeuger (Nordic)', c:'beine', cue:'Ab U16. Kniend, Partner hält die Fersen. Körper gestreckt langsam nach vorn sinken lassen, mit den Händen abfangen.',
+ s:[['mat',-36,30],['F',{t:150,r:[-30,-90],l:[-31,-90],la:[70,110],ra:[72,112]}],['box',-34,8,9]]},
+{id:'hamball', n:'Beinbeuger mit Ball oder Rolle', c:'beine', a:['Leg Curl'], cue:'Rückenlage, Fersen auf Pezziball oder Rolle, Hüfte hoch. Fersen zum Po ziehen und wieder strecken, die Hüfte bleibt die ganze Zeit oben.',
+ s:[['mat',-44,46],['ball',30,-9,9],['F',{t:-66,h:-95,l:[118,30],r:[120,32],la:[95,92],ra:[96,94],pin:['rf',27,-19]}],['arrow',[48,-30,34,-30]]]},
+{id:'walllean', n:'Skippings an der Wand', c:'beine', cue:'Hände an der Wand, Körper schräg. Knie abwechselnd zügig hochziehen, auf dem Fußballen bleiben.',
+ s:[['wall',34,74,1],['F',{t:140,r:[100,10],l:[-38,-42],la:[130,95],ra:[128,92],rft:120,lft:70}]]},
+/* ---------- Oberkörper ---------- */
+{id:'pushup', n:'Liegestütz', c:'ober', cue:'Hände unter den Schultern, Körper gestreckt. Brust Richtung Boden, Ellenbogen leicht nach hinten, wieder hochdrücken.',
+ s:[['F',{t:115,l:[-65,-65],r:[-66,-66],la:[2,2],ra:[0,0],h:115}],['arrow',[34,-34,34,-14],true]]},
+{id:'pushknee', n:'Liegestütz auf Knien', c:'ober', cue:'Leichtere Variante: Knie am Boden, Körper von Knie bis Kopf gerade. Gut für Einsteiger und Kinder.',
+ s:[['mat',-40,36],['F',{t:110,l:[-55,-95],r:[-56,-95],la:[2,2],ra:[0,0],h:110}]]},
+{id:'dips', n:'Dips an der Bank', c:'ober', cue:'Hände hinter dem Körper auf der Bank, Finger nach vorn. Ellenbogen nach hinten beugen, Rücken nah an der Bank.',
+ s:[['bench',-34,24,20],['F',{t:180,r:[76,76],l:[78,78],ra:[-110,0],la:[-112,2],pin:['rh',-12,-22]}],['arrow',[24,-58,24,-42],true]]},
+{id:'pullup', n:'Klimmzüge oder Hangeln', c:'ober', cue:'Am Reck oder Barren hängen, Schultern aktiv. Hochziehen, bis das Kinn über der Stange ist, oder seitlich hangeln.',
+ s:[['bar',-26,26,-86],['F',{fr:1,t:180,l:[-2,2],r:[2,-2],la:[-125,170],ra:[125,-170],pin:['rh',8,-86]}]]},
+{id:'row', n:'Rudern mit Band', c:'ober', cue:'Band vorn befestigen. Ellenbogen nah am Körper nach hinten ziehen, Schulterblätter zusammen, langsam zurück.',
+ s:[['post',44,60],['F',{t:178,r:[14,-10],l:[-8,-6],ra:[-28,90],la:[-26,92]}],['path','M14 -36L44 -40']]},
+{id:'bandpull', n:'Gummiband Schulter', c:'ober', cue:'Band schulterbreit greifen, Arme gestreckt vor der Brust. Auseinanderziehen, bis die Schulterblätter zusammengehen.',
+ s:[['F',{fr:1,t:180,l:[-8,0],r:[8,0],la:[-62,-62],ra:[62,62]}],['hband'],['arrow',[30,-30,42,-30]],['arrow',[-30,-30,-42,-30]]]},
+{id:'bear', n:'Bärengang', c:'ober', cue:'Auf Händen und Füßen, Knie knapp über dem Boden. Gegengleich kleine Schritte vorwärts, Rücken flach.',
+ s:[['F',{t:76,h:95,r:[20,-30],l:[35,-15],ra:[0,0],la:[12,12]}],['arrow',[20,-56,40,-56]]]},
+{id:'crab', n:'Krebsgang', c:'ober', cue:'Bauch nach oben, Hände hinter dem Körper, Hüfte angehoben. Auf Händen und Füßen vorwärts oder rückwärts gehen.',
+ s:[['F',{t:-86,h:-60,r:[88,2],l:[86,0],la:[-6,-4],ra:[-4,-2]}],['arrow',[-8,-40,12,-40],true]]},
+{id:'chestpass', n:'Medizinball Brustpass', c:'ober', cue:'Ball vor der Brust, Schrittstellung. Kräftig nach vorn stoßen, Arme ganz strecken, Daumen zeigen am Ende nach unten.',
+ s:[['F',{t:170,r:[22,-6],l:[-20,-12],la:[94,94],ra:[96,96]}],['hball','rh',5,0,6],['arrow',[44,-49,60,-49]]]},
+/* ---------- Sprung ---------- */
+{id:'boxjump', n:'Kastensprünge', a:['Box Jumps'], c:'sprung', cue:'Beidbeinig auf den Kasten springen, weich in der Hocke landen. Absteigen, nicht rückwärts herunterspringen.',
+ s:[['box',4,30,22],['G',{t:160,la:[-60,-40],ra:[-62,-42],l:[40,-20],r:[42,-18],x:-34}],['F',{t:150,l:[78,-14],r:[82,-12],la:[95,92],ra:[98,95],pin:['rf',20,-25]}],['arrow',[-30,-52,-14,-82,6,-64]]]},
+{id:'tuckjump', n:'Hockstrecksprünge', c:'sprung', cue:'Aus dem Stand hochspringen, Knie zur Brust ziehen, gestreckt und leise landen.',
+ s:[['F',{t:176,l:[148,-5],r:[152,-2],la:[100,60],ra:[102,62],air:20}],['arrow',[-22,-6,-22,-30]]]},
+{id:'jack', n:'Hampelmann', c:'sprung', cue:'Im Sprung Beine grätschen und Arme über den Kopf, im nächsten Sprung zurück. Locker und rhythmisch.',
+ s:[['F',{fr:1,t:180,l:[-24,-24],r:[24,24],la:[-140,-158],ra:[140,158]}]]},
+{id:'rope', n:'Seilspringen', c:'sprung', cue:'Auf den Fußballen springen, nur wenige Zentimeter hoch. Ellenbogen am Körper, das Seil dreht aus dem Handgelenk.',
+ s:[['F',{fr:1,t:180,l:[-5,0],r:[5,0],la:[-28,-80],ra:[28,80],lft:-30,rft:30,air:5}],['path','M-23 -31 C-30 10, 30 10, 23 -31',2.6],['path','M-23 -31 C-34 -100, 34 -100, 23 -31',1.6]]},
+{id:'pogo', n:'Fußgelenksprünge', c:'sprung', cue:'Knie fast gestreckt, nur aus dem Fußgelenk federn. Kurzer, schneller Bodenkontakt, wie ein Flummi.',
+ s:[['F',{t:180,l:[-2,0],r:[2,1],la:[-20,10],ra:[20,40],rft:30,lft:25,air:7}],['arrow',[-18,-2,-18,-16],true],['arrow',[18,-2,18,-16],true]]},
+{id:'hop1', n:'Hüpfserien einbeinig', c:'sprung', cue:'Auf einem Bein mehrere Sprünge vorwärts, aktiv aufsetzen, Knie bleibt in der Spur. Seiten wechseln.',
+ s:[['F',{t:172,r:[8,0],l:[30,-60],la:[60,140],ra:[-40,20],rft:60,air:8}],['arrow',[14,-4,26,-20,38,-4]],['arrow',[40,-4,52,-20,64,-4]]]},
+{id:'bound', n:'Sprunglauf', c:'sprung', cue:'Weite, federnde Laufsprünge. Knie vorn hoch, hinteres Bein ganz strecken, Arme schwingen gegengleich mit.',
+ s:[['F',{t:165,r:[100,8],l:[-42,-46],la:[-50,-30],ra:[60,140],air:10}],['arrow',[-40,-4,0,-22,40,-4]]]},
+{id:'take3', n:'Dreier-Take-off', c:'sprung', a:['Steigesprünge 3er-Rhythmus'], cue:'Jeden dritten Schritt ein Absprung: links, rechts, links und hoch. Absprungbein gestreckt, Schwungknie und Arme kräftig nach oben, aufrecht landen und weiterlaufen. Rhythmus vor Höhe.',
+ s:[['arrow',[-62,-2,-55,-12,-48,-2]],['arrow',[-44,-2,-37,-12,-30,-2]],['txt',-55,-16,'1'],['txt',-37,-16,'2'],['txt',-6,-80,'3'],['F',{t:176,r:[-14,-16],rft:-40,l:[100,4],ra:[140,165],la:[-50,-30],x:4}],['arrow',[24,-30,24,-50]]]},
+{id:'linejump', n:'Seitsprünge über Linie', c:'sprung', cue:'Füße zusammen, schnell seitlich über eine Linie hin und her springen. Kurzer Bodenkontakt, Blick nach vorn.',
+ s:[['floorline',0],['F',{fr:1,t:180,l:[-10,10],r:[10,-10],la:[-30,-90],ra:[30,90],air:10,x:-16}],['arrow',[-30,-4,24,-4],true]]},
+{id:'sbj', n:'Weitsprung aus dem Stand', c:'sprung', cue:'Arme schwungvoll von hinten nach vorn, beidbeinig absprechen und weit nach vorn springen. Beidbeinig landen.',
+ s:[['G',{t:140,l:[70,-20],r:[72,-18],la:[-70,-60],ra:[-72,-62],x:-34}],['F',{t:160,l:[110,40],r:[112,42],la:[120,110],ra:[122,112],air:16,x:14}],['arrow',[-24,-10,0,-60,38,-14]]]},
+{id:'frog', n:'Froschsprünge', c:'sprung', cue:'Tiefe Hocke, Hände kurz am Boden. Explosiv nach vorn oben springen und wieder in der Hocke landen.',
+ s:[['F',{t:126,l:[96,-28],r:[100,-24],la:[20,0],ra:[22,2]}],['arrow',[20,-40,40,-60,58,-30]]]},
+{id:'minihurdle', n:'Hürdensprünge', c:'sprung', cue:'Beidbeinig über mehrere niedrige Hürden oder Kartons springen, ohne Zwischenhüpfer.',
+ s:[['hurdle',-48,16,10],['hurdle',-6,16,10],['hurdle',36,16,10],['F',{t:172,l:[150,-20],r:[154,-16],la:[90,140],ra:[92,142],air:26,x:-8}]]},
+{id:'skater', n:'Schlittschuhsprünge', c:'sprung', cue:'Seitlich von einem Bein auf das andere springen, weich landen und kurz halten. Freies Bein schwingt hinter dem Standbein.',
+ s:[['F',{t:160,r:[20,-14],l:[-50,-60],la:[60,80],ra:[-40,-20]}],['arrow',[-40,-50,-20,-70,0,-50]]]},
+/* ---------- Medizinball & Wurf ---------- */
+{id:'mboverhead', n:'Medizinball über Kopf', c:'wurf', cue:'Schrittstellung, Ball hinter dem Kopf. Aus der Bogenspannung kräftig nach vorn werfen, wie beim Einwurf.',
+ s:[['F',{t:190,r:[25,0],l:[-22,-12],la:[192,198],ra:[194,200]}],['hball','rh',-2,-3],['arrow',[10,-86,32,-88,46,-66]]]},
+{id:'mbrot', n:'Medizinball Rotation', c:'wurf', cue:'Seitlich zur Wand, Ball auf Hüfthöhe. Aus der Hüftdrehung kräftig gegen die Wand werfen und fangen. Seiten wechseln.',
+ s:[['wall',48,70,1],['F',{t:176,r:[12,0],l:[-12,0],la:[-40,60],ra:[-38,62]}],['hball','rh',-3,0],['arrow',[-10,-16,16,-58,42,-36]]]},
+{id:'mbscoop', n:'Medizinball Schocken vorwärts', c:'wurf', cue:'Ball zwischen den Beinen, in die Hocke gehen. Aus den Beinen explosiv strecken und den Ball nach vorn oben werfen.',
+ s:[['F',{t:140,l:[70,-18],r:[72,-16],la:[20,10],ra:[22,12]}],['hball','rh',2,2],['arrow',[30,-18,48,-44,60,-70]]]},
+{id:'mbback', n:'Medizinball Schocken rückwärts', c:'wurf', cue:'Rücken zur Wurfrichtung, Ball vor den Knien. Aus der Hocke strecken und den Ball über den Kopf nach hinten werfen.',
+ s:[['G',{t:140,l:[70,-18],r:[72,-16],la:[20,10],ra:[22,12],x:2}],['F',{t:190,l:[2,4],r:[4,6],la:[195,200],ra:[198,203],rft:30,lft:30}],['ball',-10,-78,6],['arrow',[-20,-82,-40,-90,-54,-70]]]},
+{id:'mbslam', n:'Medizinball Slam', c:'wurf', cue:'Ball über den Kopf, Körper strecken. Mit dem ganzen Körper kräftig vor die Füße auf den Boden schmettern.',
+ s:[['G',{t:184,la:[180,180],ra:[182,182]}],['F',{t:130,l:[30,-8],r:[32,-6],la:[60,40],ra:[62,42]}],['ball',36,-6,6],['arrow',[44,-60,44,-22]]]},
+{id:'mbput', n:'Medizinball Stoß', c:'wurf', cue:'Ball an der Schulter wie eine Kugel, Ellenbogen hoch. Aus Bein und Hüfte nach vorn oben stoßen.',
+ s:[['F',{t:168,r:[30,0],l:[-26,-10],ra:[130,150],la:[80,100]}],['hball','rh',2,-4],['arrow',[30,-82,50,-96]]]},
+{id:'throwwall', n:'Schlagwurf an die Wand', c:'wurf', cue:'Schrittstellung, Wurfarm hoch hinten, Ellenbogen über der Schulter. Aus der Bogenspannung an eine Zielmarke werfen.',
+ s:[['wall',50,76,1],['target',46,-58],['F',{t:174,r:[28,0],l:[-20,-8],ra:[-130,160],la:[100,100]}],['sball',-16,-68]]},
+/* ---------- Schnelligkeit ---------- */
+{id:'sprint20', n:'Sprint 20 m', c:'schnell', cue:'Aus der Schrittstellung starten, auf den Fußballen laufen, Arme aktiv. Bis hinter das Ziel-Hütchen durchlaufen.',
+ s:[['cone',-44],['cone',44],['F',Object.assign({},RUN,{air:2})],['speed',-20,-58]]},
+{id:'freesprint', n:'Freies Sprinten', c:'schnell', a:['Fliegender Sprint'], cue:'Ohne Startkommando: locker anlaufen, ab dem ersten Hütchen volle Geschwindigkeit und durch das Ziel. Lauf locker, nicht verkrampft. Gut direkt nach dem Schlitten.',
+ s:[['cone',-50],['cone',-30],['F',Object.assign({},RUN,{t:174,air:3,x:2})],['speed',-12,-60],['arrow',[22,-4,56,-4]]]},
+{id:'sledpush', n:'Schlitten schieben', c:'schnell', a:['Prowler'], cue:'Starke Vorlage, Arme gestreckt an den Griffen. Kurze, kräftige Schritte, Druck über den ganzen Fuß, Rücken gerade. Gewicht so wählen, dass die Technik hält.',
+ s:[['F',{t:132,h:150,r:[-42,-44],l:[58,-24],ra:[96,94],la:[98,96]}],['hsled'],['arrow',[30,-62,54,-62]]]},
+{id:'sledpull', n:'Schlitten ziehen', c:'schnell', a:['Zugwiderstand'], cue:'Gurt um die Hüfte, Seil zum Schlitten. Mit Vorlage gegen den Widerstand antreten, Arme sprinten aktiv mit. Danach frei sprinten für den Kontrast.',
+ s:[['sled',-62,24,0],['F',Object.assign({},RUN,{t:150,h:150,air:1,x:4})],['jline','p',-38,-5],['arrow',[24,-4,50,-4]]]},
+{id:'reaction', n:'Reaktionsstart', c:'schnell', cue:'Auf ein Signal (Klatschen, Ruf, Ball fallen lassen) so schnell wie möglich losstarten. Startpositionen variieren.',
+ s:[['F',{t:120,r:[56,-34],l:[-40,-80],ra:[8,0],la:[-70,-50],h:120}],['signal',32,-56]]},
+{id:'skipping', n:'Skipping', c:'schnell', cue:'Kurze, schnelle Schritte mit hohem Knie. Aufrechter Oberkörper, auf dem Fußballen, Arme schwingen mit.',
+ s:[['F',{t:180,r:[95,0],l:[-4,-2],ra:[-40,50],la:[45,145],rft:120,lft:60,air:2}]]},
+{id:'butt', n:'Anfersen', c:'schnell', cue:'Fersen abwechselnd zügig Richtung Po führen, Knie zeigen nach unten. Kurze Schritte, auf dem Fußballen.',
+ s:[['F',{t:178,r:[8,-165],l:[-2,-1],ra:[-40,50],la:[45,145],lft:60,air:2}]]},
+{id:'slalom', n:'Hütchen-Slalom', c:'schnell', cue:'Im Zickzack eng um die Hütchen laufen, tief in die Kurve, kurze Schritte beim Richtungswechsel.',
+ s:[['cone',-14],['cone',16],['cone',46],['path','M-44 4 Q-28 10 -14 4 T16 4 T46 4',2.2,'4 4'],['F',Object.assign({},RUN,{x:-36})]]},
+{id:'shuttle', n:'Pendellauf', c:'schnell', cue:'Zwischen zwei Hütchen hin und her sprinten, am Hütchen den Boden mit der Hand berühren und schnell wenden.',
+ s:[['cone',-46],['cone',46],['F',{t:120,r:[60,-30],l:[-40,-70],ra:[20,0],la:[-60,-40],h:110}],['arrow',[-34,-74,34,-74],true]]},
+{id:'ladder', n:'Koordinationsleiter', c:'schnell', cue:'Pro Feld ein oder zwei schnelle Bodenkontakte, auf dem Fußballen. Erst sauber, dann schnell. Varianten wechseln.',
+ s:[['ladder',-40,40],['F',{t:178,r:[85,5],l:[-4,-2],ra:[-40,50],la:[45,145],rft:110,lft:60}]]},
+{id:'sidestep', n:'Sidesteps', c:'schnell', cue:'Leicht in den Knien, Füße schnell seitlich nachstellen, nicht überkreuzen. Oberkörper bleibt aufrecht.',
+ s:[['F',{fr:1,t:180,l:[-30,-6],r:[30,6],la:[-40,30],ra:[40,-30]}],['arrow',[-44,-66,44,-66],true]]},
+{id:'falling', n:'Fallstart', c:'schnell', cue:'Gerade stehen, nach vorn fallen lassen, bis man einen Schritt machen muss, und aus dem Fallen heraus lossprinten.',
+ s:[['F',{t:150,r:[150,30],l:[-30,-60],ra:[-60,0],la:[90,150],h:150}],['speed',-26,-60]]},
+/* ---------- Koordination ---------- */
+{id:'balance', n:'Balance einbeinig', c:'koord', cue:'Auf einem Bein stehen, das andere Knie hoch, Arme seitlich. Steigerung: Augen schließen oder auf weichem Untergrund.',
+ s:[['F',{t:180,r:[2,0],l:[95,0],la:[-82,-90],ra:[82,90]}]]},
+{id:'scale', n:'Standwaage', c:'koord', cue:'Auf einem Bein, Oberkörper nach vorn und hinteres Bein nach hinten strecken, bis eine Linie entsteht. Halten.',
+ s:[['F',{t:92,r:[0,0],l:[-90,-90],la:[96,96],ra:[94,94]}]]},
+{id:'benchwalk', n:'Balancieren auf der Bank', c:'koord', cue:'Über die umgedrehte Bank gehen, vorwärts, rückwärts oder seitlich. Blick nach vorn, Arme helfen.',
+ s:[['bench',-40,80,12],['F',{t:180,r:[20,0],l:[-18,-4],la:[-80,-90],ra:[80,90],pin:['rf',12,-17]}]]},
+{id:'wobble', n:'Wackelbrett', c:'koord', cue:'Auf Kreisel oder Wackelbrett stehen, Knie leicht gebeugt. Gleichgewicht halten, Steigerung einbeinig.',
+ s:[['board',0,30],['F',{t:178,r:[12,-6],l:[-12,6],la:[-80,-90],ra:[80,90],pin:['rf',7,-12]}]]},
+{id:'dribble', n:'Ball prellen im Laufen', c:'koord', cue:'Im Gehen oder Laufen den Ball neben dem Körper prellen. Steigerung: Hand wechseln, Slalom.',
+ s:[['F',{t:176,r:[24,0],l:[-20,-10],ra:[40,30],la:[-30,10]}],['hball','rh',2,16],['arrow',[34,-24,34,-36],true]]},
+{id:'target', n:'Zielwurf', c:'koord', cue:'Aus festem Abstand Bälle oder Säckchen in Reifen, Kasten oder Eimer werfen. Abstand nach Treffern steigern.',
+ s:[['F',{t:178,r:[22,0],l:[-20,-8],ra:[70,110],la:[-40,-30]}],['box',40,22,14],['path','M20 -38 Q36 -64 50 -18',2.2],['sball',20,-38]]},
+{id:'hoops', n:'Reifensprünge', c:'koord', cue:'Durch ausgelegte Reifen springen: einbeinig, beidbeinig oder im Wechsel, nach vorgegebenem Muster.',
+ s:[['hoop',-30],['hoop',0],['hoop',30],['F',{t:174,r:[40,-20],l:[-30,-50],la:[60,140],ra:[-40,20],air:16}]]},
+/* ---------- Beweglichkeit ---------- */
+{id:'hurdlemob', n:'Hürdenmobilisation', c:'mobil', cue:'Seitlich an der Hürde, Knie hoch und das Bein über die Hürde führen, Hüfte öffnen. Langsam und kontrolliert.',
+ s:[['hurdle',10,30,14],['F',{t:178,r:[115,30],l:[0,0],la:[-60,-60],ra:[60,60]}]]},
+{id:'hurdlewalk', n:'Hürden übergehen', c:'mobil', a:['Hürdengehen'], cue:'Hürden in Reihe, im Gehen überschreiten. Schwungbein mit hohem Knie gerade drüber, Nachziehbein seitlich flach nachführen, aufrecht bleiben.',
+ s:[['hurdle',-52,22,12],['hurdle',4,22,12],['hurdle',60,22,12],['F',{t:182,r:[108,20],l:[-4,-2],la:[60,140],ra:[-30,10],x:-2}]]},
+{id:'hipflexor', n:'Hüftbeuger-Dehnung', c:'mobil', cue:'Kniender Ausfallschritt, Becken nach vorn schieben, bis vorn in der Hüfte ein Ziehen kommt. Oberkörper aufrecht.',
+ s:[['mat',-40,30],['F',{t:182,r:[82,0],l:[-34,-90],la:[180,180],ra:[180,180]}]]},
+{id:'worldsbest', n:'Weltbester Stretch', c:'mobil', cue:'Tiefer Ausfallschritt, eine Hand innen am Boden, den anderen Arm zur Decke drehen, Blick folgt der Hand.',
+ s:[['F',{t:118,r:[72,-6],l:[-66,-66],ra:[2,2],la:[178,178],h:130}]]},
+{id:'armcircle', n:'Schulterkreisen', c:'mobil', cue:'Gestreckte Arme groß vorwärts und rückwärts kreisen, Bauch fest, kein Hohlkreuz.',
+ s:[['F',{t:180,la:[-150,-150],ra:[150,150]}],['turn',0,-60,32,-60,240]]},
+{id:'legswing', n:'Beinpendel', c:'mobil', cue:'Seitlich an Wand oder Zaun abstützen, das Bein locker vor und zurück pendeln, langsam größer werden.',
+ s:[['wall',-24,74,-1],['F',{t:180,r:[2,0],l:[70,70],la:[-80,-80],ra:[30,60],x:-8}],['G',{t:180,r:[2,0],l:[-40,-40],la:[-80,-80],ra:[30,60],x:-8}],['turn',-8,-36,30,-10,60]]}
+];
+const GENERIC = [['cone',-30],['cone',30],['F',{t:180,la:[-30,-150],ra:[30,150]}]];
+
+const EXN = {}, EXI = {};
+EX.forEach(e=>{ EXN[e.n.toLowerCase()] = e; EXI[e.id] = e; (e.a||[]).forEach(x=>{ if (!EXN[x.toLowerCase()]) EXN[x.toLowerCase()] = e; }); });
+const ICACHE = {};
+function exFor(name){ return EXN[String(name).toLowerCase()] || null; }
+function icoId(name){ const o = db.icons[name]; if (o === '-') return ''; if (o && EXI[o]) return o; const e = exFor(name); return e ? e.id : ''; }
+function icon(name){ const id = icoId(name); if (ICACHE[id] == null) ICACHE[id] = iconSvg(id ? EXI[id].s : GENERIC); return ICACHE[id]; }
+function icById(id){ if (ICACHE[id] == null) ICACHE[id] = iconSvg(id ? EXI[id].s : GENERIC); return ICACHE[id]; }
+function cueFor(name){ const e = exFor(name); return e ? e.cue : ''; }
+let libCat = 'alle', libQ = '';
+const PRESETS = [[30,15,'30 / 15'],[40,20,'40 / 20'],[45,15,'45 / 15'],[60,30,'60 / 30'],[90,30,'90 / 30']];
+
+/* ---------- Speicher ---------- */
+let storageOk = true;
+try { localStorage.setItem('z-t','1'); localStorage.removeItem('z-t'); } catch(e){ storageOk = false; }
+function normalize(o){
+  o = (o && typeof o === 'object') ? o : {};
+  o.names = String(o.names || '');
+  o.size = (o.size === 3) ? 3 : 2;
+  o.groups = Array.isArray(o.groups) ? o.groups.map(g=>Array.isArray(g) ? g.map(x=>String(x).slice(0,24)) : []).filter(g=>g.length) : [];
+  o.stations = Array.isArray(o.stations) ? o.stations.map(x=>String(x).slice(0,48)).filter(Boolean).slice(0,14) : [];
+  const ic = {};
+  if (o.icons && typeof o.icons === 'object') for (const k in o.icons){ if (typeof o.icons[k] === 'string' && o.stations.includes(k)) ic[k] = o.icons[k].slice(0,24); }
+  o.icons = ic;
+  o.work = clamp(+o.work || 45, 10, 600);
+  o.change = clamp(+o.change || 20, 5, 300);
+  o.rounds = clamp(+o.rounds || 1, 1, 10);
+  o.sound = o.sound !== false;
+  o.voice = !!o.voice;
+  return o;
+}
+function load(){
+  if (!storageOk) return normalize(null);
+  try { const r = localStorage.getItem(KEY); return normalize(r ? JSON.parse(r) : null); } catch(e){ return normalize(null); }
+}
+function save(){ if (!storageOk) return; try { localStorage.setItem(KEY, JSON.stringify(db)); } catch(e){ storageOk = false; renderWarn(); } }
+let db = load();
+
+/* ---------- Ton ---------- */
+let actx = null;
+function unlockAudio(){
+  try {
+    if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+    if (actx.state === 'suspended') actx.resume();
+  } catch(e){ actx = null; }
+}
+function beep(freq, dur, vol){
+  if (!db.sound || !actx) return;
+  try {
+    const t = actx.currentTime, o = actx.createOscillator(), g = actx.createGain();
+    o.type = 'sine'; o.frequency.value = freq;
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(vol, t + 0.012);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    o.connect(g); g.connect(actx.destination);
+    o.start(t); o.stop(t + dur + 0.03);
+  } catch(e){}
+}
+function say(text){
+  if (!db.voice || !window.speechSynthesis) return;
+  try {
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'de-DE'; u.rate = 1.0; u.volume = 1;
+    speechSynthesis.cancel(); speechSynthesis.speak(u);
+  } catch(e){}
+}
+
+/* ---------- Bildschirm wach halten ---------- */
+let wake = null;
+async function keepAwake(onOff){
+  try {
+    if (onOff){ if (!wake && navigator.wakeLock) wake = await navigator.wakeLock.request('screen'); }
+    else if (wake){ await wake.release(); wake = null; }
+  } catch(e){ wake = null; }
+}
+document.addEventListener('visibilitychange', ()=>{
+  if (document.visibilityState === 'visible' && run.active) keepAwake(true);
+});
+
+/* ---------- Gruppen ---------- */
+function parseNames(txt){
+  return String(txt).split(/[\n,;]+/).map(s=>s.trim()).filter(Boolean).map(s=>s.slice(0,24)).slice(0,60);
+}
+function buildGroups(shuffleIt){
+  const list = parseNames($('#names').value);
+  db.names = $('#names').value;
+  if (!list.length){ db.groups = []; save(); renderGroups(); flash($('#namesMsg'), 'Trage zuerst Namen ein, einen pro Zeile.'); return; }
+  const arr = list.slice();
+  if (shuffleIt) for (let i = arr.length-1; i > 0; i--){ const j = Math.floor(Math.random()*(i+1)); [arr[i],arr[j]] = [arr[j],arr[i]]; }
+  const n = Math.max(1, Math.round(arr.length / db.size));
+  const g = Array.from({length:Math.min(n, COLORS.length)}, ()=>[]);
+  arr.forEach((name, i)=> g[i % g.length].push(name));
+  db.groups = g.filter(x=>x.length);
+  save(); renderGroups(); renderPlanNote();
+  flash($('#namesMsg'), `${list.length} Teilnehmer in ${db.groups.length} Gruppen.`);
+}
+let selName = null;
+function renderGroups(){
+  const out = $('#grpOut');
+  if (!db.groups.length){ out.innerHTML = '<div class="info">Noch keine Gruppen. Namen eintragen und auf „Gruppen bilden“ tippen.</div>'; return; }
+  out.innerHTML = '<div class="grps">' + db.groups.map((g, gi)=>{
+    const col = COLORS[gi % COLORS.length];
+    return `<div class="grp${selName && selName.gi !== gi ? ' target' : ''}" style="--gc:${col.c}" data-g="${gi}">
+      <b>${col.n}</b>
+      <ul>${g.map((nm, ni)=>`<li class="${selName && selName.gi===gi && selName.ni===ni ? 'sel' : ''}" data-n="${gi}:${ni}">${esc(nm)}${selName && selName.gi===gi && selName.ni===ni ? '<em>ausgewählt</em>' : ''}</li>`).join('')}</ul>
+    </div>`;
+  }).join('') + '</div>' +
+  (selName ? '<p class="note">Jetzt die Zielgruppe antippen, oder den Namen noch einmal, um abzuwählen.</p>' : '');
+}
+
+/* ---------- Stationen ---------- */
+function renderStations(){
+  const l = $('#stList');
+  $('#stCount').textContent = db.stations.length + (db.stations.length === 1 ? ' Station' : ' Stationen');
+  l.innerHTML = db.stations.length ? db.stations.map((s, i)=>{
+      const cue = cueFor(s);
+      return `<li>
+      <span class="n">${i+1}</span>
+      <button class="ic" type="button" data-pick="${i}" aria-label="Symbol ändern">${icon(s)}</button>
+      <span class="nm">${esc(s)}${cue ? `<small>${esc(cue)}</small>` : ''}</span>
+      <button class="icon-btn" type="button" data-up="${i}" aria-label="nach oben">↑</button>
+      <button class="icon-btn" type="button" data-down="${i}" aria-label="nach unten">↓</button>
+      <button class="icon-btn" type="button" data-del="${i}" aria-label="entfernen">×</button>
+    </li>`; }).join('') : '<li style="color:var(--muted)">Noch keine Station gewählt.</li>';
+  renderLib();
+  renderPlanNote();
+}
+function renderLib(){
+  const cnt = c => c === 'alle' ? EX.length : EX.filter(e=>e.c === c).length;
+  $('#libCats').innerHTML = [['alle','Alle']].concat(CATS).map(([k,t])=>
+    `<button type="button" class="chip${libCat===k?' on':''}" data-cat="${k}">${t} <span style="opacity:.6">${cnt(k)}</span></button>`).join('');
+  const q = libQ.trim().toLowerCase();
+  const list = EX.filter(e=>(libCat === 'alle' || e.c === libCat) && (!q || e.n.toLowerCase().includes(q) || (e.a||[]).some(x=>x.toLowerCase().includes(q))));
+  $('#stLib').innerHTML = list.length ? list.map(e=>`<button type="button" class="ex${db.stations.includes(e.n)?' on':''}" data-lib="${esc(e.n)}" title="${esc(e.cue)}">
+      <div class="ic">${icById(e.id)}</div>${esc(e.n)}${e.a ? `<span class="al">${esc(e.a.join(', '))}</span>` : ''}</button>`).join('') : '<div class="libempty">Keine Übung gefunden. Unter „Eigene Station“ kannst du sie selbst anlegen.</div>';
+  $('#libCount').textContent = db.stations.length >= 14 ? 'maximal 14 Stationen' : 'antippen zum Übernehmen';
+}
+/* Symbolwahl */
+let pickIdx = -1;
+function openPicker(i){
+  pickIdx = i; const name = db.stations[i]; const cur = icoId(name);
+  $('#pkTitle').textContent = 'Symbol für „' + name + '“';
+  $('#pkGrid').innerHTML = `<button type="button" class="ex${cur===''?' cur':''}" data-ic=""><div class="ic">${icById('')}</div>Allgemein</button>` +
+    CATS.map(([k,t])=>EX.filter(e=>e.c===k).map(e=>`<button type="button" class="ex${cur===e.id?' cur':''}" data-ic="${e.id}"><div class="ic">${icById(e.id)}</div>${esc(e.n)}</button>`).join('')).join('');
+  $('#picker').hidden = false;
+}
+function closePicker(){ $('#picker').hidden = true; pickIdx = -1; }
+/* Detailansicht im Lauf */
+function openDetail(i){
+  const name = db.stations[i], gi = run.assign[i];
+  const col = gi >= 0 ? COLORS[gi % COLORS.length] : {n:'frei', c:'#4A4A52'};
+  const cue = cueFor(name);
+  const box = $('#dtBox'); box.style.setProperty('--gc', col.c);
+  box.innerHTML = `<div class="dt-ic">${icon(name)}</div>
+    <div class="dt-st">STATION ${i+1}</div><div class="dt-nm">${esc(name)}</div>
+    <div class="dt-gr">${col.n}</div><div class="dt-mem">${gi >= 0 ? esc(db.groups[gi].join(', ')) : 'Diese Station bleibt in dieser Runde frei.'}</div>
+    ${cue ? `<p class="dt-cue">${esc(cue)}</p>` : '<p class="dt-cue" style="color:#8E8E96">Eigene Station</p>'}
+    <button class="cb dt-close" type="button" id="dtClose">Schließen</button>`;
+  $('#detail').hidden = false;
+}
+function closeDetail(){ const d = $('#detail'); if (d) d.hidden = true; }
+function renderPlanNote(){
+  const ns = db.stations.length, ng = db.groups.length;
+  const total = ns * db.rounds * (db.work + db.change);
+  const mm = Math.floor(total/60), ss = total % 60;
+  let t = ns && ng ? `${ng} Gruppen, ${ns} Stationen, ${db.rounds} ${db.rounds===1?'Durchgang':'Durchgänge'}. Gesamtdauer etwa ${mm}:${String(ss).padStart(2,'0')} min.` : '';
+  if (ns && ng && ng > ns) t += ' Es gibt mehr Gruppen als Stationen, einige müssten warten.';
+  if (ns && ng && ng < ns) t += ' Einige Stationen bleiben frei, das ist in Ordnung.';
+  $('#planNote').textContent = t;
+}
+
+/* ---------- Lauf ---------- */
+let run = {active:false, phase:'work', step:0, left:0, endAt:0, paused:true, assign:[], done:false};
+let tick = null;
+
+function startRun(){
+  const err = $('#startErr');
+  if (!db.groups.length){ err.textContent = 'Es fehlen die Gruppen.'; err.hidden = false; return; }
+  if (db.stations.length < 2){ err.textContent = 'Es braucht mindestens zwei Stationen.'; err.hidden = false; return; }
+  err.hidden = true;
+  unlockAudio();
+  run = {active:true, phase:'work', step:0, left:db.work, endAt:0, paused:true, done:false,
+         assign:db.stations.map((_, i)=> i < db.groups.length ? i : -1)};
+  document.body.classList.add('running');
+  keepAwake(true);
+  renderRun(); sizeRing();
+}
+function endRun(){
+  closeDetail();
+  run.active = false; run.paused = true;
+  if (tick){ clearInterval(tick); tick = null; }
+  document.body.classList.remove('running');
+  keepAwake(false);
+}
+function phaseLen(){ return run.phase === 'work' ? db.work : db.change; }
+function totalSteps(){ return db.stations.length * db.rounds; }
+
+function play(){
+  if (run.done) return;
+  unlockAudio();
+  run.paused = false;
+  run.endAt = Date.now() + run.left * 1000;
+  if (!tick) tick = setInterval(step, 200);
+  renderRun();
+}
+function pause(){
+  run.paused = true;
+  run.left = Math.max(0, Math.round((run.endAt - Date.now())/1000));
+  if (tick){ clearInterval(tick); tick = null; }
+  renderRun();
+}
+let lastBeepSec = -1;
+function step(){
+  if (run.paused || run.done) return;
+  const rem = (run.endAt - Date.now())/1000;
+  const sec = Math.ceil(rem);
+  if (sec !== lastBeepSec && sec >= 1 && sec <= 3){ lastBeepSec = sec; beep(880, .09, .5); }
+  if (rem <= 0){ lastBeepSec = -1; advance(true); }
+  else { run.left = Math.max(0, sec); renderTimer(); }
+}
+function advance(auto){
+  closeDetail();
+  if (run.phase === 'work'){
+    run.step++;
+    if (run.step >= totalSteps()){
+      run.done = true; run.paused = true;
+      if (tick){ clearInterval(tick); tick = null; }
+      beep(523,.18,.5); setTimeout(()=>beep(659,.18,.5),200); setTimeout(()=>beep(784,.34,.5),400);
+      say('Fertig');
+      renderRun(); return;
+    }
+    rotate();
+    run.phase = 'change'; run.left = db.change;
+    if (auto){ beep(440,.5,.55); say('Wechsel'); }
+  } else {
+    run.phase = 'work'; run.left = db.work;
+    if (auto){
+      beep(1046,.3,.55);
+      const st = db.stations[run.assign.findIndex(x=>x===0)];
+      say('Los');
+    }
+  }
+  if (!run.paused) run.endAt = Date.now() + run.left * 1000;
+  renderRun();
+}
+function back(){
+  closeDetail();
+  if (run.done){ run.done = false; run.step = Math.max(0, totalSteps() - 1); run.phase = 'work'; }
+  else if (run.phase === 'change'){ unrotate(); run.step = Math.max(0, run.step-1); run.phase = 'work'; }
+  else { if (run.step > 0){ run.step--; unrotate(); } run.phase = 'work'; }
+  run.done = false; run.left = phaseLen();
+  if (!run.paused) run.endAt = Date.now() + run.left * 1000;
+  renderRun();
+}
+function rotate(){
+  const n = run.assign.length, na = new Array(n).fill(-1);
+  for (let i = 0; i < n; i++) na[(i+1) % n] = run.assign[i];
+  run.assign = na;
+}
+function unrotate(){
+  const n = run.assign.length, na = new Array(n).fill(-1);
+  for (let i = 0; i < n; i++) na[i] = run.assign[(i+1) % n];
+  run.assign = na;
+}
+
+/* ---------- Lauf zeichnen ---------- */
+function fmt(s){ const m = Math.floor(s/60); return m ? m + ':' + String(s%60).padStart(2,'0') : String(s); }
+function sizeRing(){
+  if (!run.active) return;
+  const stage = $('#stage');
+  const W = stage.clientWidth, H = stage.clientHeight;
+  const n = db.stations.length;
+  const listMode = W < 620 || H < 380 || n > 10;
+  stage.dataset.mode = listMode ? 'list' : 'ring';
+  if (listMode){ renderList(W, H); return; }
+  const aw = Math.max(300, W - 20), ah = Math.max(300, H - 16);
+  // größte Kartenbreite ohne Überlappung, Uhr in der Mitte bleibt groß genug
+  let cw, ch, rx, ry, cr;
+  const minCr = Math.min(aw, ah) * 0.19;
+  for (cw = Math.min(320, aw * 0.36); cw >= 108; cw -= 4){
+    ch = Math.max(84, Math.min(cw * 0.6, ah * 0.24));
+    rx = (aw - cw) / 2; ry = (ah - ch) / 2;
+    cr = Math.min(rx - cw/2, ry - ch/2) - 12;
+    if (cr < minCr) continue;
+    let ok = true;
+    for (let i = 0; i < n && ok; i++){
+      const a1 = (-90 + i*360/n) * Math.PI/180, a2 = (-90 + ((i+1)%n)*360/n) * Math.PI/180;
+      const dx = Math.abs(rx*(Math.cos(a1)-Math.cos(a2))), dy = Math.abs(ry*(Math.sin(a1)-Math.sin(a2)));
+      if (dx < cw + 10 && dy < ch + 10) ok = false;
+    }
+    if (ok) break;
+  }
+  cw = Math.max(108, cw);
+  cr = Math.max(74, Math.min(250, cr));
+  const ring = $('#ring');
+  if (!ring) return;
+  ring.style.width = aw + 'px'; ring.style.height = ah + 'px';
+  [...ring.querySelectorAll('.node')].forEach((el, i)=>{
+    const a = (-90 + i * 360 / n) * Math.PI / 180;
+    el.style.width = cw + 'px'; el.style.height = ch + 'px';
+    el.style.left = (aw/2 + rx * Math.cos(a)) + 'px';
+    el.style.top  = (ah/2 + ry * Math.sin(a)) + 'px';
+    const ic = Math.round(Math.min(ch - 16, cw * 0.34));
+    const ni = el.querySelector('.nic'); if (ni){ ni.style.width = ni.style.height = ic + 'px'; }
+    el.style.paddingRight = (ic + 10) + 'px';
+    const tw = cw - ic - 34, sn = el.querySelector('.sname');
+    if (sn){
+      sn.style.fontSize = '15px';
+      const avail = sn.clientWidth - 2, ff = getComputedStyle(sn).fontFamily;
+      const ctx = (sizeRing._c = sizeRing._c || document.createElement('canvas').getContext('2d'));
+      let fs = 15;
+      const words = db.stations[i].split(/\s+/);
+      while (fs > 10.5){ ctx.font = '600 ' + fs + 'px ' + ff; if (Math.max(...words.map(w=>ctx.measureText(w).width)) <= avail) break; fs -= 0.5; }
+      sn.style.fontSize = fs + 'px';
+    }
+    const g = el.querySelector('.gname'); if (g) g.style.fontSize = Math.round(Math.min(cw*0.145, (cw - ic - 30) * 0.24)) + 'px';
+  });
+  const c = $('#center');
+  if (c){
+    c.style.width = c.style.height = (cr*2) + 'px';
+    const sv = c.querySelector('svg'), ci = c.querySelector('.prog');
+    sv.setAttribute('width', cr*2); sv.setAttribute('height', cr*2);
+    sv.setAttribute('viewBox', `0 0 ${cr*2} ${cr*2}`);
+    [...sv.querySelectorAll('circle')].forEach(x=>{ x.setAttribute('cx', cr); x.setAttribute('cy', cr); x.setAttribute('r', cr-7); });
+    ci.style.strokeDasharray = (2*Math.PI*(cr-7)).toFixed(1);
+    c.querySelector('.clock').style.fontSize = Math.round(cr*0.72) + 'px';
+    c.querySelector('.phase').style.fontSize = Math.round(cr*0.145) + 'px';
+    c.querySelector('.meta').style.fontSize = Math.round(cr*0.12) + 'px';
+  }
+  renderTimer();
+}
+function nodeHtml(i){
+  const gi = run.assign[i];
+  const col = gi >= 0 ? COLORS[gi % COLORS.length] : {n:'frei', c:'#4A4A52'};
+  const mem = gi >= 0 ? db.groups[gi].join(', ') : '–';
+  return `<div class="node${gi<0?' empty':''}${run.phase==='change'?' arrive':''}" data-i="${i}" style="border-left-color:${col.c}">
+      <div class="nic">${icon(db.stations[i])}</div>
+      <div class="snum">STATION ${i+1}</div>
+      <div class="sname">${esc(db.stations[i])}</div>
+      <div class="gname" style="color:${col.c}">${col.n}</div>
+      <div class="mem">${esc(mem)}</div>
+    </div>`;
+}
+function renderRun(){
+  if (!run.active) return;
+  const n = db.stations.length;
+  $('#rTitle').textContent = run.done ? 'Fertig' : 'Station ' + (run.step % n + 1) + ' von ' + n;
+  $('#rSub').textContent = run.done
+    ? db.stations.length + ' Stationen, ' + db.rounds + ' Durchgänge geschafft'
+    : 'Durchgang ' + (Math.floor(run.step / n) + 1) + ' von ' + db.rounds;
+  $('#sndBtn').classList.toggle('on', !!db.sound);
+  $('#goBtn').textContent = run.done ? 'Nochmal' : run.paused ? 'Start' : 'Pause';
+  $('#prevBtn').disabled = (!run.done && run.step === 0 && run.phase === 'work');
+  const stage = $('#stage');
+  if (!$('#ring') || stage.dataset.built !== String(n) + '|' + stage.dataset.mode){
+    stage.innerHTML = `<div class="ring" id="ring">${db.stations.map((_, i)=>nodeHtml(i)).join('')}
+      <div class="center work" id="center">
+        <svg><circle fill="none" stroke="#2E2E36" stroke-width="7"/><circle class="prog" fill="none" stroke="#D7191C" stroke-width="7" stroke-linecap="round"/></svg>
+        <div class="phase">Belastung</div><div class="clock">0</div><div class="meta">&nbsp;</div>
+      </div></div>`;
+    stage.dataset.built = String(n) + '|ring';
+    sizeRing(); return;
+  }
+  if (stage.dataset.mode === 'list'){ renderList(stage.clientWidth, stage.clientHeight); return; }
+  [...$('#ring').querySelectorAll('.node')].forEach((el, i)=>{
+    const gi = run.assign[i];
+    const col = gi >= 0 ? COLORS[gi % COLORS.length] : {n:'frei', c:'#4A4A52'};
+    el.className = 'node' + (gi<0?' empty':'') + (run.phase==='change' && !run.done ? ' arrive' : '');
+    el.style.borderLeftColor = col.c;
+    const g = el.querySelector('.gname'); g.textContent = col.n; g.style.color = col.c;
+    el.querySelector('.mem').textContent = gi >= 0 ? db.groups[gi].join(', ') : '–';
+  });
+  renderTimer();
+}
+function renderList(W, H){
+  const stage = $('#stage');
+  const n = db.stations.length;
+  const two = W >= 860 && n > 6;
+  stage.innerHTML = `<div class="listwrap">
+    <div class="minitimer"><span class="p" id="lp">Belastung</span><span class="c" id="lc">0</span><span class="m" id="lm">&nbsp;</span></div>
+    <div class="listmode${two ? ' two' : ''}">${db.stations.map((_, i)=>{
+      const gi = run.assign[i], col = gi >= 0 ? COLORS[gi % COLORS.length] : {n:'frei', c:'#4A4A52'};
+      return `<div class="lrow" data-i="${i}" style="--gc:${col.c}"><span class="ln">${i+1}</span><span class="lic">${icon(db.stations[i])}</span>
+        <span class="lt"><b>${esc(db.stations[i])}</b><span>${gi>=0?esc(db.groups[gi].join(', ')):'frei'}</span></span>
+        <span class="lg" style="color:${col.c}">${col.n}</span></div>`;
+    }).join('')}</div></div>`;
+  stage.dataset.built = String(n) + '|list';
+  const box = stage.querySelector('.listmode');
+  if (box){
+    const rows = two ? Math.ceil(n/2) : n;
+    const measure = ()=>{
+      const rs = box.querySelectorAll('.lrow');
+      return rs.length ? rs[rs.length-1].getBoundingClientRect().bottom - rs[0].getBoundingClientRect().top : 0;
+    };
+    const apply = g =>{
+      [...box.querySelectorAll('.lrow')].forEach(r=>{ r.style.padding = (9+g) + 'px 11px'; });
+      box.style.setProperty('--lf', (1 + Math.min(0.5, g/44)).toFixed(2));
+    };
+    let g = Math.max(0, Math.min(22, Math.floor((box.clientHeight - measure() - 8) / rows / 2)));
+    while (g > 0){ apply(g); if (measure() <= box.clientHeight - 6) break; g -= 2; }
+    if (g <= 0) apply(0);
+  }
+  renderTimer();
+}
+function renderTimer(){
+  const left = run.paused || run.done ? run.left : Math.max(0, Math.ceil((run.endAt - Date.now())/1000));
+  const c = $('#center');
+  if (c){
+    c.className = 'center ' + (run.done ? 'done' : run.phase);
+    c.querySelector('.phase').textContent = run.done ? 'Zirkel' : run.phase === 'work' ? 'Belastung' : 'Wechsel';
+    c.querySelector('.clock').textContent = run.done ? 'fertig' : fmt(left);
+    c.querySelector('.meta').textContent = run.done ? '' : (run.paused ? 'pausiert' : 'noch ' + (totalSteps() - run.step) + ' Stationen');
+    const circ = c.querySelector('.prog');
+    const len = parseFloat(circ.style.strokeDasharray) || 0;
+    const frac = phaseLen() ? left / phaseLen() : 0;
+    circ.style.strokeDashoffset = (len * (1 - frac)).toFixed(1);
+    circ.setAttribute('stroke', run.done ? '#5ED17C' : run.phase === 'work' ? '#D7191C' : '#F2C200');
+  }
+  const lm = $('#lm');
+  if (lm) lm.textContent = run.done ? '' : (run.paused ? 'pausiert' : 'noch ' + (totalSteps() - run.step) + ' Stationen');
+  const lc = $('#lc'), lp = $('#lp');
+  if (lc){ lc.textContent = run.done ? 'fertig' : fmt(left); lc.style.color = run.phase === 'change' ? '#F2C200' : '#fff'; }
+  if (lp) lp.textContent = run.done ? 'Zirkel' : run.phase === 'work' ? 'Belastung' : 'Wechsel';
+}
+
+[...document.querySelectorAll('nav.jump a:not(.ext)')].forEach(a=>{
+  a.addEventListener('click', e=>{
+    const t = document.getElementById(a.getAttribute('href').slice(1));
+    if (!t) return;
+    e.preventDefault();
+    window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 8, behavior: 'smooth' });
+  });
+});
+
+/* ---------- Einrichtung zeichnen ---------- */
+function renderWarn(){
+  const el = $('#storageWarn'); if (!el) return;
+  el.hidden = storageOk;
+  el.textContent = 'Speichern ist hier nicht möglich, zum Beispiel im privaten Modus. Die Einrichtung geht beim Schließen verloren.';
+}
+function flash(el, t){ if (!el) return; el.textContent = t; clearTimeout(el._t); el._t = setTimeout(()=>{ el.textContent = ''; }, 6000); }
+function renderSetup(){
+  $('#names').value = db.names;
+  $('#gs2').checked = db.size === 2; $('#gs3').checked = db.size === 3;
+  $('#tWork').value = db.work; $('#tChange').value = db.change; $('#tRounds').value = db.rounds;
+  $('#optSound').checked = db.sound; $('#optVoice').checked = db.voice;
+  $('#presets').innerHTML = PRESETS.map(([w,c,l])=>`<button type="button" class="chip${db.work===w&&db.change===c?' on':''}" data-pre="${w}:${c}">${l} s</button>`).join('');
+  renderGroups(); renderStations(); renderWarn();
+}
+
+/* ---------- Ereignisse ---------- */
+on('#mkGroups','click', ()=>buildGroups(true));
+on('#shuffle','click', ()=>buildGroups(true));
+on('#names','input', e=>{ db.names = e.target.value; save(); });
+document.querySelectorAll('input[name="gs"]').forEach(r=>r.addEventListener('change', e=>{ db.size = +e.target.value; save(); buildGroups(false); }));
+on('#grpOut','click', e=>{
+  const li = e.target.closest('[data-n]');
+  if (li){
+    const [gi, ni] = li.dataset.n.split(':').map(Number);
+    selName = (selName && selName.gi===gi && selName.ni===ni) ? null : {gi, ni};
+    renderGroups(); return;
+  }
+  const box = e.target.closest('[data-g]');
+  if (box && selName){
+    const to = +box.dataset.g;
+    if (to !== selName.gi){
+      const nm = db.groups[selName.gi].splice(selName.ni, 1)[0];
+      db.groups[to].push(nm);
+      db.groups = db.groups.filter(g=>g.length);
+      save();
+    }
+    selName = null; renderGroups(); renderPlanNote();
+  }
+});
+on('#stAdd','click', ()=>{
+  const v = $('#stNew').value.trim(); if (!v) return;
+  if (db.stations.length >= 14) return;
+  db.stations.push(v.slice(0,48)); $('#stNew').value = ''; save(); renderStations();
+});
+on('#stNew','keydown', e=>{ if (e.key === 'Enter'){ e.preventDefault(); $('#stAdd').click(); } });
+on('#libCats','click', e=>{ const b = e.target.closest('[data-cat]'); if (!b) return; libCat = b.dataset.cat; renderLib(); });
+on('#libSearch','input', e=>{ libQ = e.target.value; renderLib(); });
+on('#pkClose','click', closePicker);
+on('#picker','click', e=>{
+  if (e.target.id === 'picker'){ closePicker(); return; }
+  const b = e.target.closest('[data-ic]'); if (!b || pickIdx < 0) return;
+  const name = db.stations[pickIdx], id = b.dataset.ic, def = exFor(name);
+  if (!id || (def && def.id === id)) delete db.icons[name]; else db.icons[name] = id;
+  if (!id && def) db.icons[name] = '-';   // bewusst allgemeines Symbol
+  save(); closePicker(); renderStations();
+});
+on('#stage','click', e=>{ const n = e.target.closest('[data-i]'); if (n) openDetail(+n.dataset.i); });
+on('#detail','click', e=>{ if (e.target.id === 'detail' || e.target.id === 'dtClose') closeDetail(); });
+document.addEventListener('keydown', e=>{ if (e.key === 'Escape'){ closeDetail(); closePicker(); } });
+on('#stLib','click', e=>{
+  const b = e.target.closest('[data-lib]'); if (!b) return;
+  const v = b.dataset.lib, i = db.stations.indexOf(v);
+  if (i >= 0) db.stations.splice(i,1); else if (db.stations.length < 14) db.stations.push(v);
+  save(); renderStations();
+});
+on('#stList','click', e=>{
+  const b = e.target.closest('button'); if (!b) return;
+  const d = b.dataset;
+  if (d.pick !== undefined){ openPicker(+d.pick); return; }
+  if (d.up !== undefined){ const i = +d.up; if (i>0) db.stations.splice(i-1,0,db.stations.splice(i,1)[0]); }
+  else if (d.down !== undefined){ const i = +d.down; if (i<db.stations.length-1) db.stations.splice(i+1,0,db.stations.splice(i,1)[0]); }
+  else if (d.del !== undefined){ const nm = db.stations.splice(+d.del,1)[0]; if (!db.stations.includes(nm)) delete db.icons[nm]; }
+  else return;
+  save(); renderStations();
+});
+['tWork','tChange','tRounds'].forEach(id=>on('#'+id,'change', e=>{
+  const v = parseInt(e.target.value,10) || 0;
+  if (id==='tWork') db.work = clamp(v,10,600);
+  if (id==='tChange') db.change = clamp(v,5,300);
+  if (id==='tRounds') db.rounds = clamp(v,1,10);
+  e.target.value = id==='tWork'?db.work:id==='tChange'?db.change:db.rounds;
+  save(); renderPlanNote(); $('#presets').innerHTML = PRESETS.map(([w,c,l])=>`<button type="button" class="chip${db.work===w&&db.change===c?' on':''}" data-pre="${w}:${c}">${l} s</button>`).join('');
+}));
+on('#presets','click', e=>{
+  const b = e.target.closest('[data-pre]'); if (!b) return;
+  const [w,c] = b.dataset.pre.split(':').map(Number);
+  db.work = w; db.change = c; save(); renderSetup();
+});
+on('#optSound','change', e=>{ db.sound = e.target.checked; save(); if (db.sound){ unlockAudio(); beep(880,.1,.4); } });
+on('#optVoice','change', e=>{ db.voice = e.target.checked; save(); if (db.voice) say('Wechsel'); });
+on('#startBtn','click', startRun);
+on('#backBtn','click', ()=>{ if (!run.paused && !run.done && !confirm('Zirkel beenden?')) return; endRun(); });
+on('#goBtn','click', ()=>{
+  if (run.done){ startRun(); return; }
+  run.paused ? play() : pause();
+});
+on('#nextBtn','click', ()=>{ unlockAudio(); advance(false); });
+on('#prevBtn','click', ()=>{ unlockAudio(); back(); });
+on('#sndBtn','click', ()=>{ db.sound = !db.sound; save(); if (db.sound){ unlockAudio(); beep(880,.1,.4); } renderRun(); });
+window.addEventListener('resize', ()=>{ if (run.active){ const s=$('#stage'); s.dataset.built=''; renderRun(); } });
+window.addEventListener('orientationchange', ()=>setTimeout(()=>{ if (run.active){ const s=$('#stage'); s.dataset.built=''; renderRun(); } }, 300));
+
+window.DTVZ = {get db(){ return db; }, get run(){ return run; }, startRun, play, pause, advance, back, buildGroups};
+renderSetup();
+})();
+</script>
+</body>
+</html>
