@@ -8,6 +8,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="DTV Technik">
 <link rel="apple-touch-icon" href="dtv-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
 <title>Dürener TV 1847 Track &amp; Field – Technik</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1015,6 +1016,13 @@ setStick(); window.addEventListener('resize', setStick);
 window.addEventListener('scroll', onScroll, {passive:true});
 onScroll();
 })();
+</script>
+<script data-sw>
+if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')){
+  navigator.serviceWorker.register('sw.js').then(function(){ return navigator.serviceWorker.ready; }).then(function(){
+    var v = document.querySelector('.ver'); if (v && !v.dataset.off){ v.dataset.off = 1; v.textContent += ' · offline verfügbar'; }
+  }).catch(function(){});
+}
 </script>
 </body>
 </html>
