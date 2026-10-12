@@ -78,7 +78,7 @@ textarea{font:500 15px var(--body);min-height:110px;resize:vertical;line-height:
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .chip{font:600 14px var(--body);border:0;background:var(--bg);color:var(--ink);border-radius:999px;padding:8px 13px;min-height:38px;cursor:pointer}
 .chip.on{background:var(--ink);color:#fff}
-.seg{display:grid;grid-template-columns:1fr 1fr;border:1.5px solid var(--ink);border-radius:6px;overflow:hidden;max-width:260px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid var(--ink);border-radius:6px;overflow:hidden;max-width:390px}
 .seg input{position:absolute;opacity:0;pointer-events:none}
 .seg label{text-align:center;padding:9px 4px;font-weight:600;cursor:pointer}
 .seg input:checked + label{background:var(--ink);color:#fff}
@@ -152,7 +152,7 @@ body.running .page{display:none}
 .node .snum{font:700 13px var(--cond);color:#8E8E96;letter-spacing:.5px;white-space:nowrap}
 .node .sname{font:600 14px var(--body);line-height:1.15;color:#E6E6EA;margin-bottom:3px;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.node .gname{font-family:var(--cond);font-weight:700;line-height:1;margin-bottom:1px}
+.node .gname{font-family:var(--cond);font-weight:700;line-height:1;margin-bottom:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .node .mem{font-size:12.5px;color:#C6C6CC;line-height:1.25;
   display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .node.empty{opacity:.45}
@@ -243,6 +243,7 @@ footer{max-width:1100px;margin:0 auto;padding:0 12px 40px;font-size:13px;color:v
     <div class="fg" style="margin-top:10px">
       <div class="f"><span>Gruppengröße</span>
         <div class="seg" role="radiogroup" aria-label="Gruppengröße">
+          <input type="radio" name="gs" id="gs1" value="1"><label for="gs1">einzeln</label>
           <input type="radio" name="gs" id="gs2" value="2"><label for="gs2">2 pro Gruppe</label>
           <input type="radio" name="gs" id="gs3" value="3"><label for="gs3">3 pro Gruppe</label>
         </div>
@@ -301,7 +302,7 @@ footer{max-width:1100px;margin:0 auto;padding:0 12px 40px;font-size:13px;color:v
   </div>
 </main>
 
-<footer>Alles bleibt auf diesem Gerät gespeichert. <span class="ver">Zirkel · Version 2026-10-11 · 77 Übungen</span></footer>
+<footer>Alles bleibt auf diesem Gerät gespeichert. <span class="ver">Zirkel · Version 2026-10-12 · 77 Übungen · Einzelstart</span></footer>
 </div>
 
 <!-- ============ LAUF ============ -->
@@ -342,7 +343,8 @@ const clamp = (v,a,b) => Math.min(b, Math.max(a, v));
 const COLORS = [
   {n:'Rot',    c:'#E8453C'}, {n:'Blau',  c:'#3B8BD4'}, {n:'Grün',   c:'#41B36B'}, {n:'Gelb', c:'#F0A830'},
   {n:'Lila',   c:'#9B6BD6'}, {n:'Türkis',c:'#3FC1C9'}, {n:'Pink',   c:'#E87EB0'}, {n:'Orange',c:'#E8743C'},
-  {n:'Hellgrün',c:'#A6CE39'},{n:'Grau',  c:'#9AA0A6'}
+  {n:'Hellgrün',c:'#A6CE39'},{n:'Grau',  c:'#9AA0A6'}, {n:'Braun', c:'#B07A45'}, {n:'Marine',c:'#5A78D6'},
+  {n:'Oliv',   c:'#9AA836'}, {n:'Weinrot',c:'#C2416A'}
 ];
 /* ===== Symbol-Engine: Strichfiguren per Vorwärtskinematik =====
    Winkel absolut: 0 = nach unten, 90 = nach vorn (rechts), 180 = nach oben, -90 = nach hinten (links).
@@ -646,7 +648,7 @@ try { localStorage.setItem('z-t','1'); localStorage.removeItem('z-t'); } catch(e
 function normalize(o){
   o = (o && typeof o === 'object') ? o : {};
   o.names = String(o.names || '');
-  o.size = (o.size === 3) ? 3 : 2;
+  o.size = [1,2,3].includes(o.size) ? o.size : 2;
   o.groups = Array.isArray(o.groups) ? o.groups.map(g=>Array.isArray(g) ? g.map(x=>String(x).slice(0,24)) : []).filter(g=>g.length) : [];
   o.stations = Array.isArray(o.stations) ? o.stations.map(x=>String(x).slice(0,48)).filter(Boolean).slice(0,14) : [];
   const ic = {};
@@ -722,7 +724,7 @@ function buildGroups(shuffleIt){
   arr.forEach((name, i)=> g[i % g.length].push(name));
   db.groups = g.filter(x=>x.length);
   save(); renderGroups(); renderPlanNote();
-  flash($('#namesMsg'), `${list.length} Teilnehmer in ${db.groups.length} Gruppen.`);
+  flash($('#namesMsg'), db.groups.every(x=>x.length===1) ? `${list.length} Teilnehmer, jeder läuft einzeln.` : `${list.length} Teilnehmer in ${db.groups.length} Gruppen.`);
 }
 let selName = null;
 function renderGroups(){
@@ -783,7 +785,7 @@ function openDetail(i){
   const box = $('#dtBox'); box.style.setProperty('--gc', col.c);
   box.innerHTML = `<div class="dt-ic">${icon(name)}</div>
     <div class="dt-st">STATION ${i+1}</div><div class="dt-nm">${esc(name)}</div>
-    <div class="dt-gr">${col.n}</div><div class="dt-mem">${gi >= 0 ? esc(db.groups[gi].join(', ')) : 'Diese Station bleibt in dieser Runde frei.'}</div>
+    <div class="dt-gr">${esc(gLabel(gi).big)}</div><div class="dt-mem">${gi >= 0 ? esc(gLabel(gi).small) : 'Diese Station bleibt in dieser Runde frei.'}</div>
     ${cue ? `<p class="dt-cue">${esc(cue)}</p>` : '<p class="dt-cue" style="color:#8E8E96">Eigene Station</p>'}
     <button class="cb dt-close" type="button" id="dtClose">Schließen</button>`;
   $('#detail').hidden = false;
@@ -793,8 +795,9 @@ function renderPlanNote(){
   const ns = db.stations.length, ng = db.groups.length;
   const total = ns * db.rounds * (db.work + db.change);
   const mm = Math.floor(total/60), ss = total % 60;
-  let t = ns && ng ? `${ng} Gruppen, ${ns} Stationen, ${db.rounds} ${db.rounds===1?'Durchgang':'Durchgänge'}. Gesamtdauer etwa ${mm}:${String(ss).padStart(2,'0')} min.` : '';
-  if (ns && ng && ng > ns) t += ' Es gibt mehr Gruppen als Stationen, einige müssten warten.';
+  const solo = ng && db.groups.every(x=>x.length===1);
+  let t = ns && ng ? `${ng} ${solo ? 'Teilnehmer einzeln' : 'Gruppen'}, ${ns} Stationen, ${db.rounds} ${db.rounds===1?'Durchgang':'Durchgänge'}. Gesamtdauer etwa ${mm}:${String(ss).padStart(2,'0')} min.` : '';
+  if (ns && ng && ng > ns) t += ` Es fehlen ${ng-ns} Stationen: ${solo ? 'Jeder' : 'Jede Gruppe'} braucht eine eigene Station.`;
   if (ns && ng && ng < ns) t += ' Einige Stationen bleiben frei, das ist in Ordnung.';
   $('#planNote').textContent = t;
 }
@@ -807,6 +810,9 @@ function startRun(){
   const err = $('#startErr');
   if (!db.groups.length){ err.textContent = 'Es fehlen die Gruppen.'; err.hidden = false; return; }
   if (db.stations.length < 2){ err.textContent = 'Es braucht mindestens zwei Stationen.'; err.hidden = false; return; }
+  if (db.groups.length > db.stations.length){
+    err.textContent = `${db.groups.length} ${db.size===1?'Teilnehmer':'Gruppen'}, aber nur ${db.stations.length} Stationen. Bitte mehr Stationen wählen` + (db.size < 3 ? ' oder größere Gruppen bilden.' : '.');
+    err.hidden = false; return; }
   err.hidden = true;
   unlockAudio();
   run = {active:true, phase:'work', step:0, left:db.work, endAt:0, paused:true, done:false,
@@ -943,7 +949,7 @@ function sizeRing(){
       while (fs > 10.5){ ctx.font = '600 ' + fs + 'px ' + ff; if (Math.max(...words.map(w=>ctx.measureText(w).width)) <= avail) break; fs -= 0.5; }
       sn.style.fontSize = fs + 'px';
     }
-    const g = el.querySelector('.gname'); if (g) g.style.fontSize = Math.round(Math.min(cw*0.145, (cw - ic - 30) * 0.24)) + 'px';
+    const g = el.querySelector('.gname'); if (g){ g.dataset.max = Math.round(Math.min(cw*0.145, (cw - ic - 30) * 0.24)); fitGname(el); }
   });
   const c = $('#center');
   if (c){
@@ -959,6 +965,19 @@ function sizeRing(){
   }
   renderTimer();
 }
+function fitGname(el){
+  const g = el.querySelector('.gname'); if (!g || !g.dataset.max) return;
+  let fs = +g.dataset.max; g.style.fontSize = fs + 'px';
+  const ctx = (fitGname._c = fitGname._c || document.createElement('canvas').getContext('2d'));
+  const ff = getComputedStyle(g).fontFamily, avail = g.clientWidth - 2;
+  while (fs > 13){ ctx.font = '700 ' + fs + 'px ' + ff; if (ctx.measureText(g.textContent).width <= avail) break; fs -= 1; }
+  g.style.fontSize = fs + 'px';
+}
+function gLabel(gi){
+  if (gi < 0) return {big:'frei', small:'–', c:'#4A4A52'};
+  const col = COLORS[gi % COLORS.length], g = db.groups[gi];
+  return g.length === 1 ? {big:g[0], small:col.n, c:col.c} : {big:col.n, small:g.join(', '), c:col.c};
+}
 function nodeHtml(i){
   const gi = run.assign[i];
   const col = gi >= 0 ? COLORS[gi % COLORS.length] : {n:'frei', c:'#4A4A52'};
@@ -967,8 +986,8 @@ function nodeHtml(i){
       <div class="nic">${icon(db.stations[i])}</div>
       <div class="snum">STATION ${i+1}</div>
       <div class="sname">${esc(db.stations[i])}</div>
-      <div class="gname" style="color:${col.c}">${col.n}</div>
-      <div class="mem">${esc(mem)}</div>
+      <div class="gname" style="color:${col.c}">${esc(gLabel(gi).big)}</div>
+      <div class="mem">${esc(gLabel(gi).small)}</div>
     </div>`;
 }
 function renderRun(){
@@ -997,8 +1016,9 @@ function renderRun(){
     const col = gi >= 0 ? COLORS[gi % COLORS.length] : {n:'frei', c:'#4A4A52'};
     el.className = 'node' + (gi<0?' empty':'') + (run.phase==='change' && !run.done ? ' arrive' : '');
     el.style.borderLeftColor = col.c;
-    const g = el.querySelector('.gname'); g.textContent = col.n; g.style.color = col.c;
-    el.querySelector('.mem').textContent = gi >= 0 ? db.groups[gi].join(', ') : '–';
+    const L = gLabel(gi), g = el.querySelector('.gname'); g.textContent = L.big; g.style.color = col.c;
+    el.querySelector('.mem').textContent = L.small;
+    fitGname(el);
   });
   renderTimer();
 }
@@ -1011,8 +1031,8 @@ function renderList(W, H){
     <div class="listmode${two ? ' two' : ''}">${db.stations.map((_, i)=>{
       const gi = run.assign[i], col = gi >= 0 ? COLORS[gi % COLORS.length] : {n:'frei', c:'#4A4A52'};
       return `<div class="lrow" data-i="${i}" style="--gc:${col.c}"><span class="ln">${i+1}</span><span class="lic">${icon(db.stations[i])}</span>
-        <span class="lt"><b>${esc(db.stations[i])}</b><span>${gi>=0?esc(db.groups[gi].join(', ')):'frei'}</span></span>
-        <span class="lg" style="color:${col.c}">${col.n}</span></div>`;
+        <span class="lt"><b>${esc(db.stations[i])}</b><span>${esc(gLabel(gi).small === '–' ? 'frei' : gLabel(gi).small)}</span></span>
+        <span class="lg" style="color:${col.c}">${esc(gLabel(gi).big)}</span></div>`;
     }).join('')}</div></div>`;
   stage.dataset.built = String(n) + '|list';
   const box = stage.querySelector('.listmode');
@@ -1071,7 +1091,7 @@ function renderWarn(){
 function flash(el, t){ if (!el) return; el.textContent = t; clearTimeout(el._t); el._t = setTimeout(()=>{ el.textContent = ''; }, 6000); }
 function renderSetup(){
   $('#names').value = db.names;
-  $('#gs2').checked = db.size === 2; $('#gs3').checked = db.size === 3;
+  $('#gs1').checked = db.size === 1; $('#gs2').checked = db.size === 2; $('#gs3').checked = db.size === 3;
   $('#tWork').value = db.work; $('#tChange').value = db.change; $('#tRounds').value = db.rounds;
   $('#optSound').checked = db.sound; $('#optVoice').checked = db.voice;
   $('#presets').innerHTML = PRESETS.map(([w,c,l])=>`<button type="button" class="chip${db.work===w&&db.change===c?' on':''}" data-pre="${w}:${c}">${l} s</button>`).join('');
