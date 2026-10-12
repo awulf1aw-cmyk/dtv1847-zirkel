@@ -125,6 +125,64 @@ nav.jump a.ext{background:#fff;border:1px solid var(--line)}
 .dt-cue{font-size:17px;line-height:1.45;color:#E6E6EA;margin:12px auto 16px;max-width:30em}
 .dt-close{min-width:150px}
 
+/* Kader & Anwesenheit */
+.sq .chip{min-height:40px;padding:8px 15px;font-size:15px}
+.att-head{display:flex;align-items:center;gap:8px;margin:12px 0 8px;flex-wrap:wrap}
+.att-head .sp{flex:1}
+.att-head b{font-size:15px}
+.att{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.pt{display:flex;align-items:stretch;border:1.5px solid var(--line);border-radius:10px;background:#fff;min-height:54px;overflow:hidden}
+.pt .pn{flex:1;min-width:0;border:0;background:none;text-align:left;padding:7px 10px;font:600 15.5px var(--body);color:var(--muted);cursor:pointer;line-height:1.2}
+.pt .pn small{display:block;font-weight:600;font-size:11.5px;color:var(--red-deep);margin-top:2px}
+.pt .pi,.pt .px{width:44px;border:0;border-left:1px solid var(--line);background:none;font-size:17px;cursor:pointer;color:var(--muted);flex:0 0 auto}
+.pt.on{border-color:var(--ink);background:var(--ink)}
+.pt.on .pn{color:#fff}
+.pt.on .pn small{color:#FFC94D}
+.pt.on .pi,.pt.on .px{color:#fff;border-left-color:#4A4A4A}
+.pt.inj .pi{color:#FFC94D}
+.pt.guest .pn::after{content:' · Gast';font-weight:400;font-size:12px;opacity:.7}
+.guest{display:flex;gap:8px;margin-top:10px}
+.guest input{flex:1}
+.reg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:6px 0 12px}
+.reg .chip{min-height:48px;font-size:15px;border-radius:10px}
+.grp li .ib{font-style:normal;font-size:11.5px;font-weight:700;color:var(--red-deep);background:#FFF1D6;border-radius:999px;padding:1px 7px}
+.stlist .alt-btn{position:relative}
+.stlist .alt-btn.has{color:var(--red-deep);border-color:var(--red)}
+.altrow{display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--line)}
+.altrow:first-of-type{border-top:0}
+.altrow .rl{width:118px;font-weight:700;flex:0 0 auto}
+.altrow .ai{width:52px;height:52px;flex:0 0 auto;color:var(--ink)}
+.altrow .an{flex:1;min-width:0}
+.altrow .an small{display:block;color:var(--muted);font-size:12.5px}
+.altrow .an.none{color:var(--muted)}
+.ex.dim{opacity:.38}
+.node .alt{font-size:12px;font-weight:600;color:#F2C200;line-height:1.2;margin-top:2px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.lrow .la{display:block;font-size:calc(12.5px * var(--lf));font-weight:600;color:#F2C200}
+.dt-alts{text-align:left;margin:4px 0 14px;border-top:1px solid #3A3A40;padding-top:10px}
+.dt-alts h4{margin:0 0 6px;font:700 15px var(--cond);letter-spacing:.6px;color:#F2C200}
+.dt-alt{display:flex;gap:12px;align-items:center;padding:8px 0}
+.dt-alt .i{width:84px;height:84px;flex:0 0 auto;color:#F2F2F4}
+.dt-alt b{display:block;font-size:17px}
+.dt-alt span{display:block;font-size:14px;color:#C6C6CC;line-height:1.35}
+.dt-alt em{font-style:normal;color:#F2C200;font-weight:700;font-size:13px}
+.dt-safe{font-size:12.5px;color:#8E8E96;margin:2px 0 12px}
+
+/* Musik / Spotify */
+.sp-state{display:flex;align-items:center;gap:8px;font-size:14.5px;margin:6px 0 0}
+.sp-dot{width:11px;height:11px;border-radius:50%;background:#B9B9B6;flex:0 0 auto}
+.sp-dot.ok{background:#1DB954}.sp-dot.err{background:var(--red)}
+details.sp{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+details.sp summary{font-weight:700;cursor:pointer;padding:6px 0}
+details.sp ol{margin:6px 0 10px;padding-left:20px;font-size:14.5px;line-height:1.5}
+details.sp li{margin:4px 0}
+.uri{display:flex;gap:8px;align-items:center;margin:6px 0 10px}
+.uri code{flex:1;min-width:0;background:var(--bg);border-radius:6px;padding:9px 10px;font-size:13.5px;overflow-wrap:anywhere}
+#spDevBox[hidden]{display:none}
+.tb.mus{font-size:17px}
+.tb.mus.on{background:#1DB954;border-color:#1DB954}
+.spst{font-size:12.5px;color:#A9A9AD;max-width:38vw;text-align:right;line-height:1.25}
+.spst.err{color:#F2C200}
+
 /* Stationen */
 .stlist{margin:0;padding:0;list-style:none}
 .stlist li{display:flex;align-items:center;gap:9px;padding:8px 0;border-top:1px solid var(--line)}
@@ -228,6 +286,7 @@ footer{max-width:1100px;margin:0 auto;padding:0 12px 40px;font-size:13px;color:v
     <a href="#gruppen">Gruppen</a>
     <a href="#stationen">Stationen</a>
     <a href="#zeiten">Zeiten</a>
+    <a href="#musik">Musik</a>
     <a href="masse.html" class="ext">Maße</a>
     <a href="technik.html" class="ext">Technik</a>
   </nav>
@@ -237,10 +296,20 @@ footer{max-width:1100px;margin:0 auto;padding:0 12px 40px;font-size:13px;color:v
   <p class="warn" id="storageWarn" hidden></p>
 
   <h2 id="teilnehmer">Teilnehmer</h2>
-  <p class="lead">Einen Namen pro Zeile. Die Gruppen entstehen daraus automatisch.</p>
+  <p class="lead">Kader wählen und antippen, wer heute da ist. Mit ⚠ markierst du eine Schonung, sie gilt nur für heute.</p>
   <div class="block">
-    <label class="f"><span>Namen</span><textarea id="names" placeholder="Anna&#10;Ben&#10;Clara&#10;David"></textarea></label>
-    <div class="fg" style="margin-top:10px">
+    <div class="chips sq" id="sqTabs"></div>
+    <div class="att-head"><b id="attCount"></b><span class="sp"></span>
+      <button class="btn small" type="button" id="attAll">Alle da</button>
+      <button class="btn small" type="button" id="attNone">Keiner</button></div>
+    <div class="att" id="attList"></div>
+    <div class="guest"><input type="text" id="guestNew" placeholder="Gast nur für heute" autocomplete="off"><button class="btn small" type="button" id="guestAdd">Gast dazu</button></div>
+    <details class="sp" id="sqEdit">
+      <summary id="sqEditSum">Kader bearbeiten</summary>
+      <label class="f"><span>Namen im Kader, einer pro Zeile</span><textarea id="names" placeholder="Anna&#10;Ben&#10;Clara&#10;David"></textarea></label>
+      <p class="note">Wird sofort gespeichert. Gespeichert werden nur Namen, Schonungen nie dauerhaft.</p>
+    </details>
+    <div class="fg" style="margin-top:14px">
       <div class="f"><span>Gruppengröße</span>
         <div class="seg" role="radiogroup" aria-label="Gruppengröße">
           <input type="radio" name="gs" id="gs1" value="1"><label for="gs1">einzeln</label>
@@ -288,6 +357,44 @@ footer{max-width:1100px;margin:0 auto;padding:0 12px 40px;font-size:13px;color:v
     <p class="note" id="planNote"></p>
   </div>
 
+  <h2 id="musik">Musik</h2>
+  <p class="lead">Spotify spielt während der Belastung und pausiert beim Wechsel. Braucht Spotify Premium und Internet.</p>
+  <div class="block">
+    <label class="chk"><input type="checkbox" id="spOn"> Spotify im Zirkel steuern</label>
+    <div class="sp-state"><span class="sp-dot" id="spDot"></span><span id="spState">Nicht verbunden.</span></div>
+    <div id="spDevBox" hidden>
+      <label class="f" style="margin-top:10px"><span>Abspielgerät</span><select id="spDev"></select></label>
+      <div class="btns">
+        <button class="btn small" type="button" id="spRefresh">Geräte suchen</button>
+        <button class="btn small" type="button" id="spTestPlay">▶ Test</button>
+        <button class="btn small" type="button" id="spTestPause">❚❚ Test</button>
+      </div>
+      <p class="note">Das Gerät erscheint erst, wenn Spotify darauf geöffnet ist. Am einfachsten: In Spotify die Playlist starten, gleich wieder pausieren, dann hier „Geräte suchen“.</p>
+    </div>
+    <details class="sp" id="spSetup">
+      <summary>Einrichtung (einmalig)</summary>
+      <ol>
+        <li>Am Computer oder iPad <b>developer.spotify.com/dashboard</b> öffnen und mit dem Spotify-Premium-Konto anmelden.</li>
+        <li><b>Create app</b>: Name z.&nbsp;B. „DTV Zirkel“, Beschreibung beliebig.</li>
+        <li>Bei <b>Redirect URIs</b> genau diese Adresse eintragen und auf <b>Add</b> tippen:
+          <div class="uri"><code id="spUri"></code><button class="btn small" type="button" id="spCopyUri">Kopieren</button></div></li>
+        <li>Bei „Which API/SDKs are you planning to use?“ <b>Web API</b> ankreuzen, Bedingungen bestätigen, <b>Save</b>.</li>
+        <li>In der App auf <b>Settings</b>, die <b>Client ID</b> kopieren und hier einfügen:</li>
+      </ol>
+      <label class="f"><span>Client ID</span><input type="text" id="spClient" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="32 Zeichen, z. B. 3f9a…"></label>
+      <div class="btns">
+        <button class="btn primary small" type="button" id="spLogin">Mit Spotify verbinden</button>
+        <button class="btn small danger" type="button" id="spLogout">Trennen</button>
+      </div>
+      <p class="note">Weitere Trainer mit eigenem Spotify-Konto trägst du im Dashboard unter <b>User Management</b> ein (Name und Spotify-E-Mail, höchstens 5 Personen).</p>
+      <p class="note"><b>Verbindung übertragen:</b> Öffnet sich die Spotify-Anmeldung in einem Browserfenster statt in der App vom Home-Bildschirm, dort verbinden, „Code kopieren“ tippen und den Code in der App einfügen. Danach nur noch an einer Stelle nutzen.</p>
+      <div class="btns">
+        <button class="btn small" type="button" id="spCodeCopy">Code kopieren</button>
+        <button class="btn small" type="button" id="spCodePaste">Code einfügen</button>
+      </div>
+    </details>
+  </div>
+
   <div class="btns" style="margin:18px 0 0">
     <button class="btn primary big" type="button" id="startBtn">Zirkel starten</button>
   </div>
@@ -302,7 +409,7 @@ footer{max-width:1100px;margin:0 auto;padding:0 12px 40px;font-size:13px;color:v
   </div>
 </main>
 
-<footer>Alles bleibt auf diesem Gerät gespeichert. <span class="ver">Zirkel · Version 2026-10-12 · 77 Übungen · Einzelstart</span></footer>
+<footer>Alles bleibt auf diesem Gerät gespeichert. <span class="ver">Zirkel · Version 2026-10-12 · Kader & Schonung</span></footer>
 </div>
 
 <!-- ============ LAUF ============ -->
@@ -314,6 +421,8 @@ footer{max-width:1100px;margin:0 auto;padding:0 12px 40px;font-size:13px;color:v
       <div class="sub" id="rSub">&nbsp;</div>
     </div>
     <div class="sp"></div>
+    <div class="spst" id="spRun"></div>
+    <button class="tb mus" type="button" id="musBtn" aria-label="Spotify ein oder aus" hidden>♫</button>
     <button class="tb" type="button" id="sndBtn" aria-label="Ton ein oder aus">♪</button>
   </div>
   <div class="stage" id="stage"></div>
@@ -330,11 +439,27 @@ footer{max-width:1100px;margin:0 auto;padding:0 12px 40px;font-size:13px;color:v
     <div class="exgrid" id="pkGrid"></div>
   </div>
 </div>
+<div class="ov" id="injOv" hidden>
+  <div class="ovbox" style="max-width:520px">
+    <div class="ovhead"><h3 id="injTitle">Schonung heute</h3><button class="icon-btn" type="button" id="injClose" aria-label="schließen">×</button></div>
+    <div class="reg" id="injRegs"></div>
+    <p class="note">Gilt nur für heute und wird morgen automatisch gelöscht. Die App schlägt an betroffenen Stationen eine Ersatzübung vor. Das ist für leichte Beschwerden gedacht: Bei akuter Verletzung wird die Region nicht trainiert, was erlaubt ist, entscheiden Arzt oder Physio.</p>
+    <div class="btns"><button class="btn primary" type="button" id="injDone">Fertig</button><button class="btn small" type="button" id="injClear">Keine Schonung</button></div>
+  </div>
+</div>
+<div class="ov" id="altOv" hidden>
+  <div class="ovbox" style="max-width:640px">
+    <div class="ovhead"><h3 id="altTitle">Ersatzübungen</h3><button class="icon-btn" type="button" id="altClose" aria-label="schließen">×</button></div>
+    <p class="note" style="margin-top:0">Für Athleten mit Schonung. Antippen, um eine andere Übung festzulegen.</p>
+    <div id="altList"></div>
+  </div>
+</div>
 <div class="ov dark" id="detail" hidden><div class="ovbox" id="dtBox"></div></div>
 
 <script>
 (function(){
 const KEY = 'dtv-zirkel-v1';
+const SQUADS = [['U14','U14'],['U16','U16'],['U18','U18'],['MW','M/W'],['Masters','Masters']];
 const $ = s => document.querySelector(s);
 const on = (sel, ev, fn) => { const el = $(sel); if (el) el.addEventListener(ev, fn); };
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -640,6 +765,66 @@ function icon(name){ const id = icoId(name); if (ICACHE[id] == null) ICACHE[id] 
 function icById(id){ if (ICACHE[id] == null) ICACHE[id] = iconSvg(id ? EXI[id].s : GENERIC); return ICACHE[id]; }
 function cueFor(name){ const e = exFor(name); return e ? e.cue : ''; }
 let libCat = 'alle', libQ = '';
+
+/* ---------- Schonung: Regionen, Belastung, Alternativen ---------- */
+const REG = [['knie','Knie'],['fuss','Fuß/Sprunggelenk'],['huefte','Hüfte/Leiste'],['ruecken','Rücken'],['schulter','Schulter/Arm'],['hand','Hand/Handgelenk']];
+const REGS = {knie:'Knie', fuss:'Fuß', huefte:'Hüfte', ruecken:'Rücken', schulter:'Schulter', hand:'Hand'};
+/* Welche Regionen eine Übung deutlich belastet (Grundlage für den Vorschlag) */
+const LOADS = {
+ plank:['schulter'], side:['schulter'], bridge:[], crunch:['ruecken'], superman:['ruecken'], climber:['schulter','hand','huefte'],
+ twist:['ruecken'], legraise:['ruecken','huefte'], deadbug:[], birddog:['hand','knie'], vsit:['ruecken','huefte'],
+ squat:['knie'], lunge:['knie','huefte'], calf:['fuss'], wallsit:['knie'], stepup:['knie'], bulgarian:['knie','huefte'], pistol:['knie','fuss'],
+ sidelunge:['knie','huefte'], bridge1:[], nordic:['knie'], hamball:[], walllean:['fuss','huefte'],
+ pushup:['schulter','hand'], pushknee:['schulter','hand','knie'], dips:['schulter','hand'], pullup:['schulter','hand'], row:['schulter','hand'],
+ bandpull:['schulter','hand'], bear:['hand','schulter'], crab:['hand','schulter'], chestpass:['schulter','hand'],
+ boxjump:['knie','fuss'], tuckjump:['knie','fuss'], jack:['fuss','knie'], rope:['fuss'], pogo:['fuss'], hop1:['fuss','knie'], bound:['fuss','knie','huefte'],
+ take3:['fuss','knie'], linejump:['fuss'], sbj:['knie','fuss'], frog:['knie','fuss'], minihurdle:['knie','fuss'], skater:['knie','fuss','huefte'],
+ mboverhead:['schulter','ruecken'], mbrot:['ruecken','schulter'], mbscoop:['ruecken','knie'], mbback:['ruecken','knie','schulter'],
+ mbslam:['schulter','ruecken'], mbput:['schulter','hand'], throwwall:['schulter','hand'],
+ sprint20:['fuss','knie','huefte'], freesprint:['fuss','knie','huefte'], sledpush:['knie','fuss','schulter'], sledpull:['knie','fuss','huefte'],
+ reaction:['fuss','knie'], skipping:['fuss','huefte'], butt:['knie','fuss'], slalom:['knie','fuss'], shuttle:['knie','fuss','ruecken'],
+ ladder:['fuss'], sidestep:['knie','fuss'], falling:['fuss'],
+ balance:['fuss'], scale:['fuss','ruecken'], benchwalk:['fuss'], wobble:['fuss','knie'], dribble:['hand','fuss'], target:['schulter'], hoops:['fuss','knie'],
+ hurdlemob:['huefte'], hurdlewalk:['huefte','knie'], hipflexor:['knie','huefte'], worldsbest:['huefte','hand'], armcircle:['schulter'], legswing:['huefte']
+};
+/* Bevorzugte Ersatzübungen je Bereich, in dieser Reihenfolge geprüft */
+const ALTPREF = {
+ rumpf:  ['deadbug','bridge','plank','side','crunch','superman','wallsit'],
+ beine:  ['bridge','bridge1','hamball','wallsit','calf','deadbug'],
+ ober:   ['row','bandpull','plank','chestpass','wallsit','bridge','deadbug'],
+ sprung: ['chestpass','mboverhead','bridge','wallsit','plank','deadbug'],
+ wurf:   ['chestpass','throwwall','mbput','bandpull','row','bridge','wallsit','deadbug'],
+ schnell:['chestpass','mbslam','throwwall','bandpull','bridge','plank','deadbug'],
+ koord:  ['target','dribble','balance','wallsit','plank','bridge','deadbug'],
+ mobil:  ['armcircle','hipflexor','worldsbest','legswing','deadbug','bridge']
+};
+const ALTANY = ['deadbug','bridge','wallsit','balance','armcircle','plank'];
+EX.forEach(e=>{ e.L = LOADS[e.id] || []; });
+function todayStr(){ const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); }
+function injOf(name){ return (db.day.inj[name] || []).filter(r=>REGS[r]); }
+function exOfStation(name){ const id = icoId(name); return id ? EXI[id] : null; }
+/* Ersatz für eine Station bei gegebenen Regionen; null = Übung ist unkritisch */
+function altFor(station, regs){
+  if (!regs.length) return null;
+  const ex = exOfStation(station);
+  const hit = ex ? regs.filter(r=>ex.L.includes(r)) : regs.slice();
+  if (!hit.length) return null;
+  const ov = db.alts[station] || {};
+  for (const r of hit){ if (ov[r] && EXI[ov[r]]) return {ex:EXI[ov[r]], regs:hit, manual:true}; }
+  if (!ex) return {ex:null, regs:hit};
+  for (const id of (ALTPREF[ex.c] || []).concat(ALTANY)){
+    const c = EXI[id]; if (!c || c.id === ex.id) continue;
+    if (c.L.some(r=>regs.includes(r))) continue;
+    return {ex:c, regs:hit};
+  }
+  return {ex:null, regs:hit};
+}
+function altNotes(i){
+  const gi = run.assign[i]; if (gi < 0) return [];
+  return db.groups[gi].map(n=>{ const a = altFor(db.stations[i], injOf(n)); return a ? Object.assign({name:n}, a) : null; }).filter(Boolean);
+}
+function altText(i){ return altNotes(i).map(a=>'⚠ ' + a.name + ': ' + (a.ex ? a.ex.n : 'Übung prüfen')).join(' · '); }
+
 const PRESETS = [[30,15,'30 / 15'],[40,20,'40 / 20'],[45,15,'45 / 15'],[60,30,'60 / 30'],[90,30,'90 / 30']];
 
 /* ---------- Speicher ---------- */
@@ -649,6 +834,20 @@ function normalize(o){
   o = (o && typeof o === 'object') ? o : {};
   o.names = String(o.names || '');
   o.size = [1,2,3].includes(o.size) ? o.size : 2;
+  const cleanList = a => Array.isArray(a) ? [...new Set(a.map(x=>String(x).trim().slice(0,24)).filter(Boolean))].slice(0,60) : [];
+  const sq = {};
+  SQUADS.forEach(([k])=>{ sq[k] = cleanList(o.squads && o.squads[k]); });
+  let migrated = false;
+  if (!o.squads && o.names){ sq.U14 = cleanList(String(o.names).split(/[\n,;]+/)); migrated = sq.U14.length > 0; }
+  o.squads = sq;
+  o.squad = SQUADS.some(([k])=>k === o.squad) ? o.squad : (migrated ? 'U14' : 'U14');
+  const today = todayStr();
+  const d = (o.day && typeof o.day === 'object' && o.day.date === today) ? o.day : {date:today, present:migrated ? sq.U14.slice() : [], inj:{}, guests:[]};
+  d.present = cleanList(d.present); d.guests = cleanList(d.guests);
+  const inj = {}; if (d.inj && typeof d.inj === 'object') for (const k in d.inj){ if (Array.isArray(d.inj[k])) inj[String(k).slice(0,24)] = d.inj[k].filter(r=>REGS[r]); }
+  d.inj = inj; o.day = d;
+  const al = {}; if (o.alts && typeof o.alts === 'object') for (const k in o.alts){ if (o.alts[k] && typeof o.alts[k] === 'object'){ al[k] = {}; for (const r in o.alts[k]) if (REGS[r] && typeof o.alts[k][r] === 'string') al[k][r] = o.alts[k][r].slice(0,24); } }
+  o.alts = al;
   o.groups = Array.isArray(o.groups) ? o.groups.map(g=>Array.isArray(g) ? g.map(x=>String(x).slice(0,24)) : []).filter(g=>g.length) : [];
   o.stations = Array.isArray(o.stations) ? o.stations.map(x=>String(x).slice(0,48)).filter(Boolean).slice(0,14) : [];
   const ic = {};
@@ -667,6 +866,7 @@ function load(){
 }
 function save(){ if (!storageOk) return; try { localStorage.setItem(KEY, JSON.stringify(db)); } catch(e){ storageOk = false; renderWarn(); } }
 let db = load();
+save();   // u. a. damit Schonungen vom Vortag sofort aus dem Speicher verschwinden
 
 /* ---------- Ton ---------- */
 let actx = null;
@@ -713,10 +913,56 @@ document.addEventListener('visibilitychange', ()=>{
 function parseNames(txt){
   return String(txt).split(/[\n,;]+/).map(s=>s.trim()).filter(Boolean).map(s=>s.slice(0,24)).slice(0,60);
 }
+function dayCheck(){
+  const t = todayStr();
+  if (db.day.date !== t){ db.day = {date:t, present:[], inj:{}, guests:[]}; save(); return true; }
+  return false;
+}
+function presentList(){
+  const roster = db.squads[db.squad] || [];
+  return roster.filter(n=>db.day.present.includes(n)).concat(db.day.guests.filter(g=>!roster.includes(g)));
+}
+function groupsStale(){
+  const a = presentList().slice().sort().join('|'), b = db.groups.flat().slice().sort().join('|');
+  return db.groups.length > 0 && a !== b;
+}
+function renderAttendance(){
+  const roster = db.squads[db.squad] || [];
+  $('#sqTabs').innerHTML = SQUADS.map(([k,t])=>`<button type="button" class="chip${db.squad===k?' on':''}" data-sq="${k}">${t} <span style="opacity:.6">${db.squads[k].length}</span></button>`).join('');
+  const tile = (n, guest)=>{
+    const on = guest || db.day.present.includes(n), inj = injOf(n);
+    return `<div class="pt${on?' on':''}${inj.length?' inj':''}${guest?' guest':''}">
+      <button type="button" class="pn" data-p="${esc(n)}">${esc(n)}${inj.length ? `<small>⚠ ${inj.map(r=>REGS[r]).join(', ')}</small>` : ''}</button>
+      <button type="button" class="pi" data-inj="${esc(n)}" aria-label="Schonung für ${esc(n)}">⚠</button>
+      ${guest ? `<button type="button" class="px" data-gdel="${esc(n)}" aria-label="Gast entfernen">×</button>` : ''}
+    </div>`;
+  };
+  const guests = db.day.guests.filter(g=>!roster.includes(g));
+  $('#attList').innerHTML = roster.map(n=>tile(n, false)).join('') + guests.map(n=>tile(n, true)).join('') ||
+    '<div class="info" style="grid-column:1/-1">Dieser Kader ist noch leer. Unter „Kader bearbeiten“ die Namen eintragen, einen pro Zeile.</div>';
+  const pres = presentList().length, nInj = presentList().filter(n=>injOf(n).length).length;
+  $('#attCount').textContent = `${pres} von ${roster.length + guests.length} da` + (nInj ? ` · ${nInj} mit Schonung` : '');
+  $('#sqEditSum').textContent = 'Kader ' + SQUADS.find(([k])=>k===db.squad)[1] + ' bearbeiten';
+  if (document.activeElement !== $('#names')) $('#names').value = roster.join('\n');
+  if (!roster.length) $('#sqEdit').open = true;
+  if (groupsStale()) $('#namesMsg').textContent = 'Anwesenheit geändert: „Gruppen bilden“ tippen, damit die Gruppen stimmen.';
+}
+let injName = null;
+function openInj(n){
+  injName = n;
+  if (!db.day.present.includes(n) && !db.day.guests.includes(n)){ db.day.present.push(n); save(); }
+  $('#injTitle').textContent = 'Schonung heute: ' + n;
+  renderInj(); $('#injOv').hidden = false;
+}
+function renderInj(){
+  const cur = injOf(injName);
+  $('#injRegs').innerHTML = REG.map(([k,t])=>`<button type="button" class="chip${cur.includes(k)?' on':''}" data-reg="${k}">${t}</button>`).join('');
+}
+function closeInj(){ $('#injOv').hidden = true; injName = null; renderAttendance(); renderGroups(); renderStations(); }
 function buildGroups(shuffleIt){
-  const list = parseNames($('#names').value);
-  db.names = $('#names').value;
-  if (!list.length){ db.groups = []; save(); renderGroups(); flash($('#namesMsg'), 'Trage zuerst Namen ein, einen pro Zeile.'); return; }
+  dayCheck();
+  const list = presentList();
+  if (!list.length){ db.groups = []; save(); renderGroups(); flash($('#namesMsg'), db.squads[db.squad].length ? 'Tippe zuerst an, wer heute da ist.' : 'Lege zuerst unter „Kader bearbeiten“ die Namen an.'); return; }
   const arr = list.slice();
   if (shuffleIt) for (let i = arr.length-1; i > 0; i--){ const j = Math.floor(Math.random()*(i+1)); [arr[i],arr[j]] = [arr[j],arr[i]]; }
   const n = Math.max(1, Math.round(arr.length / db.size));
@@ -724,17 +970,18 @@ function buildGroups(shuffleIt){
   arr.forEach((name, i)=> g[i % g.length].push(name));
   db.groups = g.filter(x=>x.length);
   save(); renderGroups(); renderPlanNote();
+  $('#namesMsg').textContent = '';
   flash($('#namesMsg'), db.groups.every(x=>x.length===1) ? `${list.length} Teilnehmer, jeder läuft einzeln.` : `${list.length} Teilnehmer in ${db.groups.length} Gruppen.`);
 }
 let selName = null;
 function renderGroups(){
   const out = $('#grpOut');
-  if (!db.groups.length){ out.innerHTML = '<div class="info">Noch keine Gruppen. Namen eintragen und auf „Gruppen bilden“ tippen.</div>'; return; }
+  if (!db.groups.length){ out.innerHTML = '<div class="info">Noch keine Gruppen. Anwesende antippen und auf „Gruppen bilden“ tippen.</div>'; return; }
   out.innerHTML = '<div class="grps">' + db.groups.map((g, gi)=>{
     const col = COLORS[gi % COLORS.length];
     return `<div class="grp${selName && selName.gi !== gi ? ' target' : ''}" style="--gc:${col.c}" data-g="${gi}">
       <b>${col.n}</b>
-      <ul>${g.map((nm, ni)=>`<li class="${selName && selName.gi===gi && selName.ni===ni ? 'sel' : ''}" data-n="${gi}:${ni}">${esc(nm)}${selName && selName.gi===gi && selName.ni===ni ? '<em>ausgewählt</em>' : ''}</li>`).join('')}</ul>
+      <ul>${g.map((nm, ni)=>`<li class="${selName && selName.gi===gi && selName.ni===ni ? 'sel' : ''}" data-n="${gi}:${ni}"><span>${esc(nm)}${injOf(nm).length ? ' <i class="ib">⚠ ' + injOf(nm).map(r=>REGS[r]).join(', ') + '</i>' : ''}</span>${selName && selName.gi===gi && selName.ni===ni ? '<em>ausgewählt</em>' : ''}</li>`).join('')}</ul>
     </div>`;
   }).join('') + '</div>' +
   (selName ? '<p class="note">Jetzt die Zielgruppe antippen, oder den Namen noch einmal, um abzuwählen.</p>' : '');
@@ -750,6 +997,7 @@ function renderStations(){
       <span class="n">${i+1}</span>
       <button class="ic" type="button" data-pick="${i}" aria-label="Symbol ändern">${icon(s)}</button>
       <span class="nm">${esc(s)}${cue ? `<small>${esc(cue)}</small>` : ''}</span>
+      <button class="icon-btn alt-btn${db.alts[s] && Object.keys(db.alts[s]).length ? ' has' : ''}" type="button" data-alt="${i}" aria-label="Ersatzübungen" title="Ersatzübungen bei Schonung">⚠</button>
       <button class="icon-btn" type="button" data-up="${i}" aria-label="nach oben">↑</button>
       <button class="icon-btn" type="button" data-down="${i}" aria-label="nach unten">↓</button>
       <button class="icon-btn" type="button" data-del="${i}" aria-label="entfernen">×</button>
@@ -768,15 +1016,37 @@ function renderLib(){
   $('#libCount').textContent = db.stations.length >= 14 ? 'maximal 14 Stationen' : 'antippen zum Übernehmen';
 }
 /* Symbolwahl */
-let pickIdx = -1;
-function openPicker(i){
+let pickIdx = -1, pickReg = '';
+function openAlt(i){
+  pickIdx = i; const name = db.stations[i], ex = exOfStation(name);
+  $('#altTitle').textContent = 'Ersatz für „' + name + '“';
+  $('#altList').innerHTML = REG.map(([k,t])=>{
+    const loads = ex ? ex.L.includes(k) : true;
+    const a = altFor(name, [k]);
+    const body = !loads ? `<div class="an none">belastet diese Region kaum, kein Ersatz nötig<small>Antippen, um trotzdem einen festzulegen</small></div>`
+      : a && a.ex ? `<div class="ai">${icById(a.ex.id)}</div><div class="an">${esc(a.ex.n)}<small>${a.manual ? 'selbst gewählt' : 'Vorschlag'}</small></div>`
+      : `<div class="an none">kein Vorschlag, bitte wählen</div>`;
+    return `<div class="altrow" data-areg="${k}" style="cursor:pointer"><div class="rl">${t}</div>${body}</div>`;
+  }).join('');
+  $('#altOv').hidden = false;
+}
+function openPicker(i, reg){
+  if (reg){
+    pickIdx = i; pickReg = reg; const name = db.stations[i];
+    const cur = (db.alts[name] || {})[reg] || '';
+    $('#pkTitle').textContent = 'Ersatz bei ' + REG.find(([k])=>k===reg)[1] + ': „' + name + '“';
+    $('#pkGrid').innerHTML = `<button type="button" class="ex${cur===''?' cur':''}" data-ic="*"><div class="ic">${icById('')}</div>Automatisch</button>` +
+      CATS.map(([k,t])=>EX.filter(e=>e.c===k).map(e=>`<button type="button" class="ex${cur===e.id?' cur':''}${e.L.includes(reg)?' dim':''}" data-ic="${e.id}"><div class="ic">${icById(e.id)}</div>${esc(e.n)}</button>`).join('')).join('');
+    $('#picker').hidden = false; return;
+  }
+  pickReg = '';
   pickIdx = i; const name = db.stations[i]; const cur = icoId(name);
   $('#pkTitle').textContent = 'Symbol für „' + name + '“';
   $('#pkGrid').innerHTML = `<button type="button" class="ex${cur===''?' cur':''}" data-ic=""><div class="ic">${icById('')}</div>Allgemein</button>` +
     CATS.map(([k,t])=>EX.filter(e=>e.c===k).map(e=>`<button type="button" class="ex${cur===e.id?' cur':''}" data-ic="${e.id}"><div class="ic">${icById(e.id)}</div>${esc(e.n)}</button>`).join('')).join('');
   $('#picker').hidden = false;
 }
-function closePicker(){ $('#picker').hidden = true; pickIdx = -1; }
+function closePicker(){ $('#picker').hidden = true; if (pickReg && pickIdx >= 0){ const i = pickIdx; pickReg = ''; openAlt(i); return; } pickIdx = -1; pickReg = ''; }
 /* Detailansicht im Lauf */
 function openDetail(i){
   const name = db.stations[i], gi = run.assign[i];
@@ -787,6 +1057,11 @@ function openDetail(i){
     <div class="dt-st">STATION ${i+1}</div><div class="dt-nm">${esc(name)}</div>
     <div class="dt-gr">${esc(gLabel(gi).big)}</div><div class="dt-mem">${gi >= 0 ? esc(gLabel(gi).small) : 'Diese Station bleibt in dieser Runde frei.'}</div>
     ${cue ? `<p class="dt-cue">${esc(cue)}</p>` : '<p class="dt-cue" style="color:#8E8E96">Eigene Station</p>'}
+    ${(()=>{ const al = altNotes(i); if (!al.length) return '';
+      return `<div class="dt-alts"><h4>ERSATZ BEI SCHONUNG</h4>` + al.map(a=>`<div class="dt-alt">
+        <div class="i">${a.ex ? icById(a.ex.id) : icById('')}</div>
+        <div><em>${esc(a.name)} · ${a.regs.map(r=>REGS[r]).join(', ')}</em><b>${a.ex ? esc(a.ex.n) : 'Übung mit dem Trainer absprechen'}</b><span>${a.ex ? esc(a.ex.cue) : 'Für diese Station gibt es keinen automatischen Vorschlag.'}</span></div></div>`).join('') +
+        `<p class="dt-safe">Nur bei leichten Beschwerden. Bei Schmerzen abbrechen. Bei akuter Verletzung entscheiden Arzt oder Physio.</p></div>`; })()}
     <button class="cb dt-close" type="button" id="dtClose">Schließen</button>`;
   $('#detail').hidden = false;
 }
@@ -802,6 +1077,135 @@ function renderPlanNote(){
   $('#planNote').textContent = t;
 }
 
+
+/* ---------- Spotify (Connect-Fernsteuerung) ---------- */
+const SPK = 'dtv-zirkel-spotify';
+const SP_SCOPES = 'user-read-playback-state user-modify-playback-state';
+let sp = (()=>{ try { return JSON.parse(localStorage.getItem(SPK)) || {}; } catch(e){ return {}; } })();
+function spSave(){ try { localStorage.setItem(SPK, JSON.stringify(sp, (k, v) => k.startsWith('_') ? undefined : v)); } catch(e){} }
+function spRedirect(){ return location.origin + location.pathname.replace(/[^/]*\.html$/, ''); }
+function b64url(buf){ return btoa(String.fromCharCode.apply(null, new Uint8Array(buf))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,''); }
+function spConnected(){ return !!(sp.refresh && sp.clientId); }
+function spUi(msg, kind){
+  if (msg != null){ sp._msg = msg; sp._kind = kind || ''; }
+  const dot = $('#spDot'), st = $('#spState');
+  if (!dot) return;
+  dot.className = 'sp-dot' + (sp._kind === 'err' ? ' err' : spConnected() ? ' ok' : '');
+  st.textContent = sp._msg || (spConnected() ? 'Verbunden' + (sp.deviceName ? ' · Gerät: ' + sp.deviceName : ' · noch kein Gerät gewählt') : 'Nicht verbunden. Einrichtung unten.');
+  $('#spDevBox').hidden = !spConnected();
+  $('#spOn').checked = !!sp.on;
+  $('#spUri').textContent = spRedirect();
+  if (document.activeElement !== $('#spClient')) $('#spClient').value = sp.clientId || '';
+  $('#spLogout').hidden = !spConnected(); $('#spCodeCopy').hidden = !spConnected();
+  if (!spConnected() && !sp._opened){ $('#spSetup').open = !!sp.on; }
+  const mb = $('#musBtn'); mb.hidden = !spConnected(); mb.classList.toggle('on', !!sp.on);
+}
+function spRunMsg(t, err){ const e = $('#spRun'); if (!e) return; e.textContent = t || ''; e.classList.toggle('err', !!err); }
+function spErrText(e){
+  if (!navigator.onLine || e.name === 'TypeError') return 'Spotify nicht erreichbar (kein Internet?)';
+  if (e.message === 'nicht verbunden') return 'Spotify ist nicht verbunden.';
+  if (e.status === 404) return 'Kein aktives Spotify-Gerät. Spotify öffnen und einmal kurz abspielen.';
+  if (e.reason === 'PREMIUM_REQUIRED') return 'Für die Steuerung braucht es Spotify Premium.';
+  if (e.status === 403) return 'Spotify lehnt ab. Ist dein Konto im Dashboard unter User Management eingetragen?';
+  if (e.oauth) return 'Anmeldung abgelaufen. Bitte neu verbinden. (' + e.message + ')';
+  return 'Spotify-Fehler: ' + e.message;
+}
+async function spLogin(){
+  const id = $('#spClient').value.trim();
+  if (!/^[0-9a-f]{32}$/i.test(id)){ spUi('Die Client ID hat 32 Zeichen (Ziffern und a–f). Bitte aus dem Dashboard kopieren.', 'err'); return; }
+  if (!window.crypto || !crypto.subtle){ spUi('Die Anmeldung geht nur über die https-Adresse der Seite.', 'err'); return; }
+  sp.clientId = id; spSave();
+  const ver = b64url(crypto.getRandomValues(new Uint8Array(48)));
+  const chal = b64url(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(ver)));
+  const state = b64url(crypto.getRandomValues(new Uint8Array(12)));
+  try { localStorage.setItem(SPK + '-pkce', JSON.stringify({ver, state, id})); } catch(e){}
+  const q = new URLSearchParams({client_id:id, response_type:'code', redirect_uri:spRedirect(), code_challenge_method:'S256', code_challenge:chal, scope:SP_SCOPES, state});
+  location.assign('https://accounts.spotify.com/authorize?' + q.toString());
+}
+async function spToken(params){
+  let r;
+  r = await fetch('https://accounts.spotify.com/api/token', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams(params).toString()});
+  const j = await r.json().catch(()=>({}));
+  if (!r.ok){ const e = new Error(j.error_description || j.error || ('HTTP ' + r.status)); e.oauth = true; e.status = r.status; throw e; }
+  sp.access = j.access_token; sp.exp = Date.now() + ((j.expires_in || 3600) - 60) * 1000;
+  if (j.refresh_token) sp.refresh = j.refresh_token;
+  spSave();
+}
+async function spHandleReturn(){
+  const u = new URL(location.href);
+  const code = u.searchParams.get('code'), err = u.searchParams.get('error'), st = u.searchParams.get('state');
+  if (!code && !err) return;
+  history.replaceState(null, '', location.pathname);
+  let pk = {}; try { pk = JSON.parse(localStorage.getItem(SPK + '-pkce')) || {}; } catch(e){}
+  try { localStorage.removeItem(SPK + '-pkce'); } catch(e){}
+  setTimeout(()=>{ const m = document.getElementById('musik'); if (m) m.scrollIntoView(); }, 50);
+  if (err){ spUi(err === 'access_denied' ? 'Anmeldung abgebrochen.' : 'Spotify meldet: ' + err, 'err'); return; }
+  if (!pk.ver || pk.state !== st){ spUi('Die Anmeldung kam in einem anderen Fenster zurück. Bitte hier noch einmal „Mit Spotify verbinden“ oder den Code übertragen.', 'err'); return; }
+  try {
+    sp.clientId = pk.id || sp.clientId;
+    await spToken({grant_type:'authorization_code', code, redirect_uri:spRedirect(), client_id:sp.clientId, code_verifier:pk.ver});
+    sp.on = true; spSave();
+    spUi('Verbunden. Jetzt Spotify auf dem Abspielgerät öffnen und „Geräte suchen“ tippen.', '');
+    spLoadDevices(true);
+  } catch(e){ spUi(spErrText(e), 'err'); }
+}
+async function spEnsure(){
+  if (!spConnected()) throw new Error('nicht verbunden');
+  if (!sp.access || Date.now() > (sp.exp || 0)) await spToken({grant_type:'refresh_token', refresh_token:sp.refresh, client_id:sp.clientId});
+}
+async function spApi(method, path, body, retry){
+  await spEnsure();
+  const h = {'Authorization':'Bearer ' + sp.access};
+  if (body) h['Content-Type'] = 'application/json';
+  const r = await fetch('https://api.spotify.com/v1' + path, {method, headers:h, body: body ? JSON.stringify(body) : undefined});
+  if (r.status === 401 && !retry){ sp.exp = 0; return spApi(method, path, body, true); }
+  if (r.status === 204 || r.status === 202) return null;
+  const j = await r.json().catch(()=>null);
+  if (!r.ok){ const e = new Error((j && j.error && (j.error.message || j.error)) || ('HTTP ' + r.status)); e.status = r.status; e.reason = j && j.error && j.error.reason; throw e; }
+  return j;
+}
+async function spLoadDevices(quiet){
+  try {
+    const j = await spApi('GET', '/me/player/devices');
+    const list = (j && j.devices) || [];
+    const sel = $('#spDev');
+    if (!list.length){
+      sel.innerHTML = sp.deviceId ? `<option value="${esc(sp.deviceId)}">${esc(sp.deviceName || 'gespeichertes Gerät')} (gerade nicht aktiv)</option>` : '<option value="">Kein Gerät gefunden</option>';
+      if (!quiet) spUi('Kein Gerät gefunden. Spotify auf dem Abspielgerät öffnen, kurz abspielen, dann erneut suchen.', 'err');
+      return;
+    }
+    if (!sp.deviceId || !list.some(d=>d.id === sp.deviceId)){
+      const act = list.find(d=>d.is_active) || list[0]; sp.deviceId = act.id; sp.deviceName = act.name; spSave();
+    }
+    sel.innerHTML = list.map(d=>`<option value="${esc(d.id)}"${d.id===sp.deviceId?' selected':''}>${esc(d.name)} · ${esc(d.type)}${d.is_active?' · aktiv':''}</option>`).join('');
+    spUi(null); spUi('Verbunden · Gerät: ' + sp.deviceName, '');
+  } catch(e){ if (!quiet) spUi(spErrText(e), 'err'); }
+}
+async function spSet(playing){
+  const q = sp.deviceId ? '?device_id=' + encodeURIComponent(sp.deviceId) : '';
+  try { await spApi('PUT', '/me/player/' + (playing ? 'play' : 'pause') + q); }
+  catch(e){
+    if (e.status === 404 && sp.deviceId){ await spApi('PUT', '/me/player', {device_ids:[sp.deviceId], play:playing}); return; }
+    if (e.status === 403 && e.reason !== 'PREMIUM_REQUIRED') return;   // läuft schon bzw. ist schon pausiert
+    throw e;
+  }
+}
+let spWant = false, spBusy = false, spAgain = false;
+function musicSync(){
+  const want = !!(sp.on && spConnected() && run.active && !run.paused && !run.done && run.phase === 'work');
+  if (want === spWant) return;
+  spWant = want; spPush();
+}
+async function spPush(){
+  if (spBusy){ spAgain = true; return; }
+  spBusy = true;
+  const target = spWant;
+  try { await spSet(target); spRunMsg(target ? 'Spotify läuft' : 'Spotify pausiert'); }
+  catch(e){ spRunMsg(spErrText(e), true); }
+  spBusy = false;
+  if (spAgain || target !== spWant){ spAgain = false; if (target !== spWant) spPush(); }
+}
+
 /* ---------- Lauf ---------- */
 let run = {active:false, phase:'work', step:0, left:0, endAt:0, paused:true, assign:[], done:false};
 let tick = null;
@@ -815,6 +1219,7 @@ function startRun(){
     err.hidden = false; return; }
   err.hidden = true;
   unlockAudio();
+  spWant = false; spRunMsg(sp.on && spConnected() ? 'Spotify bereit' : '');
   run = {active:true, phase:'work', step:0, left:db.work, endAt:0, paused:true, done:false,
          assign:db.stations.map((_, i)=> i < db.groups.length ? i : -1)};
   document.body.classList.add('running');
@@ -825,6 +1230,7 @@ function endRun(){
   closeDetail();
   run.active = false; run.paused = true;
   if (tick){ clearInterval(tick); tick = null; }
+  musicSync();
   document.body.classList.remove('running');
   keepAwake(false);
 }
@@ -988,10 +1394,12 @@ function nodeHtml(i){
       <div class="sname">${esc(db.stations[i])}</div>
       <div class="gname" style="color:${col.c}">${esc(gLabel(gi).big)}</div>
       <div class="mem">${esc(gLabel(gi).small)}</div>
+      <div class="alt">${esc(altText(i))}</div>
     </div>`;
 }
 function renderRun(){
   if (!run.active) return;
+  musicSync();
   const n = db.stations.length;
   $('#rTitle').textContent = run.done ? 'Fertig' : 'Station ' + (run.step % n + 1) + ' von ' + n;
   $('#rSub').textContent = run.done
@@ -1018,6 +1426,7 @@ function renderRun(){
     el.style.borderLeftColor = col.c;
     const L = gLabel(gi), g = el.querySelector('.gname'); g.textContent = L.big; g.style.color = col.c;
     el.querySelector('.mem').textContent = L.small;
+    el.querySelector('.alt').textContent = altText(i);
     fitGname(el);
   });
   renderTimer();
@@ -1031,7 +1440,7 @@ function renderList(W, H){
     <div class="listmode${two ? ' two' : ''}">${db.stations.map((_, i)=>{
       const gi = run.assign[i], col = gi >= 0 ? COLORS[gi % COLORS.length] : {n:'frei', c:'#4A4A52'};
       return `<div class="lrow" data-i="${i}" style="--gc:${col.c}"><span class="ln">${i+1}</span><span class="lic">${icon(db.stations[i])}</span>
-        <span class="lt"><b>${esc(db.stations[i])}</b><span>${esc(gLabel(gi).small === '–' ? 'frei' : gLabel(gi).small)}</span></span>
+        <span class="lt"><b>${esc(db.stations[i])}</b><span>${esc(gLabel(gi).small === '–' ? 'frei' : gLabel(gi).small)}</span>${altText(i) ? `<span class="la">${esc(altText(i))}</span>` : ''}</span>
         <span class="lg" style="color:${col.c}">${esc(gLabel(gi).big)}</span></div>`;
     }).join('')}</div></div>`;
   stage.dataset.built = String(n) + '|list';
@@ -1090,7 +1499,8 @@ function renderWarn(){
 }
 function flash(el, t){ if (!el) return; el.textContent = t; clearTimeout(el._t); el._t = setTimeout(()=>{ el.textContent = ''; }, 6000); }
 function renderSetup(){
-  $('#names').value = db.names;
+  dayCheck();
+  renderAttendance();
   $('#gs1').checked = db.size === 1; $('#gs2').checked = db.size === 2; $('#gs3').checked = db.size === 3;
   $('#tWork').value = db.work; $('#tChange').value = db.change; $('#tRounds').value = db.rounds;
   $('#optSound').checked = db.sound; $('#optVoice').checked = db.voice;
@@ -1101,7 +1511,52 @@ function renderSetup(){
 /* ---------- Ereignisse ---------- */
 on('#mkGroups','click', ()=>buildGroups(true));
 on('#shuffle','click', ()=>buildGroups(true));
-on('#names','input', e=>{ db.names = e.target.value; save(); });
+on('#names','input', e=>{
+  const list = [...new Set(parseNames(e.target.value).map(x=>x.slice(0,24)))].slice(0,60);
+  const added = list.filter(n=>!(db.squads[db.squad] || []).includes(n));
+  db.squads[db.squad] = list;
+  added.forEach(n=>{ if (!db.day.present.includes(n)) db.day.present.push(n); });   // neu Eingetragene gelten heute als da
+  save(); renderAttendance();
+});
+on('#sqTabs','click', e=>{ const b = e.target.closest('[data-sq]'); if (!b) return; db.squad = b.dataset.sq; save(); renderAttendance(); });
+on('#attList','click', e=>{
+  const g = e.target.closest('[data-gdel]');
+  if (g){ const n = g.dataset.gdel; db.day.guests = db.day.guests.filter(x=>x!==n); delete db.day.inj[n]; save(); renderAttendance(); return; }
+  const i = e.target.closest('[data-inj]'); if (i){ openInj(i.dataset.inj); return; }
+  const p = e.target.closest('[data-p]'); if (!p) return;
+  const n = p.dataset.p; if (db.day.guests.includes(n)) return;
+  dayCheck();
+  if (db.day.present.includes(n)) db.day.present = db.day.present.filter(x=>x!==n); else db.day.present.push(n);
+  save(); renderAttendance();
+});
+on('#attAll','click', ()=>{ dayCheck(); (db.squads[db.squad] || []).forEach(n=>{ if (!db.day.present.includes(n)) db.day.present.push(n); }); save(); renderAttendance(); });
+on('#attNone','click', ()=>{ dayCheck(); const r = db.squads[db.squad] || []; db.day.present = db.day.present.filter(n=>!r.includes(n)); save(); renderAttendance(); });
+on('#guestAdd','click', ()=>{
+  const v = $('#guestNew').value.trim().slice(0,24); if (!v) return;
+  dayCheck();
+  if ((db.squads[db.squad] || []).includes(v)){ if (!db.day.present.includes(v)) db.day.present.push(v); }
+  else if (!db.day.guests.includes(v)) db.day.guests.push(v);
+  $('#guestNew').value = ''; save(); renderAttendance();
+});
+on('#guestNew','keydown', e=>{ if (e.key === 'Enter'){ e.preventDefault(); $('#guestAdd').click(); } });
+on('#injRegs','click', e=>{
+  const b = e.target.closest('[data-reg]'); if (!b || !injName) return;
+  const cur = injOf(injName), r = b.dataset.reg;
+  db.day.inj[injName] = cur.includes(r) ? cur.filter(x=>x!==r) : cur.concat(r);
+  if (!db.day.inj[injName].length) delete db.day.inj[injName];
+  save(); renderInj();
+});
+on('#injDone','click', closeInj);
+on('#injClose','click', closeInj);
+on('#injClear','click', ()=>{ if (injName) delete db.day.inj[injName]; save(); closeInj(); });
+on('#injOv','click', e=>{ if (e.target.id === 'injOv') closeInj(); });
+on('#altClose','click', ()=>{ $('#altOv').hidden = true; pickIdx = -1; });
+on('#altOv','click', e=>{
+  if (e.target.id === 'altOv'){ $('#altOv').hidden = true; pickIdx = -1; return; }
+  const r = e.target.closest('[data-areg]'); if (!r) return;
+  const i = pickIdx; $('#altOv').hidden = true; openPicker(i, r.dataset.areg);
+});
+document.addEventListener('visibilitychange', ()=>{ if (!document.hidden && !run.active && dayCheck()){ renderAttendance(); renderGroups(); } });
 document.querySelectorAll('input[name="gs"]').forEach(r=>r.addEventListener('change', e=>{ db.size = +e.target.value; save(); buildGroups(false); }));
 on('#grpOut','click', e=>{
   const li = e.target.closest('[data-n]');
@@ -1134,6 +1589,13 @@ on('#pkClose','click', closePicker);
 on('#picker','click', e=>{
   if (e.target.id === 'picker'){ closePicker(); return; }
   const b = e.target.closest('[data-ic]'); if (!b || pickIdx < 0) return;
+  if (pickReg){
+    const nm = db.stations[pickIdx], v = b.dataset.ic;
+    db.alts[nm] = db.alts[nm] || {};
+    if (v === '*') delete db.alts[nm][pickReg]; else db.alts[nm][pickReg] = v;
+    if (!Object.keys(db.alts[nm]).length) delete db.alts[nm];
+    save(); renderStations(); closePicker(); return;
+  }
   const name = db.stations[pickIdx], id = b.dataset.ic, def = exFor(name);
   if (!id || (def && def.id === id)) delete db.icons[name]; else db.icons[name] = id;
   if (!id && def) db.icons[name] = '-';   // bewusst allgemeines Symbol
@@ -1152,6 +1614,7 @@ on('#stList','click', e=>{
   const b = e.target.closest('button'); if (!b) return;
   const d = b.dataset;
   if (d.pick !== undefined){ openPicker(+d.pick); return; }
+  if (d.alt !== undefined){ openAlt(+d.alt); return; }
   if (d.up !== undefined){ const i = +d.up; if (i>0) db.stations.splice(i-1,0,db.stations.splice(i,1)[0]); }
   else if (d.down !== undefined){ const i = +d.down; if (i<db.stations.length-1) db.stations.splice(i+1,0,db.stations.splice(i,1)[0]); }
   else if (d.del !== undefined){ const nm = db.stations.splice(+d.del,1)[0]; if (!db.stations.includes(nm)) delete db.icons[nm]; }
@@ -1181,12 +1644,40 @@ on('#goBtn','click', ()=>{
 });
 on('#nextBtn','click', ()=>{ unlockAudio(); advance(false); });
 on('#prevBtn','click', ()=>{ unlockAudio(); back(); });
+on('#spOn','change', e=>{ sp.on = e.target.checked; spSave(); spUi(); if (sp.on && spConnected()) spLoadDevices(true); });
+on('#spSetup','toggle', ()=>{ sp._opened = true; });
+on('#spCopyUri','click', ()=>{ const t = spRedirect(); (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(()=>spUi('Adresse kopiert.', ''), ()=>spUi('Bitte die Adresse von Hand abschreiben: ' + t, '')); });
+on('#spLogin','click', ()=>{ spLogin(); });
+on('#spLogout','click', ()=>{ const keep = sp.clientId; sp = {clientId:keep}; spSave(); spUi('Getrennt.', ''); });
+on('#spRefresh','click', ()=>{ spUi('Suche Geräte …', ''); spLoadDevices(false); });
+on('#spDev','change', e=>{ const o = e.target.selectedOptions[0]; if (!o || !o.value) return; sp.deviceId = o.value; sp.deviceName = o.textContent.split(' · ')[0]; spSave(); spUi(null); spUi('Verbunden · Gerät: ' + sp.deviceName, ''); });
+on('#spTestPlay','click', ()=>{ spSet(true).then(()=>spUi('Test: Wiedergabe gestartet.', ''), e=>spUi(spErrText(e), 'err')); });
+on('#spTestPause','click', ()=>{ spSet(false).then(()=>spUi('Test: pausiert.', ''), e=>spUi(spErrText(e), 'err')); });
+on('#spCodeCopy','click', ()=>{
+  const code = 'DTVSP1.' + btoa(JSON.stringify({c:sp.clientId, r:sp.refresh, d:sp.deviceId||'', n:sp.deviceName||''}));
+  (navigator.clipboard ? navigator.clipboard.writeText(code) : Promise.reject()).then(()=>spUi('Code kopiert. In der anderen App „Code einfügen“ tippen.', ''), ()=>{ window.prompt('Diesen Code kopieren:', code); });
+});
+on('#spCodePaste','click', ()=>{
+  const t = (window.prompt('Verbindungscode einfügen:') || '').trim();
+  if (!t) return;
+  try {
+    if (!t.startsWith('DTVSP1.')) throw 0;
+    const o = JSON.parse(atob(t.slice(7)));
+    if (!o.c || !o.r) throw 0;
+    sp.clientId = o.c; sp.refresh = o.r; sp.access = ''; sp.exp = 0; sp.deviceId = o.d || ''; sp.deviceName = o.n || ''; sp.on = true; spSave();
+    spUi('Verbindung übernommen.', ''); spLoadDevices(false);
+  } catch(e){ spUi('Der Code ist ungültig.', 'err'); }
+});
+on('#musBtn','click', ()=>{ sp.on = !sp.on; spSave(); spUi(); spRunMsg(sp.on ? 'Spotify an' : 'Spotify aus'); renderRun(); });
 on('#sndBtn','click', ()=>{ db.sound = !db.sound; save(); if (db.sound){ unlockAudio(); beep(880,.1,.4); } renderRun(); });
 window.addEventListener('resize', ()=>{ if (run.active){ const s=$('#stage'); s.dataset.built=''; renderRun(); } });
 window.addEventListener('orientationchange', ()=>setTimeout(()=>{ if (run.active){ const s=$('#stage'); s.dataset.built=''; renderRun(); } }, 300));
 
-window.DTVZ = {get db(){ return db; }, get run(){ return run; }, startRun, play, pause, advance, back, buildGroups};
+window.DTVZ = {altFor, presentList, get db(){ return db; }, get run(){ return run; }, get sp(){ return sp; }, startRun, play, pause, advance, back, buildGroups};
 renderSetup();
+spUi();
+spHandleReturn();
+if (spConnected() && sp.on && navigator.onLine) spLoadDevices(true);
 })();
 </script>
 <script data-sw>

@@ -1,5 +1,5 @@
 /* DTV 1847 – Offline-Speicher. Version ändert sich bei jedem Update automatisch. */
-const CACHE = 'dtv-zirkel-3f1c39c429';
+const CACHE = 'dtv-zirkel-64e810cfd2';
 const FILES = ["./", "dtv-icon.png", "index.html", "masse.html", "technik.html", "zirkel.html"];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));
