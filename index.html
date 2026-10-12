@@ -368,7 +368,14 @@ footer{max-width:1100px;margin:0 auto;padding:0 12px 40px;font-size:13px;color:v
         <button class="btn small" type="button" id="spRefresh">Geräte suchen</button>
         <button class="btn small" type="button" id="spTestPlay">▶ Test</button>
         <button class="btn small" type="button" id="spTestPause">❚❚ Test</button>
+        <button class="btn small" type="button" id="spCheck">Status prüfen</button>
       </div>
+      <div class="f" style="margin-top:12px"><span>Beim Wechsel</span>
+        <div class="seg" role="radiogroup" aria-label="Beim Wechsel" style="grid-template-columns:1fr 1fr;max-width:330px">
+          <input type="radio" name="spm" id="spmP" value="pause"><label for="spmP">pausieren</label>
+          <input type="radio" name="spm" id="spmL" value="leise"><label for="spmL">leiser stellen</label>
+        </div></div>
+      <p class="note" id="spModeNote">„Leiser stellen“ hält die Musik am Laufen und ist zuverlässiger. Es geht aber nur mit Geräten, deren Lautstärke Spotify steuern darf (Spotify-Connect-Lautsprecher, Computer). iPad und iPhone erlauben das nicht.</p>
       <p class="note">Das Gerät erscheint erst, wenn Spotify darauf geöffnet ist. Am einfachsten: In Spotify die Playlist starten, gleich wieder pausieren, dann hier „Geräte suchen“.</p>
     </div>
     <details class="sp" id="spSetup">
@@ -409,7 +416,7 @@ footer{max-width:1100px;margin:0 auto;padding:0 12px 40px;font-size:13px;color:v
   </div>
 </main>
 
-<footer>Alles bleibt auf diesem Gerät gespeichert. <span class="ver">Zirkel · Version 2026-10-12 · Kader & Schonung</span></footer>
+<footer>Alles bleibt auf diesem Gerät gespeichert. <span class="ver">Zirkel · Version 2026-10-12b · Kader & Schonung</span></footer>
 </div>
 
 <!-- ============ LAUF ============ -->
@@ -804,24 +811,55 @@ function todayStr(){ const d = new Date(); return d.getFullYear() + '-' + String
 function injOf(name){ return (db.day.inj[name] || []).filter(r=>REGS[r]); }
 function exOfStation(name){ const id = icoId(name); return id ? EXI[id] : null; }
 /* Ersatz für eine Station bei gegebenen Regionen; null = Übung ist unkritisch */
+/* Verwandte Bereiche: ähnliche Trainingswirkung, wenn im eigenen Bereich nichts passt */
+const RELATED = {rumpf:['beine','mobil','ober'], beine:['rumpf','mobil','koord'], ober:['rumpf','wurf'], sprung:['wurf','rumpf','ober','beine'],
+  wurf:['ober','rumpf'], schnell:['wurf','ober','rumpf','beine'], koord:['rumpf','mobil','wurf'], mobil:['rumpf','koord','beine']};
+/* Übungen, die besonderes Gerät brauchen: als Ersatz nur, wenn nichts anderes passt */
+const GEAR = new Set(['stepup','bulgarian','pistol','dips','pullup','boxjump','minihurdle','sledpush','sledpull','benchwalk','wobble','hoops',
+  'hurdlemob','hurdlewalk','ladder','nordic','rope','slalom','shuttle','sprint20','freesprint','walllean','take3','sbj','bound']);
+const ALTCACHE = new Map();
+/* Plant für eine Kombination von Regionen die Ersatzübungen über den ganzen Zirkel:
+   jede Übung möglichst nur einmal, zuerst aus dem eigenen Bereich, dann aus verwandten. */
+function altPlan(regs){
+  const key = regs.slice().sort().join(',') + '|' + db.stations.join('|') + '|' + JSON.stringify(db.alts) + '|' + JSON.stringify(db.icons);
+  if (ALTCACHE.has(key)) return ALTCACHE.get(key);
+  const used = {}, res = [];
+  const impact = regs.includes('knie') || regs.includes('fuss');
+  const inCirc = new Set(db.stations.map(st=>{ const e = exOfStation(st); return e && e.id; }).filter(Boolean));
+  db.stations.forEach(st=>{
+    const ex = exOfStation(st);
+    const hit = ex ? regs.filter(r=>ex.L.includes(r)) : regs.slice();
+    if (!hit.length){ res.push(null); return; }
+    const ov = db.alts[st] || {};
+    for (const r of hit){ if (ov[r] && EXI[ov[r]]){ used[ov[r]] = (used[ov[r]] || 0) + 1; res.push({ex:EXI[ov[r]], regs:hit, manual:true}); return; } }
+    if (!ex){ res.push({ex:null, regs:hit}); return; }
+    const rel = RELATED[ex.c] || [], pref = ALTPREF[ex.c] || [];
+    let best = null, bs = 1e9;
+    EX.forEach(c=>{
+      if (c.id === ex.id || c.L.some(r=>regs.includes(r))) return;
+      if (impact && (c.c === 'sprung' || c.c === 'schnell')) return;   // bei Knie/Fuß keine Sprünge oder Sprints als Ersatz
+      let sc = (used[c.id] || 0) * 10;
+      sc += c.c === ex.c ? 0 : rel.includes(c.c) ? 1 + rel.indexOf(c.c) * 0.5 : 5;
+      const pi = pref.indexOf(c.id); sc += pi >= 0 ? pi * 0.05 : 0.6;
+      if (inCirc.has(c.id)) sc += 3;
+      if (GEAR.has(c.id)) sc += 4;
+      if (sc < bs){ bs = sc; best = c; }
+    });
+    if (best) used[best.id] = (used[best.id] || 0) + 1;
+    res.push({ex:best, regs:hit});
+  });
+  if (ALTCACHE.size > 60) ALTCACHE.clear();
+  ALTCACHE.set(key, res);
+  return res;
+}
 function altFor(station, regs){
   if (!regs.length) return null;
-  const ex = exOfStation(station);
-  const hit = ex ? regs.filter(r=>ex.L.includes(r)) : regs.slice();
-  if (!hit.length) return null;
-  const ov = db.alts[station] || {};
-  for (const r of hit){ if (ov[r] && EXI[ov[r]]) return {ex:EXI[ov[r]], regs:hit, manual:true}; }
-  if (!ex) return {ex:null, regs:hit};
-  for (const id of (ALTPREF[ex.c] || []).concat(ALTANY)){
-    const c = EXI[id]; if (!c || c.id === ex.id) continue;
-    if (c.L.some(r=>regs.includes(r))) continue;
-    return {ex:c, regs:hit};
-  }
-  return {ex:null, regs:hit};
+  const i = db.stations.indexOf(station);
+  return i >= 0 ? altPlan(regs)[i] : null;
 }
 function altNotes(i){
   const gi = run.assign[i]; if (gi < 0) return [];
-  return db.groups[gi].map(n=>{ const a = altFor(db.stations[i], injOf(n)); return a ? Object.assign({name:n}, a) : null; }).filter(Boolean);
+  return db.groups[gi].map(n=>{ const r = injOf(n); const a = r.length ? altPlan(r)[i] : null; return a ? Object.assign({name:n}, a) : null; }).filter(Boolean);
 }
 function altText(i){ return altNotes(i).map(a=>'⚠ ' + a.name + ': ' + (a.ex ? a.ex.n : 'Übung prüfen')).join(' · '); }
 
@@ -1022,7 +1060,7 @@ function openAlt(i){
   $('#altTitle').textContent = 'Ersatz für „' + name + '“';
   $('#altList').innerHTML = REG.map(([k,t])=>{
     const loads = ex ? ex.L.includes(k) : true;
-    const a = altFor(name, [k]);
+    const a = altPlan([k])[i];
     const body = !loads ? `<div class="an none">belastet diese Region kaum, kein Ersatz nötig<small>Antippen, um trotzdem einen festzulegen</small></div>`
       : a && a.ex ? `<div class="ai">${icById(a.ex.id)}</div><div class="an">${esc(a.ex.n)}<small>${a.manual ? 'selbst gewählt' : 'Vorschlag'}</small></div>`
       : `<div class="an none">kein Vorschlag, bitte wählen</div>`;
@@ -1094,6 +1132,7 @@ function spUi(msg, kind){
   st.textContent = sp._msg || (spConnected() ? 'Verbunden' + (sp.deviceName ? ' · Gerät: ' + sp.deviceName : ' · noch kein Gerät gewählt') : 'Nicht verbunden. Einrichtung unten.');
   $('#spDevBox').hidden = !spConnected();
   $('#spOn').checked = !!sp.on;
+  $('#spmP').checked = sp.mode !== 'leise'; $('#spmL').checked = sp.mode === 'leise';
   $('#spUri').textContent = spRedirect();
   if (document.activeElement !== $('#spClient')) $('#spClient').value = sp.clientId || '';
   $('#spLogout').hidden = !spConnected(); $('#spCodeCopy').hidden = !spConnected();
@@ -1104,6 +1143,9 @@ function spRunMsg(t, err){ const e = $('#spRun'); if (!e) return; e.textContent 
 function spErrText(e){
   if (!navigator.onLine || e.name === 'TypeError') return 'Spotify nicht erreichbar (kein Internet?)';
   if (e.message === 'nicht verbunden') return 'Spotify ist nicht verbunden.';
+  if (e.message === 'eingeschlafen') return 'Spotify-Gerät ist eingeschlafen: iPad/iPhone stoppt Spotify im Hintergrund nach einer Pause. Abhilfe: Spotify auf einem zweiten Gerät im Vordergrund laufen lassen oder Lautsprecher mit Spotify Connect.';
+  if (e.message === 'nichtgestartet') return 'Spotify ist erreichbar, startet aber nicht. Einmal in Spotify auf Play tippen.';
+  if (e.message === 'keinvolume') return 'Dieses Gerät erlaubt keine Lautstärke-Steuerung (iPad/iPhone). Es wurde pausiert. Für „leiser“ einen Spotify-Connect-Lautsprecher wählen.';
   if (e.status === 404) return 'Kein aktives Spotify-Gerät. Spotify öffnen und einmal kurz abspielen.';
   if (e.reason === 'PREMIUM_REQUIRED') return 'Für die Steuerung braucht es Spotify Premium.';
   if (e.status === 403) return 'Spotify lehnt ab. Ist dein Konto im Dashboard unter User Management eingetragen?';
@@ -1177,35 +1219,68 @@ async function spLoadDevices(quiet){
     if (!sp.deviceId || !list.some(d=>d.id === sp.deviceId)){
       const act = list.find(d=>d.is_active) || list[0]; sp.deviceId = act.id; sp.deviceName = act.name; spSave();
     }
-    sel.innerHTML = list.map(d=>`<option value="${esc(d.id)}"${d.id===sp.deviceId?' selected':''}>${esc(d.name)} · ${esc(d.type)}${d.is_active?' · aktiv':''}</option>`).join('');
+    const cur = list.find(d=>d.id === sp.deviceId); if (cur){ sp.devVol = cur.supports_volume !== false; spSave(); }
+    sel.innerHTML = list.map(d=>`<option value="${esc(d.id)}" data-vol="${d.supports_volume !== false ? 1 : 0}"${d.id===sp.deviceId?' selected':''}>${esc(d.name)} · ${esc(d.type)}${d.is_active?' · aktiv':''}${d.supports_volume === false ? '' : ' · Lautstärke ✓'}</option>`).join('');
     spUi(null); spUi('Verbunden · Gerät: ' + sp.deviceName, '');
   } catch(e){ if (!quiet) spUi(spErrText(e), 'err'); }
 }
-async function spSet(playing){
-  const q = sp.deviceId ? '?device_id=' + encodeURIComponent(sp.deviceId) : '';
-  try { await spApi('PUT', '/me/player/' + (playing ? 'play' : 'pause') + q); }
-  catch(e){
-    if (e.status === 404 && sp.deviceId){ await spApi('PUT', '/me/player', {device_ids:[sp.deviceId], play:playing}); return; }
-    if (e.status === 403 && e.reason !== 'PREMIUM_REQUIRED') return;   // läuft schon bzw. ist schon pausiert
-    throw e;
-  }
+const sleep = ms => new Promise(r=>setTimeout(r, ms));
+function devQ(sep){ return sp.deviceId ? (sep || '?') + 'device_id=' + encodeURIComponent(sp.deviceId) : ''; }
+async function spIsPlaying(){
+  const st = await spApi('GET', '/me/player');
+  return !!(st && st.is_playing && (!sp.deviceId || !st.device || st.device.id === sp.deviceId));
 }
-let spWant = false, spBusy = false, spAgain = false;
+async function spSet(playing){
+  try { await spApi('PUT', '/me/player/' + (playing ? 'play' : 'pause') + devQ()); }
+  catch(e){
+    if (e.status === 404 && sp.deviceId){ try { await spApi('PUT', '/me/player', {device_ids:[sp.deviceId], play:playing}); } catch(e2){ if (!playing) return; if (e2.status === 404){ const x = new Error('eingeschlafen'); x.custom = true; throw x; } throw e2; } }
+    else if (e.status === 403 && e.reason !== 'PREMIUM_REQUIRED'){ if (!playing) return; }   // „schon pausiert“ bzw. wird unten geprüft
+    else throw e;
+  }
+  if (!playing) return;
+  // Kontrolle: läuft die Musik wirklich wieder?
+  await sleep(1200);
+  if (await spIsPlaying()) return;
+  try { await spApi('PUT', '/me/player', {device_ids:[sp.deviceId], play:true}); } catch(e){ if (e.status !== 404) throw e; }
+  await sleep(1500);
+  if (await spIsPlaying()) return;
+  const devs = ((await spApi('GET', '/me/player/devices')) || {}).devices || [];
+  const err = new Error(devs.some(d=>d.id === sp.deviceId) ? 'nichtgestartet' : 'eingeschlafen'); err.custom = true; throw err;
+}
+async function spVolume(v){ await spApi('PUT', '/me/player/volume?volume_percent=' + Math.round(v) + devQ('&')); }
+async function spApply(target){
+  if (target === 'duck'){
+    const st = await spApi('GET', '/me/player');
+    if (!st || !st.device){ const e = new Error('eingeschlafen'); e.custom = true; throw e; }
+    if (st.device.supports_volume === false){ await spSet(false); const e = new Error('keinvolume'); e.custom = true; throw e; }
+    if (st.device.volume_percent != null && st.device.volume_percent > (sp.duck || 10) + 5){ sp.vol = st.device.volume_percent; spSave(); }
+    await spVolume(sp.duck || 10); return 'leise';
+  }
+  if (target === 'play'){
+    if (sp.mode === 'leise' && sp.vol){ try { await spVolume(sp.vol); } catch(e){} }
+    if (sp.mode === 'leise' && await spIsPlaying()) return 'läuft';
+    await spSet(true); return 'läuft';
+  }
+  await spSet(false);
+  if (sp.mode === 'leise' && sp.vol){ try { await spVolume(sp.vol); } catch(e){} }
+  return 'pausiert';
+}
+let spWant = 'stop', spBusy = false;
 function musicSync(){
-  const want = !!(sp.on && spConnected() && run.active && !run.paused && !run.done && run.phase === 'work');
+  let want = 'stop';
+  if (sp.on && spConnected() && run.active && !run.paused && !run.done) want = run.phase === 'work' ? 'play' : (sp.mode === 'leise' ? 'duck' : 'stop');
   if (want === spWant) return;
   spWant = want; spPush();
 }
 async function spPush(){
-  if (spBusy){ spAgain = true; return; }
+  if (spBusy) return;              // nach Abschluss wird der neueste Wunsch nachgeholt
   spBusy = true;
   const target = spWant;
-  try { await spSet(target); spRunMsg(target ? 'Spotify läuft' : 'Spotify pausiert'); }
+  try { const r = await spApply(target); spRunMsg('Spotify ' + r); }
   catch(e){ spRunMsg(spErrText(e), true); }
   spBusy = false;
-  if (spAgain || target !== spWant){ spAgain = false; if (target !== spWant) spPush(); }
+  if (target !== spWant) spPush();
 }
-
 /* ---------- Lauf ---------- */
 let run = {active:false, phase:'work', step:0, left:0, endAt:0, paused:true, assign:[], done:false};
 let tick = null;
@@ -1219,7 +1294,7 @@ function startRun(){
     err.hidden = false; return; }
   err.hidden = true;
   unlockAudio();
-  spWant = false; spRunMsg(sp.on && spConnected() ? 'Spotify bereit' : '');
+  spWant = 'stop'; spRunMsg(sp.on && spConnected() ? 'Spotify bereit' : '');
   run = {active:true, phase:'work', step:0, left:db.work, endAt:0, paused:true, done:false,
          assign:db.stations.map((_, i)=> i < db.groups.length ? i : -1)};
   document.body.classList.add('running');
@@ -1650,7 +1725,20 @@ on('#spCopyUri','click', ()=>{ const t = spRedirect(); (navigator.clipboard ? na
 on('#spLogin','click', ()=>{ spLogin(); });
 on('#spLogout','click', ()=>{ const keep = sp.clientId; sp = {clientId:keep}; spSave(); spUi('Getrennt.', ''); });
 on('#spRefresh','click', ()=>{ spUi('Suche Geräte …', ''); spLoadDevices(false); });
-on('#spDev','change', e=>{ const o = e.target.selectedOptions[0]; if (!o || !o.value) return; sp.deviceId = o.value; sp.deviceName = o.textContent.split(' · ')[0]; spSave(); spUi(null); spUi('Verbunden · Gerät: ' + sp.deviceName, ''); });
+on('#spDev','change', e=>{ const o = e.target.selectedOptions[0]; if (!o || !o.value) return; sp.deviceId = o.value; sp.deviceName = o.textContent.split(' · ')[0]; sp.devVol = o.dataset.vol === '1'; spSave(); spUi(null); spUi('Verbunden · Gerät: ' + sp.deviceName, ''); });
+document.querySelectorAll('input[name="spm"]').forEach(r=>r.addEventListener('change', e=>{ sp.mode = e.target.value; spSave(); spUi(); }));
+on('#spCheck','click', async ()=>{
+  spUi('Prüfe …', '');
+  try {
+    const st = await spApi('GET', '/me/player');
+    const devs = ((await spApi('GET', '/me/player/devices')) || {}).devices || [];
+    const me = devs.find(d=>d.id === sp.deviceId);
+    let t = me ? `Gerät „${me.name}“ ist erreichbar` + (me.is_active ? ' und aktiv' : ', aber nicht aktiv') : 'Gewähltes Gerät ist gerade nicht erreichbar (Spotify dort schläft oder ist geschlossen)';
+    t += st ? (st.is_playing ? ' · spielt gerade' : ' · pausiert') : ' · keine Wiedergabe aktiv';
+    if (me) t += me.supports_volume === false ? ' · Lautstärke nicht steuerbar' : ' · Lautstärke steuerbar';
+    spUi(t + '.', me ? '' : 'err');
+  } catch(e){ spUi(spErrText(e), 'err'); }
+});
 on('#spTestPlay','click', ()=>{ spSet(true).then(()=>spUi('Test: Wiedergabe gestartet.', ''), e=>spUi(spErrText(e), 'err')); });
 on('#spTestPause','click', ()=>{ spSet(false).then(()=>spUi('Test: pausiert.', ''), e=>spUi(spErrText(e), 'err')); });
 on('#spCodeCopy','click', ()=>{
